@@ -2,7 +2,7 @@ import * as express from 'express';
 import * as path from 'path';
 import * as socketio from 'socket.io';
 import { Character } from '../engine/Characters/Character';
-import { notOwnedCharacters, ownedCharacters } from '../engine/Characters/selector';
+import { notOwnedCharacters, ownedCharacters } from '../engine/Guards/Characters/selector';
 import { addCommand, CommandList } from '../engine/Commands/Command';
 import { Direction } from '../engine/models/Direction';
 
