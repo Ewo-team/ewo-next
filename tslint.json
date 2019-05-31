@@ -1,0 +1,19 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-airbnb"
+  ],
+  "jsRules": {},
+  "rules": {
+    "max-classes-per-file": true,
+    "max-file-line-count": true,
+    "no-default-export": true,
+    "max-line-length": [
+      true,
+      160
+    ],
+    "object-literal-sort-keys": false
+  },
+  "rulesDirectory": []
+}
