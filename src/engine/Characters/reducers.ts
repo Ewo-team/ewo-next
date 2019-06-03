@@ -16,6 +16,7 @@ export const reducer = (state: ICharactersState = INITIAL_STATE, action: AnyActi
       return load;
     case CharactersActions.SAVE_DATABASE:
       Tasks.saveDatabaseMap(DATABASE, state);
+      return state;
     default:
       return state;
   }

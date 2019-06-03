@@ -8,12 +8,12 @@ const createNodeLogger = require('redux-node-logger');
 export const makeStore = (): Store<IState> => {
 
   const loggerMiddleware = createNodeLogger({
-    /*predicate: (getState, action) => {
-      return !(action.type as string).includes('CommandsActions');
-    },*/
     predicate: (getState, action) => {
-      return false;
+      return !(action.type as string).includes('CommandsActions');
     },
+    /*predicate: (getState, action) => {
+      return false;
+    },*/
   });
 
   const middlewares = [reduxThunk/*, loggerMiddleware*/];

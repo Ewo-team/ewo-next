@@ -19,7 +19,7 @@ export interface Command {
   command: CommandList;
   payload: any;
   status: CommandStatus;
-  eligible(payload, store: Store<IState>): boolean;
+  eligible(payload, store: Store<IState>): boolean | { result: boolean, meta: any };
   execute(payload, store: Store<IState>): boolean;
 }
 

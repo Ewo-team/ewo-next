@@ -16,6 +16,15 @@ export const reducer = (state: IMapsState = INITIAL_STATE, action: AnyAction) =>
       return load;
     case MapsActions.SAVE_DATABASE:
       Tasks.saveDatabaseMap(DATABASE, state);
+    case MapsActions.MOVE:
+      return state.update(action.maps, (map) => {
+        const coordIndex = map.findIndex(c => c.mat === action.Character.mat);
+        return map.update(coordIndex, (coord) => {
+          coord.x = action.newX;
+          coord.y = action.newY;
+          return coord;
+        });
+      });
     default:
       return state;
   }

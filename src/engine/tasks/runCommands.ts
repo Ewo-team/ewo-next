@@ -8,14 +8,16 @@ import { IState } from '../reducers';
 import { saveDatabase as saveMaps } from '../Maps/actions';
 import { saveDatabase as saveCharacters } from '../Characters/actions';
 
-// tslint:disable-next-line: no-namespace
 export namespace runCommands {
   export const makeQueue = () => {
 
     const q = async.queue((current: Command, callback) => {
       console.log(`starting task ${current.command}`);
-      if (current.eligible(current.payload, store)) {
-        current.execute(current.payload, store);
+      const test = current.eligible(current.payload, store);
+      const meta = typeof test === 'boolean' ? current.payload : { ...test.meta, ...current.payload };
+      const eligible = typeof test === 'boolean' ? test : test.result;
+      if (eligible) {
+        current.execute(meta, store);
       }
 
       callback();

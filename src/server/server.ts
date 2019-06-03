@@ -48,20 +48,20 @@ export const startServer = (store) => {
     console.log('listening on *:3000');
   });
 
-  /*store.subscribe(
+  store.subscribe(
     () => io.emit('state', JSON.stringify(store.getState())),
-  );*/
+  );
 
   io.on('connection', (socket) => {
     const userId = 1; // TEMP
 
     const owned = ownedCharacters(userId)(store.getState());
-    const limited = notOwnedCharacters(userId)(store.getState());
-    const state = {
+    //const limited = notOwnedCharacters(userId)(store.getState());
+    /*const state = {
       Characters: { ...owned, ...limited },
-    };
+    };*/
 
-    // socket.emit('state', JSON.stringify(state));
+    socket.emit('state', JSON.stringify(store.getState()));
 
     socket.on('login', (userdata) => {
       console.log(userdata);

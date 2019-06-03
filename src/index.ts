@@ -8,7 +8,6 @@ import { makeStore } from './engine/store';
 import { runCommands } from './engine/tasks/runCommands';
 import { startServer } from './server/server';
 
-// tslint:disable-next-line: no-namespace
 declare namespace NodeJS {
   // tslint:disable-next-line: interface-name
   interface Global {
