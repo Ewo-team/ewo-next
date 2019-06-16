@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "esModuleInterop": false,
-    "target": "es5",
+    "esModuleInterop": true,
+    "target": "es6",
+    "outDir": "dist",
     "jsx": "react",
     "moduleResolution": "node",
     "sourceMap": true,
+    "strictNullChecks": false,
     "baseUrl": ".",
     "paths": {
       "*": [
@@ -14,7 +16,10 @@
       ]
     }
   },
+  "files": [
+    "./node_modules/@types/node/index.d.ts"
+  ],
   "include": [
-    "src/**/*"
+    "src/**/*.ts"
   ]
 }

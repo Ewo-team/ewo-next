@@ -8,13 +8,18 @@
   "rules": {
     "max-classes-per-file": true,
     "max-file-line-count": true,
-    "no-default-export": true,
     "max-line-length": [
       true,
       160
     ],
     "object-literal-sort-keys": false,
-    "no-namespace": false
+    "no-namespace": false,
+    "arrow-parens": false,
+    "ter-arrow-parens": false,
+    "object-shorthand-properties-first": false,
+    "no-console": false,
+    "interface-name": false,
+    "import-name": false
   },
   "rulesDirectory": []
 }
