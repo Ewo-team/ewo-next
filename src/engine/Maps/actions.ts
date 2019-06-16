@@ -1,6 +1,6 @@
 import { Character } from '../Characters/Character';
 import { DirectionOctogone } from '../models/Direction';
-//import { Action } from 'redux';
+// import { Action } from 'redux';
 
 export enum MapsActions {
   MOVE = 'MapsActions.MOVE',
@@ -12,7 +12,7 @@ export enum MapsActions {
 export type loadDatabaseAction = Action<{ type: MapsActions }>;
 export type saveDatabase = Action<{ type: MapsActions }>;*/
 
-export const characterMove = (character: Character, maps: string, newX: number, newY: number)/*: characterMoveAction*/ => ({
+export const characterMove = (character: Character, maps: string, newX: number, newY: number) /*: characterMoveAction*/ => ({
   character,
   maps,
   newX,

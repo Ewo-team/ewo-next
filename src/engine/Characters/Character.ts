@@ -1,38 +1,77 @@
 import { Store } from 'redux';
-import { Hydrater } from '../models/Hydrater';
 import { IState } from '../reducers';
 
-export class Character extends Hydrater {
+export interface Character {
+  mat: number;
+  name: string;
 
-  public static properties = ['mat', 'name', 'race', 'owner', 'hp', 'regen', 'insight', 'speed', 'dexterity', 'strength', 'agility', 'maps'];
-  public mat: number;
-  public name: string;
+  race: string;
 
-  public race: string;
+  owner: number;
 
-  public owner: number;
-
-  public hp = 40;
-  public regen = 5;
-  public insight = 3; // distance of view
-  public speed = 4; // number of movement points
-  public dexterity = 10; // number of atq/defense points
-  public strength = 4; // damage
-  public agility = 2; // number on actions points
+  hp;
+  regen;
+  insight; // distance of view
+  speed; // number of movement points
+  dexterity; // number of atq/defense points
+  strength; // damage
+  agility; // number on actions points
 
   // private magic; // level of magic
 
-  public xp = 0;
-  public ap = 0;
-
-  protected getProperties(): string[] {
-    return Character.properties;
-  }
-
+  xp;
+  ap;
 }
 
-export namespace CharacterUtils {
+export namespace CharactersTools {
+
+  export const factory = (values?): Character => {
+    const character = {} as Character;
+
+    if (values !== undefined) {
+
+      properties.forEach((property) => {
+        if (values[property] !== undefined) {
+          character[property] = values[property];
+        }
+      });
+    }
+
+    return character;
+  };
+
+  export const currentCharacter = (mat, store: Store<IState>): Character | null => {
+    const character = store.getState().Characters.find(c => c.mat === mat);
+
+    if (character !== undefined) {
+      return character;
+    }
+
+    return null;
+  };
+
+  export const hydrater = (source: any) => CharactersTools.factory(source);
+
+  const properties = [
+    'mat',
+    'name',
+    'race',
+    'owner',
+    'hp',
+    'regen',
+    'insight',
+    'speed',
+    'dexterity',
+    'strength',
+    'agility',
+    'xp',
+    'ap',
+    'maps',
+  ];
+}
+
+/*export namespace CharacterUtils {
   export const currentCharacter = (mat, store: Store<IState>): Character => store.getState().Characters.find(c => c.mat === mat);
 }
 
-export const characterHydrater = (source: any) => new Character(source);
+export const characterHydrater = (source: any) => CharacterFactory.get(source);*/

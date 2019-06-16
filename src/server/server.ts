@@ -1,88 +1,136 @@
-import * as express from 'express';
-import * as path from 'path';
-import * as socketio from 'socket.io';
-import { Character } from '../engine/Characters/Character';
-import { notOwnedCharacters, ownedCharacters } from '../engine/Guards/Characters/selector';
-import { addCommand, CommandList } from '../engine/Commands/Command';
-import { Direction } from '../engine/models/Direction';
+import { Store } from 'redux';
+import { IState } from '../engine/reducers';
+import { ExpressServer } from '../server/express';
+import { startSocket } from '../server/socket';
+
+// tslint:disable-next-line: no-var-requires
+const debug = require('debug')('express:server');
+
+import * as http from 'http';
 
 declare var __basedir;
 
-export const startServer = (store) => {
+/*export const app = express();
 
-  const app = express();
-  app.set('port', process.env.PORT || 3000);
+export let http;
 
-  // tslint:disable-next-line: no-var-requires
-  const http = require('http').Server(app);
+export let session;*/
 
-  // tslint:disable-next-line: no-var-requires
-  const io = require('socket.io')(http);
+declare global {
+  namespace Express {
+    interface Request {
+      reduxStore: Store<IState>;
+    }
+  }
+}
 
-  const session = require('express-session')({
-    secret: 'my-secret',
-    resave: true,
-    saveUninitialized: true,
-  });
-  const sharedsession = require('express-socket.io-session');
+export class GameServer {
 
-  app.use(session);
-  io.use(sharedsession(session));
+  // public readonly app;
+  // public readonly http;
+  // public readonly session;
+  private server: http.Server;
+  private readonly port: number | string | false;
+  private readonly express: ExpressServer;
+  private readonly store: Store;
 
-  // simple '/' endpoint sending a Hello World
-  // response
-  app.get('/', (req: any, res: any) => {
-    // path.join(__basedir, './data', `${databaseName}.json`);
-    res.sendFile(path.join(__basedir, './src/server/views/perso.html'));
-  });
+  public constructor(store: Store<IState>) {
 
-  app.get('/command', (req: any, res: any) => {
-    // path.join(__basedir, './data', `${databaseName}.json`);
-    res.sendFile(path.join(__basedir, './src/server/views/commands.html'));
-  });
+    const reduxStoreMiddleware = (iStore: Store) => (req, res, next) => {
+      req.reduxStore = iStore;
+      next();
+    };
 
-  app.use(express.static('dist/client'));
+    this.express = new ExpressServer(reduxStoreMiddleware(store));
 
-  // start our simple server up on localhost:3000
-  const server = http.listen(3000, function () {
-    console.log('listening on *:3000');
-  });
+    this.port = this.normalizePort(process.env.PORT || '3000');
 
-  store.subscribe(
-    () => io.emit('state', JSON.stringify(store.getState())),
-  );
+    this.store = store;
 
-  io.on('connection', (socket) => {
-    const userId = 1; // TEMP
+    this.onError = this.onError.bind(this);
+    this.onListening = this.onListening.bind(this);
 
-    const owned = ownedCharacters(userId)(store.getState());
-    //const limited = notOwnedCharacters(userId)(store.getState());
-    /*const state = {
-      Characters: { ...owned, ...limited },
-    };*/
+  }
 
-    socket.emit('state', JSON.stringify(store.getState()));
+  public launch() {
 
-    socket.on('login', (userdata) => {
-      console.log(userdata);
-      socket.handshake.session.userdata = userdata;
-      socket.handshake.session.save();
-    });
-    socket.on('logout', (userdata) => {
-      console.log(userdata);
-      if (socket.handshake.session.userdata) {
-        delete socket.handshake.session.userdata;
-        socket.handshake.session.save();
-      }
-    });
-    socket.on('action', (action) => {
-      console.log(`receive action ${action}`);
-      const character = owned.first() as Character;
-      switch (action) {
-        case 'move':
-          addCommand(CommandList.move, { CharacterMat: character.mat, Direction: Direction.North });
-          break;
-      }
-    });
-  });
-};
+    this.express.app.set('port', this.port);
+
+    this.server = http.createServer(this.express.app);
+
+    this.server.listen(this.port);
+    this.server.on('error', this.onError);
+    this.server.on('listening', this.onListening);
+
+    // startSocket(this.server, this.express.session, this.store);
+  }
+
+  /**
+   * Normalize a port into a number, string, or false.
+   * @param val
+   */
+  private normalizePort(val): number | string | false {
+    const port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+      // named pipe
+      return val;
+    }
+
+    if (port >= 0) {
+      // port number
+      return port;
+    }
+
+    return false;
+  }
+
+  /**
+   * Event listener for HTTP server "error" event.
+   * @param error
+   */
+  private onError(error) {
+    if (error.syscall !== 'listen') {
+      throw error;
+    }
+
+    const port = this.port;
+
+    const bind = typeof port === 'string'
+      ? `Pipe ${port}`
+      : `Port ${port}`;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+      case 'EACCES':
+        console.error(`${bind} requires elevated privileges`);
+        process.exit(1);
+        break;
+      case 'EADDRINUSE':
+        console.error(`${bind} is already in use`);
+        process.exit(1);
+        break;
+      default:
+        throw error;
+    }
+  }
+
+  /**
+   *
+   */
+  private onListening() {
+    const addr = this.server.address();
+
+    if (addr === null || addr === undefined) {
+      debug('Error on listening, no address found');
+      console.log('Error on listening, no address found');
+      return;
+    }
+
+    const bind = typeof addr === 'string'
+      ? `pipe ${addr}`
+      : `port ${addr.port}`;
+    debug(`Listening on ${bind}`);
+    console.log(`Listening on ${bind}`);
+  }
+}

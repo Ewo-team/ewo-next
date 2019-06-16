@@ -1,18 +1,19 @@
 import { List } from 'immutable';
 import { Store } from 'redux';
 import { Character } from '../Characters/Character';
+import { Direction, DirectionOctogone } from '../models/Direction';
 import { IState } from '../reducers';
 import { Coord } from './Coord';
-import { Direction, DirectionOctogone } from '../models/Direction';
 
-export namespace MapsUtils {
-  export const coordsFromCharacter = (character: Character, store: Store<IState>): { key: string, value: Coord } => {
+export namespace MapsTools {
+  export type foundType = { key: string, value: Coord } | null;
+  export const coordsFromCharacter = (character: Character, store: Store<IState>): foundType => {
 
-    let found = null;
+    let found: foundType = null;
 
     store.getState().Maps.forEach((coords: List<Coord>, map: string) => {
       const coord = coords.find(c => c.mat === character.mat);
-      if (coord !== null) {
+      if (coord !== undefined) {
         found = { key: map, value: coord };
         return;
       }
@@ -21,10 +22,20 @@ export namespace MapsUtils {
     return found;
   };
 
-  export const getCoordFromPosition = (maps: string, posX: number, posY: number, store: Store<IState>): Coord => {
+  export const getCoordFromPosition = (maps: string, posX: number, posY: number, store: Store<IState>): Coord | null => {
     const map = store.getState().Maps.get(maps);
 
-    return map.find(m => m.x === posX && m.y === posY);
+    if (map === undefined) {
+      return null;
+    }
+
+    const coord: Coord | undefined = map.find(m => m.x === posX && m.y === posY);
+
+    if (coord !== undefined) {
+      return coord;
+    }
+
+    return null;
   };
 
   export const getRelativePosition = (posX: number, posY: number, direction: Direction | DirectionOctogone) => {
@@ -69,6 +80,6 @@ export namespace MapsUtils {
         break;
     }
 
-    return { x: posX, y: posY };
+    return { x: newX, y: newY };
   };
 }

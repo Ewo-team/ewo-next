@@ -1,0 +1,377 @@
+
+@import "colors";
+
+$fonttext: DejaVuSansBook;
+$fonttextB: DejaVuSansBold;
+$fonttextI: DejaVuSansOblique;
+$fonttextBI: DejaVuSansBoldOblique;
+
+$fonttitle: DejaVuSerifBook;
+$fonttitleB: DejaVuSerifBold;
+$fonttitleI: DejaVuSerifOblique;
+$fonttitleBI: DejaVuSerifBoldOblique;
+
+html, body {
+    height: 100%;
+}
+
+body {
+	margin: 0;
+  font: 0.8em $fonttext;
+  color: #333;
+}
+
+b {
+	font-family: $fonttextB;
+	font-weight: normal;
+}
+
+i, a {
+	font-family: $fonttextI;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+b i, i b {
+	font-family: $fonttextBI;
+}
+
+h1, h2, h3 {
+	text-shadow: 0 1px 0 #ffffff;
+	font-family: $fonttitle;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h1 b, h2 b, h3 b {
+	font-family: $fonttitleB;
+}
+
+h1 i, h2 i, h3 i,
+h1 a, h2 a, h3 a {
+	font-family: $fonttitleI;
+}
+
+h1 b i, h2 b i, h3 b i,
+h1 i b, h2 i b, h3 i b {
+	font-family: $fonttitleBI;
+}
+
+img {	border:0;}
+.separation {	height: 10px;}
+.centrage {	text-align: center;}
+.centrer {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.clear {clear: both}
+ol {list-style-type: decimal}
+ul {list-style-type: none}
+
+.curspointer {cursor: pointer;}
+.underline {text-decoration: underline;}
+.bold {font-family:$fonttextB;}
+
+.lien {
+	font-size:0.8em;
+	color:#fff;
+}
+
+.lien_carte{
+	color:#68551F;
+	text-decoration: none;
+        font-family:$fonttextB;
+}
+
+#content h2 {color:#933a25;font-size:1.5em;text-align: center;}
+#content h3 {color:#933a25;font-size:1.3em;}
+
+#content_bg_jeu h2 {color:#933a25;font-size:1.5em;text-align: center;}
+#content_bg_jeu h3 {color:#933a25;font-size:1.3em;}
+
+  /*
+.demon_hr {
+	background:url(../images/hr_demon.png) no-repeat 50% 50%;
+	height: 40px;
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+	border:0;
+}
+
+.ange_hr {
+	background:url(../images/hr_ange.png) no-repeat 50% 50%;
+	height: 40px;
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+	border:0;
+}
+
+.escargot_hr {
+	background:url(../images/hr_escargot.png) no-repeat 50% 50%;
+	height: 40px;
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+	border:0;
+}
+*/
+
+#page, #page_accueil {
+	padding-top:60px;
+        position: relative;
+}
+
+body {
+	background-color: $fond;
+}
+
+
+.logo {
+	height: 175px;
+	width: 254px;
+	padding-right: 30px;
+	float: left;
+}
+
+#content_bg, #content_bg_jeu, #footer {
+	min-width: 980px;
+	max-width: 1500px;
+    width: 80%;
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+
+#content_bg_jeu, #content_bg, #content_accueil {
+	margin-right: auto;
+	margin-left: auto;
+
+	background-color: $couleur1;
+
+	border-radius: 10px 10px 0px 0px;
+	padding-bottom: 0px;
+}
+
+#content_bg_jeu, #content_bg, #content_accueil, #footer_accueil {
+	border-right: 1px solid rgba(2, 2, 2, 0.28);
+	border-left: 1px solid rgba(2, 2, 2, 0.28);
+	border-top: 1px solid rgba(250, 250, 250, 0.27);
+	box-shadow: rgba(255,255,255,0.3) 0 1px 0, rgba(0,0,0,0.3) 0 -1px 0;
+	box-shadow: 0 0 5px rgba(1, 1, 1, 0.7);
+}
+
+#content_accueil {
+    padding: 30px;
+}
+
+#footer_accueil, #footer {
+	border-radius: 0px 0px 10px 10px;
+    background-color: #111;
+	color: white;
+    margin: auto;
+}
+
+#content_accueil, #footer_accueil {
+    min-width: 800px;
+    max-width: 1000px;
+}
+
+#content_accueil, #footer_accueil, #footer {
+    padding: 30px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#corps {
+        padding-right: 185px;
+}
+
+#content fieldset {
+    background-color: $couleur2;
+}
+
+#colonne {
+        right: -185px;
+        position: relative;
+	float:right;
+	background-color:#1B1B1B;
+	color:#fff;
+	padding: 10px 10px 10px 10px;
+	width:160px;
+        border-radius: 0px 5px 0px 0px;
+}
+p#warning {	color : red; }
+
+
+/*-- Formulaire --*/
+
+.formulaire input, .formulaire textarea, .formulaire select {
+	border-style:solid;
+	border-width:1px;
+	border-color:#4F4F4F;
+	border-radius:5px;
+	padding:1px 3px 1px 3px;
+	/*cursor: pointer;*/
+}
+
+.formulaire input:hover,.formulaire textarea:hover,.formulaire input:focus,.formulaire textarea:focus,.formulaire select:focus,.formulaire select:focus{
+	border-style:solid;
+	border-width:1px;
+	border-color:#AFAFAF;
+	padding:1px 3px 1px 3px;
+	border-radius:5px;
+}
+
+/*-- Menu topbar --*/
+
+@import "menu";
+
+/*-- Conteneur --*/
+.conteneur{
+	position:relative;
+	background-color: $couleur2;
+	margin-top:15px;
+	padding:20px 10px 10px 10px;
+	border: 1px solid $couleur3;
+	border-radius:10px;
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
+}
+
+.conteneur_st{
+	position:relative;
+	background-color: $couleur2;
+	margin-top:10px;
+	padding:10px 10px 10px 10px;
+	border: 1px solid $couleur3;
+	border-radius:10px;
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
+}
+
+.conteneur_damier{
+	position:relative;
+	background-color: $couleur2;
+	margin-top:10px;
+	border: 1px solid $couleur3;
+	border-radius:10px;
+}
+
+.conteneur_titre {
+	position:absolute;
+	background-color:$couleur3;
+	color:$texte3;
+	top:-10px;
+	left:0px;
+	margin-left:10px;
+	padding: 1px 5px 1px 5px;
+	border-radius:5px;
+        box-shadow: 0 1px;
+}
+
+.maj_ok {
+	border: dotted red 1px;
+	background-color: #ff8d8d;
+}
+
+.action_ok {
+	border: dotted red 1px;
+	background-color: #A0FFCC;
+}
+
+.sort_ok {
+	border: dotted red 1px;
+	background-color: #A0CCFF;
+}
+
+.color_red, .color_green, .color_blue {
+	font-size:1px;
+	height:13px;
+	border-radius:3px;
+}
+
+.color_red{
+	background-color: rgb(255, 60, 67);
+	width:80px;
+	position:relative;
+	float:right;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	z-index:7;
+}
+
+.color_green, .color_blue {
+	float:left;
+}
+
+.color_green{
+	background-color: rgb(163, 241, 150);
+	z-index:8;
+}
+
+.color_blue {
+	background-color: rgb(164, 165, 252);
+	z-index:9;
+}
+
+.caracs_sup {
+	position:absolute;
+	top:-2px;
+	left:15%;
+	z-index:10;
+}
+
+.tab_carac_td{
+	position:relative;
+	float:left;
+}
+
+#columns .column{
+	min-height: 200px; /* set a min-height to ensure a target dropzone */
+}
+
+#columns .target {
+	border: 2px dashed #ccc;
+	border-radius: 5px;
+}
+
+a.dropdown { font-family: $fonttextB; }
+
+#connection { line-height:12px; }
+#connection #perdu {
+	font-size:0.8em;
+	color:#3D9CE5;
+	display: block;
+	padding-left: 5px;
+	padding-right: 0px;
+	background-image:none;
+}
+
+input[type="button"], input[type="submit"], .button {
+    box-shadow: 0 1px;
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: $couleur3;
+    color: $texte3;
+    margin: 5px;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, .button:hover, .button_selected {
+    box-shadow: 0px 0px 5px blue !important;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+
+}
+
+.button {
+	padding: 5px;
+}

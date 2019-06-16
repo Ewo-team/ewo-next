@@ -1,0 +1,23 @@
+extends ../layout/layout
+
+block content
+  div#inscription
+    h2 Formulaire d'inscription
+    div
+      form(action = "/users/signup" method = "POST" id="signup_form")
+        include ../layout/flash
+        .form-group
+          label(for="username") Nom du compte
+          input(name = "username" type = "text" placeholder = "Nom du compte" class="form-control" value=username)
+        .form-group
+          label(for="email") E-Mail
+          input(name = "email" type = "email" placeholder = "E-Mail" class="form-control" value=email)
+        .form-group
+          label(for="password") Mot de passe
+          input(name = "password" type = "password" placeholder = "Password" class="form-control")
+        .form-group
+          label(for="confirm_pass") Confirmer mot de passe
+          input(name = "confirm_pass" type = "password" placeholder = "Confirmation" class="form-control")
+        button(type = "Submit" class="btn btn-primary") Valider
+      script.
+        document.query

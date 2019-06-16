@@ -1,45 +1,69 @@
-import { CharacterUtils } from '../../Characters/Character';
+import { Character, CharactersTools } from '../../Characters/Character';
 import { characterMove } from '../../Maps/actions';
-import { MapsUtils } from '../../Maps/Maps';
+import { MapsTools } from '../../Maps/Maps';
+import { Direction } from '../../models/Direction';
 import { Command } from '../Command';
 
-const command: Command = {
-  eligible: (payload, store) => {
+export interface MovePayload {
+  mat: number;
+  Direction: Direction;
+}
+
+export interface MoveMeta {
+  Character: Character;
+  maps: string;
+  x: number;
+  y: number;
+}
+
+// tslint:disable-next-line: no-empty-interface
+export interface MoveCommand extends Command { }
+
+const command: MoveCommand = {
+  eligible: (payload: MovePayload, store): { result: true, meta: MoveMeta } | false => {
 
     // get the current character
-    const currentCharacter = CharacterUtils.currentCharacter(payload.mat, store);
+    const currentCharacter = CharactersTools.currentCharacter(payload.mat, store);
     console.log({ currentCharacter });
 
-    if (currentCharacter === undefined) {
+    if (currentCharacter === null) {
       return false;
     }
 
     // get the current position
-    const position = MapsUtils.coordsFromCharacter(currentCharacter, store);
+    const position = MapsTools.coordsFromCharacter(currentCharacter, store);
 
-    if (position === undefined) {
+    console.log({ position });
+
+    if (position === null) {
       return false;
     }
 
     // get the new position
-    const { x, y } = MapsUtils.getRelativePosition(position.value.x, position.value.y, payload.Direction);
+    const { x, y } = MapsTools.getRelativePosition(position.value.x, position.value.y, payload.Direction);
+
+    console.log({ x, y });
 
     // check if the new position is free
-    const coord = MapsUtils.getCoordFromPosition(position.key, x, y, store);
-    if (coord === undefined) {
+    const coord = MapsTools.getCoordFromPosition(position.key, x, y, store);
+
+    console.log({ coord });
+
+    if (coord === null) {
       return {
         result: true,
         meta: {
+          Character: currentCharacter,
           x,
           y,
-          map: position.key,
+          maps: position.key,
         },
       };
     }
 
     return false;
   },
-  execute: (meta, store) => {
+  execute: (meta: MoveMeta, store) => {
 
     // const start = performance.now;
 
@@ -50,10 +74,11 @@ const command: Command = {
       const char = 65 + index % 26;
       // str += String.fromCharCode(char);
     }*/
+    const action = characterMove(meta.Character, meta.maps, meta.x, meta.y);
+    console.log({ meta, store, action });
+    store.dispatch(action);
 
-    store.dispatch(characterMove(meta.Character, meta.maps, meta.x, meta.y));
-
-    //console.log(Math.floor(Math.random() * 1000));
+    // console.log(Math.floor(Math.random() * 1000));
 
   },
 } as Command;

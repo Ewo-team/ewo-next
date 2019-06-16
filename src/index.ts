@@ -2,11 +2,14 @@
   Server Index File
 */
 import * as path from 'path';
-import { loadDatabase as loadCharacters } from './engine/Characters/actions';
-import { loadDatabase as loadMaps } from './engine/Maps/actions';
+import { loadDatabases } from './engine/actions';
+import { loadDatabase } from './engine/Characters/actions';
+import { addCommand, CommandList } from './engine/Commands/Command';
+import { Direction } from './engine/models/Direction';
 import { makeStore } from './engine/store';
 import { runCommands } from './engine/tasks/runCommands';
-import { startServer } from './server/server';
+import { GameServer } from './server/server';
+import { startSocket } from './server/socket';
 
 declare namespace NodeJS {
   // tslint:disable-next-line: interface-name
@@ -16,15 +19,24 @@ declare namespace NodeJS {
 }
 declare var global: NodeJS.Global;
 
-global.__basedir = path.resolve(__dirname, '../..');
+global.__basedir = path.resolve(__dirname, '..');
 
 export const store = makeStore();
 
 export const commandQueue = runCommands.makeQueue();
 
-startServer(store);
+export const server = new GameServer(store);
 
-store.dispatch(loadCharacters());
-store.dispatch(loadMaps());
+server.launch();
 
-runCommands.autoSave(store);
+// store.dispatch(loadDatabase());
+store.dispatch<any>(loadDatabases());
+
+/*console.log('prepare command');
+addCommand(CommandList.move, {
+  mat: 1,
+  Direction: Direction.North,
+});
+console.log('end command');*/
+
+// runCommands.autoSave(store);

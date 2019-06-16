@@ -1,7 +1,7 @@
 import jsExtract from 'js-extract';
 import { Character } from '../../Characters/Character';
 
-export interface LimitedCharacter {
+export interface ILimitedCharacter {
   mat: number;
   name: string;
   race: string;
@@ -15,4 +15,4 @@ const selector = `
   xp
 `;
 
-export const limitedCharacterFromCharacter = (character: Character): LimitedCharacter => jsExtract(selector).from(character);
+export const limitedCharacterFromCharacter = (character: Character): ILimitedCharacter => jsExtract(selector).from(character);

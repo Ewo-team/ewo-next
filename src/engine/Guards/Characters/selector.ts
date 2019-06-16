@@ -10,7 +10,7 @@ export const ownedCharacters = ownerId => {
     charactersSelector,
     characters => {
       return characters.filter(character => {
-        return character.owner === ownerId
+        return character.owner === ownerId;
       });
     },
   );
@@ -24,7 +24,7 @@ export const notOwnedCharacters = ownerId => {
 
       return characters
         .filter(character => {
-          return character.owner !== ownerId
+          return character.owner !== ownerId;
         }).map((character) => {
           return limitedCharacterFromCharacter(character);
         });

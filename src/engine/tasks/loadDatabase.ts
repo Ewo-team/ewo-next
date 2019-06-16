@@ -14,6 +14,8 @@ const loadDatabase = <V>({ databaseName, modelHydrater }: ILoadDatabaseParameter
 
   const database = path.join(__basedir, './data', `${databaseName}.json`);
 
+  console.log(`loading database ${database}`);
+
   const databaseExist = fs.existsSync(database);
   if (!databaseExist) {
     return List([]);
@@ -29,14 +31,14 @@ const loadDatabase = <V>({ databaseName, modelHydrater }: ILoadDatabaseParameter
 
   if (data.format === 'mapOfArray') {
 
-    const map = {};
+    const mapOfArray = {};
     Object.keys(data.data).forEach((key: string) => {
       const current = data.data[key];
       console.log(current);
-      map[key] = List((current as any[]).map(item => modelHydrater(item)));
+      mapOfArray[key] = List((current as any[]).map(item => modelHydrater(item)));
     });
 
-    return Map(map);
+    return Map(mapOfArray);
   }
 
   const map = {};

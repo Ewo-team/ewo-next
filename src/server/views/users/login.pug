@@ -1,0 +1,9 @@
+extends ../layout/layout
+
+block content
+  if(message)
+      h4 #{message}
+  form(action = "/users/login" method = "POST")
+    input(name = "name" type = "text" required placeholder = "User name")
+    input(name = "password" type = "password" required placeholder = "Password")
+    button(type = "Submit") Log in
