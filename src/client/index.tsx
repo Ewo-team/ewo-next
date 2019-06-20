@@ -1,7 +1,17 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { App } from './App';
+import { Provider } from './provider';
+import { createStore } from './store';
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root'),
-);
+const rootElement = document.getElementById('root');
+const store = createStore();
+
+if (rootElement) {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    rootElement,
+  );
+}

@@ -1,6 +1,6 @@
-import { Store } from 'redux';
-import { commandQueue } from '../..';
-import { IState } from '../reducers';
+import { runCommands } from '@commands/runCommands';
+import { IStateServer } from '@engine/reducers';
+import { AnyAction, Store } from 'redux';
 import moveCommand from './CommandsTemplate/moveCommand';
 
 export enum CommandStatus {
@@ -19,8 +19,8 @@ export interface Command {
   command: CommandList;
   payload: any;
   status: CommandStatus;
-  eligible(payload, store: Store<IState>): boolean | { result: boolean, meta: any };
-  execute(payload, store: Store<IState>): boolean;
+  eligible(payload, store: Store<IStateServer>): boolean | { result: boolean, meta: any };
+  execute(payload, store: Store<IStateServer>): AnyAction;
 }
 
 export const commandsTemplates = (command: CommandList, payload: any) => {
@@ -28,19 +28,15 @@ export const commandsTemplates = (command: CommandList, payload: any) => {
   let template = {} as Command;
   switch (command) {
     case CommandList.move:
-      template = moveCommand;
+      template = new moveCommand(payload);
       break;
     default:
       break;
   }
 
-  template.status = CommandStatus.Queue;
-  template.command = command;
-  template.payload = payload;
-
   return template;
 };
 
 export const addCommand = (command: CommandList, payload: any) => {
-  commandQueue.push(commandsTemplates(command, payload));
+  runCommands.queueCommand.push(commandsTemplates(command, payload));
 };

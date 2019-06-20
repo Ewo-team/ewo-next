@@ -1,11 +1,11 @@
 import { applyMiddleware, createStore, Store } from 'redux';
 import reduxThunk from 'redux-thunk';
-import { IState, rootReducer } from './reducers';
+import { IStateServer, rootReducer } from './reducers';
 
 // tslint:disable-next-line: no-var-requires
 const createNodeLogger = require('redux-node-logger');
 
-export const makeStore = (): Store<IState> => {
+export const makeStore = () => {
 
   const loggerMiddleware = createNodeLogger({
     /*predicate: (getState, action) => {
@@ -18,5 +18,7 @@ export const makeStore = (): Store<IState> => {
 
   const middlewares = [reduxThunk, loggerMiddleware];
 
-  return createStore(rootReducer, applyMiddleware(...middlewares));
+  store = createStore(rootReducer, applyMiddleware(...middlewares));
 };
+
+export let store;

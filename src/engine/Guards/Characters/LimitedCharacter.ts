@@ -1,5 +1,5 @@
+import { Character } from '@models';
 import jsExtract from 'js-extract';
-import { Character } from '../../Characters/Character';
 
 export interface ILimitedCharacter {
   mat: number;

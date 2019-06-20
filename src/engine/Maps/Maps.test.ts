@@ -1,12 +1,12 @@
 /// <reference types="jest" />
 
+import { CharactersTools } from '@engine/Characters/CharacterTools';
+import { IStateServer } from '@engine/reducers';
+import { Direction, DirectionOctogone } from '@models';
 import { List, Map } from 'immutable';
 import { Store } from 'redux';
 import configureStore from 'redux-mock-store';
-import { CharactersTools } from '../../engine/Characters/Character';
-import { Direction, DirectionOctogone } from '../../engine/models/Direction';
-import { IState } from '../../engine/reducers';
-import { MapsTools } from './Maps';
+import { MapsTools } from './MapsTools';
 
 describe('MapsTools', () => {
 
@@ -34,7 +34,7 @@ describe('MapsTools', () => {
         },
       ]),
     }),
-  } as IState;
+  } as IStateServer;
 
   let store: Store;
 

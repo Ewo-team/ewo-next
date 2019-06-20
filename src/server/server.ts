@@ -1,40 +1,28 @@
+import { IStateServer } from '@engine/reducers';
+import { ExpressServer } from '@server/express';
+import { startSocket } from '@server/socket';
+import * as http from 'http';
 import { Store } from 'redux';
-import { IState } from '../engine/reducers';
-import { ExpressServer } from '../server/express';
-import { startSocket } from '../server/socket';
 
 // tslint:disable-next-line: no-var-requires
 const debug = require('debug')('express:server');
 
-import * as http from 'http';
-
-declare var __basedir;
-
-/*export const app = express();
-
-export let http;
-
-export let session;*/
-
 declare global {
   namespace Express {
     interface Request {
-      reduxStore: Store<IState>;
+      reduxStore: Store<IStateServer>;
     }
   }
 }
 
 export class GameServer {
 
-  // public readonly app;
-  // public readonly http;
-  // public readonly session;
   private server: http.Server;
   private readonly port: number | string | false;
   private readonly express: ExpressServer;
   private readonly store: Store;
 
-  public constructor(store: Store<IState>) {
+  public constructor(store: Store<IStateServer>) {
 
     const reduxStoreMiddleware = (iStore: Store) => (req, res, next) => {
       req.reduxStore = iStore;

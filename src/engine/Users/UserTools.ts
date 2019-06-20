@@ -1,10 +1,4 @@
-export interface User {
-  id: number;
-  name: string;
-  hash: string;
-  email: string;
-  token?: string; // Token for socket.io
-}
+import { User } from '@models';
 
 export namespace UsersTools {
   export const hydrater = (source: any): User => {

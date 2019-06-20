@@ -1,7 +1,7 @@
+import { DatabaseSchema } from '@models';
 import * as fs from 'fs';
 import { List, Map } from 'immutable';
 import * as path from 'path';
-import { DatabaseSchema } from '../models/DatabaseSchema';
 
 declare var __basedir;
 
@@ -22,9 +22,19 @@ const loadDatabase = <V>({ databaseName, modelHydrater }: ILoadDatabaseParameter
   }
 
   const data: DatabaseSchema = JSON.parse(fs.readFileSync(database, { encoding: 'utf8' }));
+  let percentOld = -1;
 
   if (data.format === 'array') {
-    const dataArray = (data.data as any[]).map(item => modelHydrater(item));
+    const dataArray = (data.data as any[]).map((item, index, array) => {
+      const percent = Math.floor(((index + 1) / array.length) * 100);
+      console.log({ index, length: array.length });
+      if (percent !== percentOld) {
+        console.log(`loading... ${percent}%`);
+        percentOld = percent;
+      }
+
+      return modelHydrater(item);
+    });
 
     return List(dataArray);
   }
@@ -34,15 +44,27 @@ const loadDatabase = <V>({ databaseName, modelHydrater }: ILoadDatabaseParameter
     const mapOfArray = {};
     Object.keys(data.data).forEach((key: string) => {
       const current = data.data[key];
-      console.log(current);
-      mapOfArray[key] = List((current as any[]).map(item => modelHydrater(item)));
+      mapOfArray[key] = List((current as any[]).map((item, index, array) => {
+        const percent = Math.floor(((index + 1) / array.length) * 100);
+        // console.log({ index, length: array.length, percent, percentOld });
+        if (percent !== percentOld) {
+          console.log(`loading... ${percent}%`);
+          percentOld = percent;
+        }
+        return modelHydrater(item);
+      }));
     });
 
     return Map(mapOfArray);
   }
 
   const map = {};
-  Object.keys(data.data).forEach((key: string) => {
+  Object.keys(data.data).forEach((key: string, index: number, array) => {
+    const percent = Math.floor(((index + 1) / array.length) * 100);
+    console.log({ index, length: array.length });
+    if (percent !== percentOld) {
+      percentOld = percent;
+    }
     map[key] = modelHydrater(data.data[key]);
   });
 

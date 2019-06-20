@@ -1,0 +1,54 @@
+:root {
+    font-size: 10px;
+    --main-color: #245d88;
+    --sub-color: #accee8;
+    --font-size: 1.28rem;
+}
+
+body {
+    font-size: var(--font-size);
+    font-family: DejaVuSansBold;
+    font-weight: 400;
+    font-stretch: 100%;
+    line-height: normal;
+}
+
+
+
+.Game {
+
+    display: grid;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 1rem;
+    grid-template-areas: "Infos Infos"
+                         "Actions Views"
+                         "States Views";
+    grid-template-columns: 270px auto;
+
+
+
+    .Game__Container {
+        position: relative;
+        background-color: var(--sub-color);
+        border-radius: 1rem;
+        box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,0.1);
+        padding: 2rem 1rem 2rem 1rem;
+        border: 1px solid var(--main-color);
+
+        &.Header {
+            padding: 1rem;
+        }
+
+        .Title {
+            background-color: var(--main-color);
+            color: var(--sub-color);
+            position: absolute;
+            top: -1rem;
+            left: 0;
+            border-radius: 0.5rem;
+            box-shadow: 0, 1px;
+            margin-left: 1rem;
+            padding: 1px 0.5rem 1px 0.5rem;
+        }
+    }
+}

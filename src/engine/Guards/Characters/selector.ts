@@ -1,8 +1,8 @@
+import { IStateServer } from '@engine/reducers';
 import { createSelector } from 'reselect';
-import { IState } from '../../reducers';
 import { limitedCharacterFromCharacter } from './LimitedCharacter';
 
-const charactersSelector = (state: IState) => state.Characters;
+const charactersSelector = (state: IStateServer) => state.Characters;
 
 export const ownedCharacters = ownerId => {
 

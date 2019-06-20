@@ -1,4 +1,4 @@
-import { User } from './User';
+import { User } from '@models';
 
 export enum UsersActions {
   REGISTER = 'UsersActions.REGISTER',

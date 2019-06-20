@@ -7,6 +7,8 @@ import path = require('path');
 import indexRoutes from './routes';
 import usersRoutes from './routes/users';
 
+declare var __basedir;
+
 export class ExpressServer {
 
   public readonly session;
@@ -41,6 +43,7 @@ export class ExpressServer {
       sourceMap: true,
     }));
     app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.static(path.join(__basedir, 'dist', 'client')));
     app.use(this.session);
 
     app.use('/', indexRoutes);

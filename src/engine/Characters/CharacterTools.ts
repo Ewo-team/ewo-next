@@ -1,27 +1,6 @@
+import { IStateServer } from '@engine/reducers';
+import { Character } from '@models';
 import { Store } from 'redux';
-import { IState } from '../reducers';
-
-export interface Character {
-  mat: number;
-  name: string;
-
-  race: string;
-
-  owner: number;
-
-  hp;
-  regen;
-  insight; // distance of view
-  speed; // number of movement points
-  dexterity; // number of atq/defense points
-  strength; // damage
-  agility; // number on actions points
-
-  // private magic; // level of magic
-
-  xp;
-  ap;
-}
 
 export namespace CharactersTools {
 
@@ -40,7 +19,7 @@ export namespace CharactersTools {
     return character;
   };
 
-  export const currentCharacter = (mat, store: Store<IState>): Character | null => {
+  export const currentCharacter = (mat, store: Store<IStateServer>): Character | null => {
     const character = store.getState().Characters.find(c => c.mat === mat);
 
     if (character !== undefined) {
@@ -69,9 +48,3 @@ export namespace CharactersTools {
     'maps',
   ];
 }
-
-/*export namespace CharacterUtils {
-  export const currentCharacter = (mat, store: Store<IState>): Character => store.getState().Characters.find(c => c.mat === mat);
-}
-
-export const characterHydrater = (source: any) => CharacterFactory.get(source);*/

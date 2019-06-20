@@ -1,9 +1,15 @@
 extends ../layout/layout
 
 block content
-  if(message)
-      h4 #{message}
-  form(action = "/users/login" method = "POST")
-    input(name = "name" type = "text" required placeholder = "User name")
-    input(name = "password" type = "password" required placeholder = "Password")
-    button(type = "Submit") Log in
+  div#inscription
+    h2 Connection
+    div
+      form(action = "/users/login" method = "POST")
+        include ../layout/flash
+        .form-group
+          label(for="username") Nom du compte
+          input(name = "username" type = "text" required placeholder = "Nom du compte" class="form-control")
+        .form-group
+          label(for="password") Mot de passe
+          input(name = "password" type = "password" required placeholder = "Mot de passe" class="form-control")
+        button(type = "Submit" class="btn btn-primary") Connection

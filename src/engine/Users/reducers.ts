@@ -1,8 +1,9 @@
+import * as Tasks from '@commands/tasks';
+import { User } from '@models';
 import { List } from 'immutable';
 import { AnyAction } from 'redux';
-import * as Tasks from '../tasks';
 import { UsersActions } from './actions';
-import { User, UsersTools } from './User';
+import { UsersTools } from './UserTools';
 
 const INITIAL_STATE: IUsersState = List();
 const DATABASE = 'users';

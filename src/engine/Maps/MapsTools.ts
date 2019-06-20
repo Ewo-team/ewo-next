@@ -1,13 +1,11 @@
+import { IStateServer } from '@engine/reducers';
+import { Character, Coord, Direction, DirectionOctogone } from '@models';
 import { List } from 'immutable';
 import { Store } from 'redux';
-import { Character } from '../Characters/Character';
-import { Direction, DirectionOctogone } from '../models/Direction';
-import { IState } from '../reducers';
-import { Coord } from './Coord';
 
 export namespace MapsTools {
   export type foundType = { key: string, value: Coord } | null;
-  export const coordsFromCharacter = (character: Character, store: Store<IState>): foundType => {
+  export const coordsFromCharacter = (character: Character, store: Store<IStateServer>): foundType => {
 
     let found: foundType = null;
 
@@ -22,7 +20,7 @@ export namespace MapsTools {
     return found;
   };
 
-  export const getCoordFromPosition = (maps: string, posX: number, posY: number, store: Store<IState>): Coord | null => {
+  export const getCoordFromPosition = (maps: string, posX: number, posY: number, store: Store<IStateServer>): Coord | null => {
     const map = store.getState().Maps.get(maps);
 
     if (map === undefined) {

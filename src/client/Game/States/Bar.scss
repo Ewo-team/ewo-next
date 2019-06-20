@@ -1,0 +1,9 @@
+.States__Bar {
+    height: var(--font-size);
+
+    .Label {
+        position: absolute;
+        padding-left: 1rem;
+        font-size: var(--font-size);
+    }
+}

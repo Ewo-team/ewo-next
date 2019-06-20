@@ -1,8 +1,10 @@
+import * as Tasks from '@commands/tasks';
+import { CharacterActions } from '@engine/Characters/actions';
+import { Coord } from '@models';
 import { List, Map } from 'immutable';
 import { AnyAction } from 'redux';
-import * as Tasks from '../tasks';
 import { MapsActions } from './actions';
-import { Coord, CoordsTools } from './Coord';
+import { CoordsTools } from './CoordsTools';
 
 const INITIAL_STATE: IMapsState = Map();
 const DATABASE = 'maps';
@@ -16,7 +18,7 @@ export const mapsReducer = (state: IMapsState = INITIAL_STATE, action: AnyAction
       return load;
     case MapsActions.SAVE_DATABASE:
       Tasks.saveDatabaseMap(DATABASE, state);
-    case MapsActions.MOVE:
+    case CharacterActions.MOVE:
       return state.update(action.maps, (map) => {
         const coordIndex = map.findIndex(c => c.mat === action.character.mat);
         return map.update(coordIndex, (coord) => {

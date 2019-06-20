@@ -1,0 +1,7 @@
+.Infos {
+    grid-area: Infos;
+    display: grid;
+    grid-template: "position screenname" 1fr
+                    ". endu" 1fr /
+                    1fr 1fr;
+}

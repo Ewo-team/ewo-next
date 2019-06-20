@@ -19,7 +19,9 @@
     "object-shorthand-properties-first": false,
     "no-console": false,
     "interface-name": false,
-    "import-name": false
+    "import-name": false,
+    "no-var-requires": false,
+    "variable-name": false
   },
   "rulesDirectory": []
 }

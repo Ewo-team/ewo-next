@@ -1,5 +1,8 @@
 if(flash)
   .alert(class=flash.type)
     ul
-      - for (var i = 0; i < flash.messages.length; i++)
-          li #{flash.messages[i].msg}
+      if(flash.message)
+        li #{flash.message}
+      if(flash.messages)
+        - for (var i = 0; i < flash.messages.length; i++)
+            li #{flash.messages[i].msg}

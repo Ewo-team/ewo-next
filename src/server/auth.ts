@@ -1,6 +1,4 @@
 import crypto = require('crypto');
-import { Store } from 'redux';
-import { IState } from '../engine/reducers';
 
 export const checkSignIn = (req, res, next) => {
   if (req.session && req.session.user) {

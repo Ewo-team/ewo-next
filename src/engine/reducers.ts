@@ -3,7 +3,7 @@ import { charactersReducer, ICharactersState } from './Characters/reducers';
 import { IMapsState, mapsReducer } from './Maps/reducers';
 import { IUsersState, usersReducers } from './Users/reducers';
 
-export interface IState {
+export interface IStateServer {
   Characters: ICharactersState;
   Maps: IMapsState;
   Users: IUsersState;

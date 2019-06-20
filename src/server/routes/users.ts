@@ -1,7 +1,7 @@
+import { login, logout, register } from '@engine/Users/actions';
+import { User } from '@models';
 import express = require('express');
 import { check, validationResult } from 'express-validator/check';
-import { login, logout, register } from '../../engine/Users/actions';
-import { User } from '../../engine/Users/User';
 import { checkAnon, checkSignIn, hash } from '../auth';
 
 const router = express.Router();
@@ -10,7 +10,7 @@ const views = {
   index: 'users',
   login: 'users/login',
   signup: 'users/signup',
-}
+};
 
 /* GET users listing. */
 router.get('/', checkSignIn, (req, res, next) => {
@@ -56,7 +56,7 @@ router.post(
     check('password', 'Le mot de passe est requis').exists(),
     check('password', 'Le mot de passe doit faire minimum 5 caracters').isLength({ min: 5 }),
     check('confirm_pass', 'La confirmation du mot de passe est requise').exists(),
-    check('confirm_pass', 'La confirmation du mot de passe est requise').custom((value, { req }) => value === req.body.password),
+    check('confirm_pass', 'La confirmation du mot de passe n\'est pas valide').custom((value, { req }) => value === req.body.password),
     check('username', 'L\'utilisateur existe déjà').custom(userExist),
   ],
   (req, res) => {
@@ -90,23 +90,42 @@ router.post(
     }
   });
 
-router.post('/login', checkAnon, (req, res) => {
-  if (!req.body.name || !req.body.password) {
-    res.render(views.login, { message: 'Please enter both username and password' });
-  } else {
-    const user = req.reduxStore.getState().Users.find(u => {
-      return u.name === req.body.name;
-    });
+router.post(
+  '/login',
+  [
+    checkAnon,
+    check('username', 'Le nom d\'utilisateur est requis').exists(),
+    check('password', 'Le mot de passe est requis').exists(),
+  ],
+  (req, res) => {
 
-    const hashed = hash(req.body.password);
-    if (user && user.hash === hashed) {
-      req.session.user = user;
-      req.reduxStore.dispatch(login(user.name, req.sessionID));
-      res.redirect('/');
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+
+      const body = {
+        username: req.body.username,
+        password: req.body.password,
+      };
+
+      const message = { flash: { type: 'alert-danger', messages: errors.array() }, ...body };
+
+      res.render(views.login, message);
     } else {
-      res.render(views.login, { message: 'Invalid credentials!' });
+      const user = req.reduxStore.getState().Users.find(u => {
+        return u.name === req.body.username;
+      });
+
+      const hashed = hash(req.body.password);
+      if (user && user.hash === hashed) {
+        req.session.user = user;
+        req.reduxStore.dispatch(login(user.username, req.sessionID));
+        res.redirect('/');
+      } else {
+        res.render(views.login, { flash: { type: 'alert-danger', message: 'Invalid credentials!' } });
+      }
     }
-  }
-});
+
+  });
 
 export default router;

@@ -1,8 +1,8 @@
-import { Character, CharactersTools } from '../../Characters/Character';
-import { characterMove } from '../../Maps/actions';
-import { MapsTools } from '../../Maps/Maps';
-import { Direction } from '../../models/Direction';
-import { Command } from '../Command';
+import { Command, CommandList, CommandStatus } from '@commands/Command';
+import { characterMove } from '@engine/Characters/actions';
+import { Character, Direction } from '@models';
+import { MapsTools } from '@engine/Maps/MapsTools';
+import { CharactersTools } from '@engine/Characters/CharacterTools';
 
 export interface MovePayload {
   mat: number;
@@ -16,17 +16,30 @@ export interface MoveMeta {
   y: number;
 }
 
-// tslint:disable-next-line: no-empty-interface
-export interface MoveCommand extends Command { }
+const costMove = 1;
 
-const command: MoveCommand = {
-  eligible: (payload: MovePayload, store): { result: true, meta: MoveMeta } | false => {
+// tslint:disable-next-line: no-empty-interface
+export class MoveCommand implements Command {
+  public readonly command = CommandList.move;
+  public readonly payload: MovePayload;
+  public status: CommandStatus;
+
+  constructor(payload: MovePayload) {
+    this.payload = payload;
+  }
+
+  public eligible(payload: MovePayload, store) {
 
     // get the current character
     const currentCharacter = CharactersTools.currentCharacter(payload.mat, store);
     console.log({ currentCharacter });
 
     if (currentCharacter === null) {
+      return false;
+    }
+
+    // check if the character can move
+    if (currentCharacter.speedPoints <= 0) {
       return false;
     }
 
@@ -62,26 +75,12 @@ const command: MoveCommand = {
     }
 
     return false;
-  },
-  execute: (meta: MoveMeta, store) => {
+  }
 
-    // const start = performance.now;
+  public execute(meta: MoveMeta) {
+    return characterMove(meta.Character, meta.maps, meta.x, meta.y, costMove);
+  }
 
-    // let str = '';
+}
 
-    /*for (let index = 0; index < 1000000000; index++) {
-
-      const char = 65 + index % 26;
-      // str += String.fromCharCode(char);
-    }*/
-    const action = characterMove(meta.Character, meta.maps, meta.x, meta.y);
-    console.log({ meta, store, action });
-    store.dispatch(action);
-
-    // console.log(Math.floor(Math.random() * 1000));
-
-  },
-} as Command;
-
-// tslint:disable-next-line: no-default-export
-export default command;
+export default MoveCommand;

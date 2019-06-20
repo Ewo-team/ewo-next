@@ -1,15 +1,17 @@
+import { Command } from '@commands/Command';
+import { IStateServer } from '@engine/reducers';
+import { store } from '@engine/store';
 import * as async from 'async';
-import { Store } from 'redux';
-import { store } from '../..';
-import { saveDatabase as saveCharacters } from '../Characters/actions';
-import { Command } from '../Commands/Command';
-import { saveDatabase as saveMaps } from '../Maps/actions';
-import { IState } from '../reducers';
+import { Action, Store } from 'redux';
 
 export namespace runCommands {
-  export const makeQueue = () => {
 
-    const q = async.queue(
+  export let queueCommand: async.AsyncQueue<Command>;
+  export let queueAction: async.AsyncQueue<Action>;
+
+  export const makeQueues = () => {
+
+    queueCommand = async.queue(
       (current: Command, callback) => {
         console.log(`starting task ${current.command}`);
         const test = current.eligible(current.payload, store);
@@ -25,18 +27,23 @@ export namespace runCommands {
       },
       1);
 
-    (q.drain as any)(() => {
+    queueAction = async.queue(
+      (current: Action, callback) => {
+        store.dispatch(current);
+        callback();
+      },
+      1);
+
+    (queueCommand.drain as any)(() => {
       console.log('the queue is completed');
     });
-
-    return q;
   };
 
-  export const autoSave = (iStore: Store<IState>) => {
+  export const autoSave = (iStore: Store<IStateServer>) => {
 
     console.log('auto-save...');
 
     // store.dispatch(saveMaps());
-    iStore.dispatch(saveCharacters());
+    // iStore.dispatch(saveCharacters());
   };
 }

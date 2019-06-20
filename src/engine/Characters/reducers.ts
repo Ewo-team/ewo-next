@@ -1,8 +1,9 @@
+import * as Tasks from '@commands/tasks';
+import { Character } from '@models';
 import { Map } from 'immutable';
 import { AnyAction } from 'redux';
-import * as Tasks from '../tasks';
-import { CharactersActions } from './actions';
-import { Character, CharactersTools } from './Character';
+import { CharacterActions, CharactersActions } from './actions';
+import { CharactersTools } from './CharacterTools';
 
 const INITIAL_STATE: ICharactersState = Map();
 const DATABASE = 'characters';
@@ -17,6 +18,12 @@ export const charactersReducer = (state: ICharactersState = INITIAL_STATE, actio
     case CharactersActions.SAVE_DATABASE:
       Tasks.saveDatabaseMap(DATABASE, state);
       return state;
+    case CharacterActions.MOVE:
+      const char = action.character;
+      char.speedPoints -= action.cost;
+
+      return state.set(char.mat, char);
+
     default:
       return state;
   }

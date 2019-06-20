@@ -8,11 +8,26 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "strictNullChecks": false,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "*": [
-        "node_modules/",
-        "src/types/*"
+      "@server/*": [
+        "server/*"
+      ],
+      "@client/*": [
+        "client/*"
+      ],
+      "@models": [
+        "engine/models/index.ts"
+      ],
+      "@models/*": [
+        "engine/models/*"
+      ],
+      "@engine/*": [
+        "engine/*"
+      ],
+      "@commands/*": [
+        "engine/Commands/*",
+        "engine/tasks/*"
       ]
     }
   },
@@ -20,6 +35,7 @@
     "./node_modules/@types/node/index.d.ts"
   ],
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/client/Router.tsx"
   ]
 }
