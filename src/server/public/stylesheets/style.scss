@@ -1,5 +1,7 @@
 
+@import "normalize";
 @import "colors";
+@import "font";
 
 $fonttext: DejaVuSansBook;
 $fonttextB: DejaVuSansBold;
@@ -13,6 +15,7 @@ $fonttitleBI: DejaVuSerifBoldOblique;
 
 html, body {
     height: 100%;
+    font-size: 12px;
 }
 
 body {
