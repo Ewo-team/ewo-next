@@ -64,11 +64,20 @@
     "tslint-config-airbnb": "^5.11.1"
   },
   "jest": {
+    "rootDir": "src",
     "moduleFileExtensions": [
       "ts",
       "tsx",
       "js"
     ],
+    "moduleNameMapper": {
+      "^@server(.*)$": "<rootDir>/server$1",
+      "^@client(.*)$": "<rootDir>/client$1",
+      "^@models(.*)$": "<rootDir>/engine/models$1",
+      "^@engine(.*)$": "<rootDir>/engine$1",
+      "^@tasks(.*)$": "<rootDir>/engine/tasks$1",
+      "^@commands(.*)$": "<rootDir>/engine/Commands/CommandsTemplate$1"
+    },
     "transform": {
       "\\.(ts|tsx)$": "ts-jest"
     },

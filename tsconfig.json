@@ -22,12 +22,17 @@
       "@models/*": [
         "engine/models/*"
       ],
-      "@engine/*": [
-        "engine/*"
+      "@tasks": [
+        "engine/tasks/index.ts"
+      ],
+      "@tasks/*": [
+        "engine/tasks/*"
       ],
       "@commands/*": [
-        "engine/Commands/*",
-        "engine/tasks/*"
+        "engine/Commands/CommandsTemplate/*",
+      ],
+      "@engine/*": [
+        "engine/*"
       ]
     }
   },
