@@ -2,6 +2,36 @@
 
 Reprise depuis 0 de Eternal War One
 
+### Installation
+
+1: Installez les packages
+
+```bash
+npm install
+```
+
+ou 
+
+```bash
+yarn install
+```
+
+2: Générez l'application React frontend
+
+```bash
+webpack
+```
+
+3: Lancez le serveur de dev
+
+```bash
+npm run watch
+```
+
+Vous pouvez maintenant vous rendre sur http://localhost:3000 pour accéder à l'application. 
+
+Vous pourrez directement vous connecter avec le compte admin/admin
+
 __Architecture :__
 
 Coté Backend, il y a:
