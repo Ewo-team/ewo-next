@@ -1,3 +1,4 @@
+import { IMapsState } from '@engine/Maps/reducers';
 import { Character } from '@models';
 import { Action } from 'redux';
 
@@ -12,15 +13,15 @@ export enum CharacterActions {
 export enum CharactersActions {
   LOAD_DATABASE = 'CharactersActions.LOAD_DATABASE',
   SAVE_DATABASE = 'CharactersActions.SAVE_DATABASE',
+  LINK_TO_MAP = 'CharactersActions.LINK_TO_MAP',
 }
 
 export type CharacterActionsType = Action<CharacterActions>;
 
-export type MoveAction = CharacterActionsType & { character: Character, maps: string, newX: number, newY: number, cost: number };
+export type MoveAction = CharacterActionsType & { character: Character, newX: number, newY: number, cost: number };
 
-export const characterMove = (character: Character, maps: string, newX: number, newY: number, cost: number): MoveAction /*: characterMoveAction*/ => ({
+export const characterMove = (character: Character, newX: number, newY: number, cost: number): MoveAction /*: characterMoveAction*/ => ({
   character,
-  maps,
   newX,
   newY,
   cost,
@@ -33,4 +34,9 @@ export const loadDatabase = () => ({
 
 export const saveDatabase = () => ({
   type: CharactersActions.SAVE_DATABASE,
+});
+
+export const linkToMap = (maps: IMapsState) => ({
+  type: CharactersActions.LINK_TO_MAP,
+  maps,
 });

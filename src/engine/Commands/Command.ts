@@ -1,7 +1,7 @@
-import { runCommands } from '@commands/runCommands';
+import { MoveCommand } from '@commands/moveCommand';
 import { IStateServer } from '@engine/reducers';
+import { runCommands } from '@tasks';
 import { AnyAction, Store } from 'redux';
-import moveCommand from './CommandsTemplate/moveCommand';
 
 export enum CommandStatus {
   Queue,
@@ -28,7 +28,7 @@ export const commandsTemplates = (command: CommandList, payload: any) => {
   let template = {} as Command;
   switch (command) {
     case CommandList.move:
-      template = new moveCommand(payload);
+      template = new MoveCommand(payload);
       break;
     default:
       break;

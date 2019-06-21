@@ -1,3 +1,5 @@
+import { Character } from '@models';
+
 export interface Plan {
   id: string;
   name: string;
@@ -6,5 +8,5 @@ export interface Plan {
 export interface Coord {
   x: number;
   y: number;
-  mat: number;
+  character: Character;
 }

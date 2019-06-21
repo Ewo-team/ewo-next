@@ -7,10 +7,11 @@ declare var __basedir;
 
 export interface ILoadDatabaseParameters {
   databaseName: string;
-  modelHydrater: (item: any) => any;
+  modelHydrater: (item: any, additionnalData?: any) => any;
+  additionnalData?: any;
 }
 
-const loadDatabase = <V>({ databaseName, modelHydrater }: ILoadDatabaseParameters): Map<string, V> | List<V> => {
+const loadDatabase = <V>({ databaseName, modelHydrater, additionnalData }: ILoadDatabaseParameters): Map<string, V> | List<V> => {
 
   const database = path.join(__basedir, './data', `${databaseName}.json`);
 
@@ -33,7 +34,7 @@ const loadDatabase = <V>({ databaseName, modelHydrater }: ILoadDatabaseParameter
         percentOld = percent;
       }
 
-      return modelHydrater(item);
+      return modelHydrater(item, additionnalData);
     });
 
     return List(dataArray);
@@ -51,7 +52,7 @@ const loadDatabase = <V>({ databaseName, modelHydrater }: ILoadDatabaseParameter
           console.log(`loading... ${percent}%`);
           percentOld = percent;
         }
-        return modelHydrater(item);
+        return modelHydrater(item, additionnalData);
       }));
     });
 
@@ -65,7 +66,7 @@ const loadDatabase = <V>({ databaseName, modelHydrater }: ILoadDatabaseParameter
     if (percent !== percentOld) {
       percentOld = percent;
     }
-    map[key] = modelHydrater(data.data[key]);
+    map[key] = modelHydrater(data.data[key], additionnalData);
   });
 
   return Map(map);

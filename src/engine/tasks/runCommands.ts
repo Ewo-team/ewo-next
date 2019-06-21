@@ -1,4 +1,4 @@
-import { Command } from '@commands/Command';
+import { Command } from '@engine/Commands/Command';
 import { IStateServer } from '@engine/reducers';
 import { store } from '@engine/store';
 import * as async from 'async';

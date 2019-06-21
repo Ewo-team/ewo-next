@@ -1,8 +1,8 @@
-import { Command, CommandList, CommandStatus } from '@commands/Command';
 import { characterMove } from '@engine/Characters/actions';
-import { Character, Direction } from '@models';
-import { MapsTools } from '@engine/Maps/MapsTools';
 import { CharactersTools } from '@engine/Characters/CharacterTools';
+import { MapsTools } from '@engine/Maps/MapsTools';
+import { Character, Direction } from '@models';
+import { Command, CommandList, CommandStatus } from '../Command';
 
 export interface MovePayload {
   mat: number;
@@ -11,7 +11,6 @@ export interface MovePayload {
 
 export interface MoveMeta {
   Character: Character;
-  maps: string;
   x: number;
   y: number;
 }
@@ -38,38 +37,42 @@ export class MoveCommand implements Command {
       return false;
     }
 
-    // check if the character can move
-    if (currentCharacter.speedPoints <= 0) {
+    if (!currentCharacter.position) {
+      // the character is not incarned
+      return false;
+    }
+
+    if (currentCharacter.currentSpeed <= 0) {
+      // the character cannot move
       return false;
     }
 
     // get the current position
-    const position = MapsTools.coordsFromCharacter(currentCharacter, store);
+    const coord = currentCharacter.position.coord;
 
-    console.log({ position });
+    console.log({ position: coord });
 
-    if (position === null) {
+    if (coord === null) {
       return false;
     }
 
     // get the new position
-    const { x, y } = MapsTools.getRelativePosition(position.value.x, position.value.y, payload.Direction);
+    const { x, y } = MapsTools.getRelativePosition(coord.x, coord.y, payload.Direction);
 
     console.log({ x, y });
 
     // check if the new position is free
-    const coord = MapsTools.getCoordFromPosition(position.key, x, y, store);
+    const newCoord = MapsTools.getCoordFromPosition(currentCharacter.position.plan, x, y, store);
 
-    console.log({ coord });
+    console.log({ newCoord });
 
-    if (coord === null) {
+    if (newCoord === null) {
       return {
         result: true,
         meta: {
           Character: currentCharacter,
           x,
           y,
-          maps: position.key,
         },
       };
     }
@@ -78,9 +81,7 @@ export class MoveCommand implements Command {
   }
 
   public execute(meta: MoveMeta) {
-    return characterMove(meta.Character, meta.maps, meta.x, meta.y, costMove);
+    return characterMove(meta.Character, meta.x, meta.y, costMove);
   }
 
 }
-
-export default MoveCommand;

@@ -1,4 +1,4 @@
-import * as Tasks from '@commands/tasks';
+import * as Tasks from '@engine/tasks';
 import { User } from '@models';
 import { List } from 'immutable';
 import { AnyAction } from 'redux';

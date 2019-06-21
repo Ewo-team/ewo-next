@@ -1,27 +1,34 @@
 import { IStateServer } from '@engine/reducers';
-import { Character, Coord, Direction, DirectionOctogone } from '@models';
+import { Character, Coord, Direction, DirectionOctogone, Plan } from '@models';
 import { List } from 'immutable';
 import { Store } from 'redux';
 
 export namespace MapsTools {
   export type foundType = { key: string, value: Coord } | null;
-  export const coordsFromCharacter = (character: Character, store: Store<IStateServer>): foundType => {
+  /*export const coordsFromCharacter = (character: Character, store: Store<IStateServer>): foundType => {
 
     let found: foundType = null;
 
-    store.getState().Maps.forEach((coords: List<Coord>, map: string) => {
-      const coord = coords.find(c => c.mat === character.mat);
-      if (coord !== undefined) {
-        found = { key: map, value: coord };
-        return;
-      }
-    });
+    if (character.position) {
+      found = {
+        key: character.position.plan.id,
+        value: character.position.coord,
+      };
+    }
+
+    // store.getState().Maps.forEach((coords: List<Coord>, map: string) => {
+    //   const coord = coords.find(c => c.character === character);
+    //   if (coord !== undefined) {
+    //     found = { key: map, value: coord };
+    //     return;
+    //   }
+    // });
 
     return found;
-  };
+};*/
 
-  export const getCoordFromPosition = (maps: string, posX: number, posY: number, store: Store<IStateServer>): Coord | null => {
-    const map = store.getState().Maps.get(maps);
+  export const getCoordFromPosition = (plan: Plan, posX: number, posY: number, store: Store<IStateServer>): Coord | null => {
+    const map = store.getState().Maps.get(plan.id);
 
     if (map === undefined) {
       return null;

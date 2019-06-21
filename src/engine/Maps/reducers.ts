@@ -1,5 +1,4 @@
-import * as Tasks from '@commands/tasks';
-import { CharacterActions } from '@engine/Characters/actions';
+import * as Tasks from '@engine/tasks';
 import { Coord } from '@models';
 import { List, Map } from 'immutable';
 import { AnyAction } from 'redux';
@@ -14,19 +13,10 @@ export type IMapsState = Map<string, List<Coord>>;
 export const mapsReducer = (state: IMapsState = INITIAL_STATE, action: AnyAction) => {
   switch (action.type) {
     case MapsActions.LOAD_DATABASE:
-      const load = Tasks.loadDatabaseMap({ databaseName: DATABASE, modelHydrater: CoordsTools.hydrater }) as IMapsState;
+      const load = Tasks.loadDatabaseMap({ databaseName: DATABASE, modelHydrater: CoordsTools.hydrater, additionnalData: action.characters }) as IMapsState;
       return load;
     case MapsActions.SAVE_DATABASE:
-      Tasks.saveDatabaseMap(DATABASE, state);
-    case CharacterActions.MOVE:
-      return state.update(action.maps, (map) => {
-        const coordIndex = map.findIndex(c => c.mat === action.character.mat);
-        return map.update(coordIndex, (coord) => {
-          coord.x = action.newX;
-          coord.y = action.newY;
-          return coord;
-        });
-      });
+      Tasks.saveDatabaseMap(DATABASE, state, CoordsTools.serializer);
     default:
       return state;
   }
