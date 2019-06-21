@@ -12,7 +12,7 @@ export interface PositionProps {
 
 export const PositionComponent = (props?: PositionProps) => {
   if (props && props.position) {
-    const { plan, x, y } = props.position;
+    const { plan, coord: { x, y } } = props.position;
     return <div className="Infos__Position">Sur <a href="#">{plan.name}</a> en X = {x} <b>| </b>Y = {y}</div>;
   }
   return <div className="Infos__Position">Nullepart</div>;

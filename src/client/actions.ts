@@ -30,7 +30,7 @@ export const setSelectedCharacter = (mat: number) => ({
 export const load = () => (dispatch: Dispatch) => {
   dispatch(loadInit());
 
-  return fetch('/api/list-character', {
+  return fetch('/api/characters', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

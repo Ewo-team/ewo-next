@@ -18,10 +18,10 @@ export const startSocket = (http, session, store) => {
   );
 
   io.on('connection', (socket) => {
-    //const userId = 1; // TEMP
+    // const userId = 1; // TEMP
 
-    //const owned = ownedCharacters(userId)(store.getState());
-    //const limited = notOwnedCharacters(userId)(store.getState());
+    // const owned = ownedCharacters(userId)(store.getState());
+    // const limited = notOwnedCharacters(userId)(store.getState());
     /*const state = {
       Characters: { ...owned, ...limited },
     };*/

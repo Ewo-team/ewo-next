@@ -42,34 +42,34 @@ export const StatesComponent = (props: StatesProps) => {
     <div>(Rang 0)</div>
 
     <div>Pv</div>
-    <DoubleBar actual={props.hp} max={props.maxHp} large />
+    <DoubleBar actual={props.currentHp} max={props.hp} large />
 
     <div>Malus</div>
     <SimpleBar actual={Math.abs(bonusMalus.def)} inverted />
 
     <div>Pa</div>
-    <DoubleBar actual={props.ap} max={props.agility} />
+    <DoubleBar actual={props.currentAgility} max={props.agility} />
 
     <div>Mouv</div>
-    <DoubleBar actual={props.speed} max={props.speedPoints} />
+    <DoubleBar actual={props.currentSpeed} max={props.speed} />
 
     <div>Res Magique</div>
     <SimpleBar actual={bonusMalus.resMagie} inverted backgroundColor="blue" />
 
     <div>Récupération Pv</div>
-    <DoubleBar actual={props.regen} max={props.regen} />
+    <DoubleBar actual={props.regenHp} max={props.maxRegenHp} />
 
     <div>Récup'Malus</div>
-    <DoubleBar actual={props.debuffRegen} max={props.debuffRegen} />
+    <DoubleBar actual={props.regenAgility} max={props.maxRegenAgility} />
 
     <div>Force</div>
-    <DoubleBar actual={props.strength} max={props.strength} />
+    <DoubleBar actual={props.currentStrength} max={props.strength} />
 
     <div>Perception</div>
-    <DoubleBar actual={props.insight} max={props.insight} />
+    <DoubleBar actual={props.currentInsight} max={props.insight} />
 
     <div>Niveau de magie</div>
-    <InfoBar message={String(props.magic)} />
+    <InfoBar message={String(props.currentMagic)} />
   </div>;
 };
 

@@ -1,21 +1,15 @@
-:root {
-    font-size: 10px;
+.Game {
+
+
     --main-color: #245d88;
     --sub-color: #accee8;
     --font-size: 1.28rem;
-}
 
-body {
     font-size: var(--font-size);
     font-family: DejaVuSansBold;
     font-weight: 400;
     font-stretch: 100%;
     line-height: normal;
-}
-
-
-
-.Game {
 
     display: grid;
     grid-column-gap: 0.5rem;

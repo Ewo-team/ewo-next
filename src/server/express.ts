@@ -5,6 +5,7 @@ import logger = require('morgan');
 import sassMiddleware = require('node-sass-middleware');
 import path = require('path');
 import indexRoutes from './routes';
+import apiRoutes from './routes/api';
 import usersRoutes from './routes/users';
 
 declare var __basedir;
@@ -46,13 +47,14 @@ export class ExpressServer {
     app.use(express.static(path.join(__basedir, 'dist', 'client')));
     app.use(this.session);
 
-    app.use('/', indexRoutes);
     app.use('/users', usersRoutes);
+    app.use('/api', apiRoutes);
+    app.use('*', indexRoutes);
 
     // catch 404 and forward to error handler
-    app.use((req, res, next) => {
+    /*app.use((req, res, next) => {
       next(createError(404));
-    });
+    });*/
 
     // error handler
     app.use((err, req, res, next) => {

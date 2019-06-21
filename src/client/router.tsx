@@ -1,12 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { CharacterList } from './Game/CharacterList';
 import { Game } from './Game/Game';
 
+const empty = () => null;
+
 export const Router = () => <BrowserRouter>
-  <Route path="/" component={CharacterList} />
-  <Route
-    path="/:selectedCharacter"
-    render={(props) => <Game {...props.match.params} />}
-  />
+  <Switch>
+    <Route exact path="/" component={empty} />
+    <Route exact path="/game" component={CharacterList} />
+    <Route
+      path="/game/:selectedCharacter"
+      render={(props) => <Game {...props.match.params} />}
+    />
+  </Switch>
 </BrowserRouter>;

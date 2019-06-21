@@ -9,6 +9,14 @@ export const checkSignIn = (req, res, next) => {
   }
 };
 
+export const checkSignInRest = (req, res, next) => {
+  if (req.session && req.session.user) {
+    next();
+  } else {
+    res.status(403).json({ error: 'not logged in' });
+  }
+};
+
 export const checkAnon = (req, res, next) => {
   if (req.session && req.session.user) {
     res.redirect('/');

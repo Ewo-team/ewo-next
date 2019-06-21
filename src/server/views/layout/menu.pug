@@ -1,0 +1,27 @@
+nav#nav
+  div#top_bar
+    ul#menuDeroulant
+      li
+        a(href="/") Index
+        ul
+          li
+            a(href="/users/signup") Inscription
+      if(user)
+        li
+          a(href="/game") Jeu
+          ul
+            li
+              a(href="/users") Mon compte
+            li Carte du monde
+            li Annuaire
+            li Mes événements
+            li Classement
+            li Affiliations
+            li Légions personnages
+        li
+          a(href="/game") Pages de jeu
+        li
+          a(href="/users/logout") Logout
+      else
+        li
+          a(href="/users/login") Login
