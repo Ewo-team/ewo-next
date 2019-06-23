@@ -1,6 +1,9 @@
 #### E.W.O. :  Next
 
-Reprise depuis 0 de Eternal War One
+E.W.O était un projet francophone de jeu multijoueur online en PHP. 
+Le sujet du jeu est la bataille entre les anges, les démons et les humains, dans un futur alternatif. 
+
+EWO Next est le nom de code d'une reprise à zéro du projet (redéfinition du gameplay et des technologies) 
 
 ### Installation
 
