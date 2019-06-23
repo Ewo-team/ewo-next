@@ -1,10 +1,8 @@
 import { IStateServer } from '@engine/reducers';
-import { Character, Coord, Direction, DirectionOctogone, Plan } from '@models';
-import { List } from 'immutable';
+import { Coord, Direction, DirectionOctogone, Plan } from '@models';
 import { Store } from 'redux';
 
-export namespace MapsTools {
-  export type foundType = { key: string, value: Coord } | null;
+export class MapsTools {
   /*export const coordsFromCharacter = (character: Character, store: Store<IStateServer>): foundType => {
 
     let found: foundType = null;
@@ -27,7 +25,7 @@ export namespace MapsTools {
     return found;
 };*/
 
-  export const getCoordFromPosition = (plan: Plan, posX: number, posY: number, store: Store<IStateServer>): Coord | null => {
+  public static getCoordFromPosition = (plan: Plan, posX: number, posY: number, store: Store<IStateServer>): Coord | null => {
     const map = store.getState().Maps.get(plan.id);
 
     if (map === undefined) {
@@ -41,9 +39,9 @@ export namespace MapsTools {
     }
 
     return null;
-  };
+  }
 
-  export const getRelativePosition = (posX: number, posY: number, direction: Direction | DirectionOctogone) => {
+  public static getRelativePosition = (posX: number, posY: number, direction: Direction | DirectionOctogone) => {
 
     let newX = posX; // east-west position
     let newY = posY; // north-south
@@ -86,5 +84,7 @@ export namespace MapsTools {
     }
 
     return { x: newX, y: newY };
-  };
+  }
+
+  // public foundType = { key: string, value: Coord } | null;
 }

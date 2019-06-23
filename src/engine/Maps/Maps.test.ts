@@ -2,7 +2,7 @@
 
 import { CharactersTools } from '@engine/Characters/CharacterTools';
 import { IStateServer } from '@engine/reducers';
-import { Plans, RaceTemplate } from '@engine/resources';
+import { Plans } from '@engine/resources';
 import { Direction, DirectionOctogone, Plan } from '@models';
 import { List, Map } from 'immutable';
 import { Store } from 'redux';
@@ -18,7 +18,6 @@ describe('MapsTools', () => {
 
   const character1 = CharactersTools.factory(1, 'Test 1');
   const character2 = CharactersTools.factory(2, 'Test 2');
-  const character3 = CharactersTools.factory(3, 'Test 3');
   // const earth: Plan = { id: 'earth', name: 'Althian' };
   const earth = Plans.first() as Plan;
 
@@ -88,7 +87,7 @@ describe('MapsTools', () => {
     const expected2 = {
       character: {
         mat: 2,
-        name: 'Test 2'
+        name: 'Test 2',
       },
       x: 1,
       y: 0,

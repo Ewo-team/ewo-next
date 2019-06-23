@@ -24,7 +24,7 @@ export class GameServer {
 
   public constructor(store: Store<IStateServer>) {
 
-    const reduxStoreMiddleware = (iStore: Store) => (req, res, next) => {
+    const reduxStoreMiddleware = (iStore: Store) => (req, _res, next) => {
       req.reduxStore = iStore;
       next();
     };
@@ -50,7 +50,7 @@ export class GameServer {
     this.server.on('error', this.onError);
     this.server.on('listening', this.onListening);
 
-    // startSocket(this.server, this.express.session, this.store);
+    startSocket(this.server, this.express.session, this.store);
   }
 
   /**

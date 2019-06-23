@@ -1,6 +1,6 @@
-import { applyMiddleware, createStore, Store } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import reduxThunk from 'redux-thunk';
-import { IStateServer, rootReducer } from './reducers';
+import { rootReducer } from './reducers';
 
 // tslint:disable-next-line: no-var-requires
 const createNodeLogger = require('redux-node-logger');

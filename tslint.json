@@ -13,7 +13,7 @@
       160
     ],
     "object-literal-sort-keys": false,
-    "no-namespace": false,
+    "no-namespace": true,
     "arrow-parens": false,
     "ter-arrow-parens": false,
     "object-shorthand-properties-first": false,

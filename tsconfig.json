@@ -8,6 +8,12 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "rootDirs": [
+      "src",
+      "stories"
+    ],
     "baseUrl": "src",
     "paths": {
       "@server/*": [
@@ -29,7 +35,7 @@
         "engine/tasks/*"
       ],
       "@commands/*": [
-        "engine/Commands/CommandsTemplate/*",
+        "engine/Commands/CommandsTemplate/*"
       ],
       "@engine/*": [
         "engine/*"
@@ -40,7 +46,6 @@
     "./node_modules/@types/node/index.d.ts"
   ],
   "include": [
-    "src/**/*.ts",
-    "src/client/Router.tsx"
+    "src/**/*.ts"
   ]
 }

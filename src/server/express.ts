@@ -1,6 +1,6 @@
 import express = require('express');
 import session = require('express-session');
-import createError = require('http-errors');
+// import createError = require('http-errors');
 import logger = require('morgan');
 import sassMiddleware = require('node-sass-middleware');
 import path = require('path');
@@ -57,7 +57,7 @@ export class ExpressServer {
     });*/
 
     // error handler
-    app.use((err, req, res, next) => {
+    app.use((err, req, res, _next) => {
       // set locals, only providing error in development
       res.locals.message = err.message;
       res.locals.error = req.app.get('env') === 'development' ? err : {};

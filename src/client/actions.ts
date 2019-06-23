@@ -1,5 +1,6 @@
 import { Character } from '@models';
 import { Dispatch } from 'redux';
+import { CharactersTools } from '../engine/Characters/CharacterTools';
 
 export enum Actions {
   LOAD_INIT = 'LOAD_INIT',
@@ -44,7 +45,8 @@ export const load = () => (dispatch: Dispatch) => {
     return response.json();
   })
     .then((characters: Character[]) => {
-      dispatch(loadSuccess(characters));
+      const char = characters.map(character => CharactersTools.hydrater(character));
+      dispatch(loadSuccess(char));
     })
     .catch((error) => {
       dispatch(loadError(error));

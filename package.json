@@ -9,7 +9,9 @@
     "test": "jest",
     "watch": "nodemon -e ts -w ./src -x npm run watch:serve",
     "watch:serve": "node -r ts-node/register -r tsconfig-paths/register --inspect src/index.ts",
-    "client": "webpack --watch"
+    "client": "webpack",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@types/async": "^2.4.2",
@@ -35,6 +37,7 @@
     "immutable": "^4.0.0-rc.12",
     "js-extract": "^1.0.1",
     "morgan": "^1.9.1",
+    "nes.css": "^2.2.0",
     "node-sass": "^4.12.0",
     "node-sass-middleware": "^0.11.0",
     "pug": "^2.0.3",
@@ -50,18 +53,36 @@
     "typescript": "^3.4.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-a11y": "^5.1.9",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-storyshots": "^5.1.9",
+    "@storybook/addon-storyshots-puppeteer": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "@types/storybook__react": "^4.0.2",
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
     "jest": "^24.8.0",
     "nodemon": "^1.19.1",
+    "react-docgen-typescript-loader": "^3.1.0",
+    "react-scripts": "^3.0.1",
+    "react-storybook-addon-props-combinations": "^1.1.0",
+    "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3",
     "redux-node-logger": "^0.1.0",
+    "require-context.macro": "^1.0.4",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.3",
     "ts-node": "^8.2.0",
     "tsconfig-paths": "^3.8.0",
-    "tslint-config-airbnb": "^5.11.1"
+    "tslint-config-airbnb": "^5.11.1",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.4"
   },
   "jest": {
     "rootDir": "src",

@@ -1,17 +1,36 @@
-import { Command } from '@engine/Commands/Command';
-import { IStateServer } from '@engine/reducers';
+import { SaveDBCommand } from '@commands/saveDBCommand';
+import { addLazyCommand, Command } from '@engine/Commands/Command';
 import { store } from '@engine/store';
 import * as async from 'async';
-import { Action, Store } from 'redux';
+import { List } from 'immutable';
 
-export namespace runCommands {
+export class RunCommands {
 
-  export let queueCommand: async.AsyncQueue<Command>;
-  export let queueAction: async.AsyncQueue<Action>;
+  public static queueCommand: async.AsyncQueue<Command>;
+  public static lazyCommands: List<Command> = List();
+  public static timerTenMinute: NodeJS.Timeout;
 
-  export const makeQueues = () => {
+  public static startAutoSave = () => {
 
-    queueCommand = async.queue(
+    RunCommands.timerTenMinute = setInterval(
+      () => {
+        addLazyCommand(new SaveDBCommand());
+      },
+      10 * 60 * 1000);
+  }
+
+  public static makeQueues() {
+    if (RunCommands.instance === null) {
+      RunCommands.instance = new RunCommands();
+    }
+    return RunCommands.instance;
+  }
+
+  private static instance: RunCommands = null;
+
+  private constructor() {
+
+    RunCommands.queueCommand = async.queue(
       (current: Command, callback) => {
         console.log(`starting task ${current.command}`);
         const test = current.eligible(current.payload, store);
@@ -19,7 +38,10 @@ export namespace runCommands {
         const eligible = typeof test === 'boolean' ? test : test.result;
         console.log({ test, meta, eligible });
         if (eligible) {
-          current.execute(meta, store);
+          const actions = current.execute(meta, store);
+          actions.forEach(action => {
+            store.dispatch(action);
+          });
         }
 
         callback();
@@ -27,23 +49,14 @@ export namespace runCommands {
       },
       1);
 
-    queueAction = async.queue(
-      (current: Action, callback) => {
-        store.dispatch(current);
-        callback();
-      },
-      1);
-
-    (queueCommand.drain as any)(() => {
+    (RunCommands.queueCommand.drain as any)(() => {
       console.log('the queue is completed');
+      if (RunCommands.lazyCommands.size > 0) {
+        console.log('executing lazy commands');
+        const commands = RunCommands.lazyCommands.toArray();
+        RunCommands.lazyCommands = List();
+        RunCommands.queueCommand.push(commands);
+      }
     });
-  };
-
-  export const autoSave = (iStore: Store<IStateServer>) => {
-
-    console.log('auto-save...');
-
-    // store.dispatch(saveMaps());
-    // iStore.dispatch(saveCharacters());
-  };
+  }
 }

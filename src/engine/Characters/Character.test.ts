@@ -1,6 +1,6 @@
 /// <reference types="jest" />
 
-import { Character, CharacterPosition, Coord, Races } from '@models';
+import { Character, CharacterPosition, Races } from '@models';
 import { Map } from 'immutable';
 import { characterMove } from './actions';
 import { CharactersTools } from './CharacterTools';

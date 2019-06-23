@@ -2,10 +2,11 @@ import { IStateServer } from '@engine/reducers';
 import { Character, CharacterPosture, RaceFromString, Races } from '@models';
 import { Store } from 'redux';
 
-export namespace CharactersTools {
+export class CharactersTools {
 
-  export const factory = (mat, name, values?): Character => {
+  public static factory = (mat, name, values?): Character => {
 
+    console.log('factory character: ', mat, name, values);
     const character = new Character(mat, name);
 
     if (values !== undefined) {
@@ -16,19 +17,24 @@ export namespace CharactersTools {
         character.race = Races.NoRace;
       }
 
-      properties.forEach((property) => {
+      CharactersTools.properties.forEach((property) => {
         if (values[property] !== undefined) {
           character[property] = values[property];
         } else {
-          character[property] = defaultValues[property];
+          character[property] = CharactersTools.defaultValues[property];
         }
+      });
+    } else {
+      character.race = Races.NoRace;
+      CharactersTools.properties.forEach((property) => {
+        character[property] = CharactersTools.defaultValues[property];
       });
     }
 
     return character;
-  };
+  }
 
-  export const currentCharacter = (mat, store: Store<IStateServer>): Character | null => {
+  public static currentCharacter = (mat, store: Store<IStateServer>): Character | null => {
     const character = store.getState().Characters.find(c => c.mat === mat);
 
     if (character !== undefined) {
@@ -36,11 +42,26 @@ export namespace CharactersTools {
     }
 
     return null;
-  };
+  }
 
-  export const hydrater = (source: any) => CharactersTools.factory(source.mat, source.name, source);
+  public static hydrater = (source: any) => CharactersTools.factory(source.mat, source.name, source);
 
-  const defaultValues = {
+  public static serializer = (source: Character) => {
+    const json: any = {
+      mat: source.mat,
+      name: source.name,
+    };
+
+    json.race = Races[source.race];
+
+    CharactersTools.properties.forEach(property => {
+      json[property] = source[property];
+    });
+
+    return json;
+  }
+
+  private static readonly defaultValues = {
     grade: {
       major: 0,
       minor: 0,
@@ -68,9 +89,7 @@ export namespace CharactersTools {
     maps: 'earth',
   };
 
-  const properties = [
-    'mat',
-    'name',
+  private static readonly properties = [
     'grade',
     'motd',
     'minutes',
@@ -94,4 +113,5 @@ export namespace CharactersTools {
     'buffs',
     'maps',
   ];
+
 }
