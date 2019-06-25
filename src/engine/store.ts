@@ -16,9 +16,15 @@ export const makeStore = () => {
     },*/
   });
 
-  const middlewares = [reduxThunk, loggerMiddleware];
+  if (process.env.SERVER_LOG) {
+    const middlewares = [reduxThunk, loggerMiddleware];
 
-  store = createStore(rootReducer, applyMiddleware(...middlewares));
+    store = createStore(rootReducer, applyMiddleware(...middlewares));
+  } else {
+    const middlewares = [reduxThunk];
+
+    store = createStore(rootReducer, applyMiddleware(...middlewares));
+  }
 };
 
 export let store;

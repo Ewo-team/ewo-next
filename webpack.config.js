@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: process.env.NODE_ENV || 'development',
+  mode: process.env.CLIENT_MODE || 'development',
   entry: ['./src/client/index.tsx'],
   output: {
     path: path.resolve(__dirname, 'dist/client'),

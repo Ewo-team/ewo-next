@@ -8,6 +8,8 @@ import { startSocket } from '@server/socket';
 import { runCommands } from '@tasks';
 import * as path from 'path';
 
+require('dotenv').config();
+
 declare namespace NodeJS {
   // tslint:disable-next-line: interface-name
   interface Global {

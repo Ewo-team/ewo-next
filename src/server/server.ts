@@ -31,7 +31,7 @@ export class GameServer {
 
     this.express = new ExpressServer(reduxStoreMiddleware(store));
 
-    this.port = this.normalizePort(process.env.PORT || '3000');
+    this.port = this.normalizePort(process.env.SERVER_PORT || '3000');
 
     this.store = store;
 
