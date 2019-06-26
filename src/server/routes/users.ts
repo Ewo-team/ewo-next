@@ -13,16 +13,16 @@ const views = {
 };
 
 /* GET users listing. */
-router.get('/', checkSignIn, (req, res, next) => {
+router.get('/', checkSignIn, (req, res) => {
   console.log(req.session);
   res.render(views.index, { title: 'Dashboard', user: req.session.user.name });
 });
 
-router.get('/signup', checkAnon, (req, res) => {
+router.get('/signup', checkAnon, (_req, res) => {
   res.render(views.signup);
 });
 
-router.get('/login', checkAnon, (req, res) => {
+router.get('/login', checkAnon, (_req, res) => {
   res.render(views.login);
 });
 

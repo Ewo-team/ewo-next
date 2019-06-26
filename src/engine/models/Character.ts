@@ -20,7 +20,7 @@ const levelInsightModifier = 1;
 const levelMagicModifier = 1;
 
 // TODO temp
-export const GradeTemplate = (grade: CharacterGrade) => ({
+export const GradeTemplate = (_grade: CharacterGrade) => ({
   hp: 0,
   speed: 0,
   dexterity: 0,

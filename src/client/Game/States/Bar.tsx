@@ -115,6 +115,23 @@ const colorToClass = (color: BarColors): string | null => {
       return null;
   }
 };
+/*const colorToClass = (color: BarColors): string | null => {
+  switch (color) {
+    case 'blue':
+      return 'is-primary';
+    case 'black':
+      return '';
+    case 'green':
+      return 'is-success';
+    case 'red':
+      return 'is-error';
+    case 'yellow':
+      return 'is-warning';
+    case 'none':
+    default:
+      return null;
+  }
+};*/
 
 export const Bar = ({ ratio, actual, min, max, message, large, backgroundColor, valueColor }: BarProps) => {
   let color = valueColor ? colorToClass(valueColor) : colorToClass('green');
@@ -142,4 +159,10 @@ export const Bar = ({ ratio, actual, min, max, message, large, backgroundColor, 
       aria-valuemax={max || actual}></div> : null}
     <span className="Label">{message}</span>
   </div>;
+
+  /*return <progress className={`States__Bar nes-progress ${color}`}
+    value={actual}
+    max={max}
+  >
+  </progress>;*/
 };

@@ -1,24 +1,31 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
-import { number, withKnobs, select } from '@storybook/addon-knobs/react';
-
+import { number, select, withKnobs } from '@storybook/addon-knobs/react';
+import { storiesOf } from '@storybook/react';
+import * as React from 'react';
 import { PositionComponent } from '.';
-import { earth, hell, heaven } from 'models/mockCharacter';
+import { Plans } from '../../../engine/resources/Maps';
 
 const stories = storiesOf('Infos/Position', module);
+
+const earth = Plans.find(p => p.id === 'earth');
+const hell = Plans.find(p => p.id === 'hell');
+const heaven = Plans.find(p => p.id === 'heaven');
 
 stories.addDecorator(withKnobs);
 
 stories.add('basic Position', () => <PositionComponent
-    position={{
-        plan: select('Plan', {
-            'earth': earth,
-            'hell': hell,
-            'heaven': heaven
-        }, earth),
-        x: number('Position X', 0),
-        y: number('Position Y', 0)
+  position={
+    {
+      plan: select(
+        'Plan',
+        {
+          earth,
+          hell,
+          heaven,
+        },
+        earth),
+      x: number('Position X', 0),
+      y: number('Position Y', 0),
     }}
 />);
 

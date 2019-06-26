@@ -1,6 +1,6 @@
 import { MoveCommand } from '@commands/moveCommand';
 import { IStateServer } from '@engine/reducers';
-import { runCommands } from '@tasks';
+import { RunCommands } from '@tasks';
 import { AnyAction, Store } from 'redux';
 
 export enum CommandStatus {
@@ -10,6 +10,7 @@ export enum CommandStatus {
 }
 
 export enum CommandList {
+  saveDB,
   move,
   changeDexterity,
   attack,
@@ -20,7 +21,7 @@ export interface Command {
   payload: any;
   status: CommandStatus;
   eligible(payload, store: Store<IStateServer>): boolean | { result: boolean, meta: any };
-  execute(payload, store: Store<IStateServer>): AnyAction;
+  execute(payload, store: Store<IStateServer>): AnyAction[];
 }
 
 export const commandsTemplates = (command: CommandList, payload: any) => {
@@ -38,5 +39,13 @@ export const commandsTemplates = (command: CommandList, payload: any) => {
 };
 
 export const addCommand = (command: CommandList, payload: any) => {
-  runCommands.queueCommand.push(commandsTemplates(command, payload));
+  RunCommands.queueCommand.push(commandsTemplates(command, payload));
+};
+
+export const addLazyCommand = (command: Command) => {
+  if (RunCommands.queueCommand.length() > 0) {
+    RunCommands.lazyCommands = RunCommands.lazyCommands.push(command);
+  } else {
+    RunCommands.queueCommand.push(command);
+  }
 };

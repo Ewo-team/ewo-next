@@ -2,7 +2,6 @@ import { setSelectedCharacter } from '@client/actions';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { IStateFrontend } from '../reducers';
 import { Actions } from './Actions';
 import { Infos } from './Infos';
 import { States } from './States';

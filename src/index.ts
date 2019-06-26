@@ -4,12 +4,12 @@
 import { loadDatabases } from '@engine/actions';
 import { makeStore, store } from '@engine/store';
 import { GameServer } from '@server/server';
-import { startSocket } from '@server/socket';
-import { runCommands } from '@tasks';
+import { RunCommands } from '@tasks';
 import * as path from 'path';
 
 require('dotenv').config();
 
+// tslint:disable-next-line: no-namespace
 declare namespace NodeJS {
   // tslint:disable-next-line: interface-name
   interface Global {
@@ -22,7 +22,7 @@ global.__basedir = path.resolve(__dirname, '..');
 
 makeStore();
 
-runCommands.makeQueues();
+RunCommands.makeQueues();
 
 export const server = new GameServer(store);
 
@@ -37,4 +37,4 @@ addCommand(CommandList.move, {
 });
 console.log('end command');*/
 
-// runCommands.autoSave(store);
+RunCommands.startAutoSave();

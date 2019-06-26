@@ -8,22 +8,24 @@ import { DoubleBar, InfoBar, SimpleBar } from './Bar';
 require('./States.scss');
 
 // tslint:disable-next-line: no-empty-interface
-export interface StatesProps extends Character {
-
+export interface StatesProps {
+  character: Character;
 }
 
 const mapStateToProps = (state: IStateFrontend) => ({
-  ...getSelectedCharacter(state),
+  character: getSelectedCharacter(state),
 });
 
 export const StatesComponent = (props: StatesProps) => {
+
+  const { character } = props;
 
   const bmDefault = {
     def: 0,
     resMagie: 0,
   };
 
-  const bonusMalus = props.buffs.reduce(
+  const bonusMalus = character.buffs.reduce(
     (total, buff) => {
 
       if (buff.operation === 'bonus') {
@@ -36,40 +38,41 @@ export const StatesComponent = (props: StatesProps) => {
     },
     bmDefault);
 
+  console.log(character);
   return <div className="States Game__Container">
     <div className="Title">States</div>
-    <div>Px {props.xp} | Pi {props.ep}</div>
+    <div>Px {character.xp} | Pi {character.ep}</div>
     <div>(Rang 0)</div>
 
     <div>Pv</div>
-    <DoubleBar actual={props.currentHp} max={props.hp} large />
+    <DoubleBar actual={character.currentHp} max={character.hp} large />
 
     <div>Malus</div>
     <SimpleBar actual={Math.abs(bonusMalus.def)} inverted />
 
     <div>Pa</div>
-    <DoubleBar actual={props.currentAgility} max={props.agility} />
+    <DoubleBar actual={character.currentAgility} max={character.agility} />
 
     <div>Mouv</div>
-    <DoubleBar actual={props.currentSpeed} max={props.speed} />
+    <DoubleBar actual={character.currentSpeed} max={character.speed} />
 
     <div>Res Magique</div>
     <SimpleBar actual={bonusMalus.resMagie} inverted backgroundColor="blue" />
 
     <div>Récupération Pv</div>
-    <DoubleBar actual={props.regenHp} max={props.maxRegenHp} />
+    <DoubleBar actual={character.regenHp} max={character.maxRegenHp} />
 
     <div>Récup'Malus</div>
-    <DoubleBar actual={props.regenAgility} max={props.maxRegenAgility} />
+    <DoubleBar actual={character.regenAgility} max={character.maxRegenAgility} />
 
     <div>Force</div>
-    <DoubleBar actual={props.currentStrength} max={props.strength} />
+    <DoubleBar actual={character.currentStrength} max={character.strength} />
 
     <div>Perception</div>
-    <DoubleBar actual={props.currentInsight} max={props.insight} />
+    <DoubleBar actual={character.currentInsight} max={character.insight} />
 
     <div>Niveau de magie</div>
-    <InfoBar message={String(props.currentMagic)} />
+    <InfoBar message={String(character.currentMagic)} />
   </div>;
 };
 

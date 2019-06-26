@@ -28,19 +28,19 @@ export const startSocket = (http, session, store) => {
 
     socket.emit('state', JSON.stringify(store.getState()));
 
-    /*socket.on('login', (userdata) => {
-      console.log(userdata);
+    socket.on('login', (userdata) => {
+      console.log('login', userdata);
       socket.handshake.session.userdata = userdata;
       socket.handshake.session.save();
     });
     socket.on('logout', (userdata) => {
-      console.log(userdata);
+      console.log('logout', userdata);
       if (socket.handshake.session.userdata) {
         delete socket.handshake.session.userdata;
         socket.handshake.session.save();
       }
     });
-    socket.on('action', (action) => {
+    /*socket.on('action', (action) => {
       console.log(`receive action ${action}`);
       const character = owned.first() as Character;
       switch (action) {

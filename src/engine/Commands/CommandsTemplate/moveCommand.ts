@@ -81,7 +81,7 @@ export class MoveCommand implements Command {
   }
 
   public execute(meta: MoveMeta) {
-    return characterMove(meta.Character, meta.x, meta.y, costMove);
+    return [characterMove(meta.Character, meta.x, meta.y, costMove)];
   }
 
 }
