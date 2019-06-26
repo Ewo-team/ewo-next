@@ -80,3 +80,6 @@ dist
 
 # Data
 data
+
+# Session file
+sessions

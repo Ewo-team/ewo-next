@@ -14,6 +14,7 @@ module.exports = {
       '@client': path.resolve(__dirname, 'src/client/'),
       '@engine': path.resolve(__dirname, 'src/engine/'),
       '@models': path.resolve(__dirname, 'src/engine/models/')
+
     }
   },
   module: {

@@ -35,7 +35,7 @@
         "engine/tasks/*"
       ],
       "@commands/*": [
-        "engine/Commands/CommandsTemplate/*"
+        "engine/Commands/CommandsTemplate/*",
       ],
       "@engine/*": [
         "engine/*"
