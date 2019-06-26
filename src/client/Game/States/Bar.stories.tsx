@@ -6,8 +6,7 @@ import React from 'react';
 
 import withPropsCombinations from 'react-storybook-addon-props-combinations';
 
-import { DoubleBar } from '.';
-import { InfoBar, SimpleBar } from './Bar';
+import { DoubleBar, InfoBar, SimpleBar } from '.';
 
 const stories = storiesOf('States/Bar', module);
 

@@ -20,6 +20,12 @@ export const StatesComponent = (props: StatesProps) => {
 
   const { character } = props;
 
+  if (character === undefined) {
+    return null;
+  }
+
+  console.log({ character });
+
   const bmDefault = {
     def: 0,
     resMagie: 0,
@@ -38,7 +44,6 @@ export const StatesComponent = (props: StatesProps) => {
     },
     bmDefault);
 
-  console.log(character);
   return <div className="States Game__Container">
     <div className="Title">States</div>
     <div>Px {character.xp} | Pi {character.ep}</div>

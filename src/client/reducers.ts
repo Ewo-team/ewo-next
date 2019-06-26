@@ -1,10 +1,11 @@
-import { Character } from '@models';
+import { Character, CoordFrontend } from '@models';
 import { AnyAction } from 'redux';
 import { Actions } from './actions';
 
 export interface IStateFrontend {
   selectedCharacter?: number;
-  characters: Character[];
+  characters: Record<string, Character>;
+  coords: Record<string, CoordFrontend[]>;
   loaded: boolean;
   loading: boolean;
   error?: string;
@@ -13,17 +14,16 @@ export interface IStateFrontend {
 const initialState: IStateFrontend = {
   loading: false,
   loaded: false,
-  characters: [],
+  characters: {},
+  coords: {},
 };
 
 const reducer = (state: IStateFrontend = initialState, action: AnyAction): IStateFrontend => {
   switch (action.type) {
-    case Actions.LOAD_INIT:
-      return { loading: true, loaded: false, characters: [] };
-    case Actions.LOAD_SUCCESS:
-      return { loading: false, loaded: true, characters: action.characters };
-    case Actions.LOAD_ERROR:
-      return { loading: false, loaded: false, characters: [], error: action.error };
+    case Actions.REFRESH_CHARACTERS:
+      return { ...state, loading: false, loaded: true, characters: action.characters };
+    case Actions.REFRESH_MAPS:
+      return { ...state, loading: false, loaded: true, coords: { ...state.coords, [action.mat]: action.coords } };
     case Actions.SET_SELECTED_CHARACTER:
       return { ...state, selectedCharacter: action.mat };
   }

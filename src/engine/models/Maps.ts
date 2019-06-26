@@ -10,3 +10,9 @@ export interface Coord {
   y: number;
   character: Character;
 }
+
+export interface CoordFrontend {
+  x: number;
+  y: number;
+  mat: number;
+}

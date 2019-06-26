@@ -1,4 +1,15 @@
 .Views {
     grid-area: Views;
+
+    .grid {
+      display: grid;
+    }
+
+    @for $i from 1 through 15 {
+      .grid-#{i} {
+        grid-template-columns: repeat($i * 2 + 1, 1fr);
+        grid-template-rows: repeat($i * 2 + 1, 1fr);
+      }
+    }
 }
 

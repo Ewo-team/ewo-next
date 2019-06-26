@@ -1,26 +1,21 @@
-import { Character } from '@models';
+import { Character, Coord } from '@models';
 import { Dispatch } from 'redux';
-import { CharactersTools } from '../engine/Characters/CharacterTools';
 
 export enum Actions {
-  LOAD_INIT = 'LOAD_INIT',
-  LOAD_SUCCESS = 'LOAD_SUCCESS',
-  LOAD_ERROR = 'LOAD_ERROR',
+  REFRESH_CHARACTERS = 'REFRESH_CHARACTERS',
+  REFRESH_MAPS = 'REFRESH_MAPS',
   SET_SELECTED_CHARACTER = 'SET_SELECTED_CHARACTER',
 }
 
-export const loadInit = () => ({
-  type: Actions.LOAD_INIT,
-});
-
-export const loadSuccess = (characters: Character[]) => ({
-  type: Actions.LOAD_SUCCESS,
+export const refreshCharacters = (characters: Character[]) => ({
+  type: Actions.REFRESH_CHARACTERS,
   characters,
 });
 
-export const loadError = (error: any) => ({
-  type: Actions.LOAD_ERROR,
-  error,
+export const refreshMaps = (mat: number, coords: Coord[]) => ({
+  type: Actions.REFRESH_MAPS,
+  mat,
+  coords,
 });
 
 export const setSelectedCharacter = (mat: number) => ({
@@ -28,27 +23,6 @@ export const setSelectedCharacter = (mat: number) => ({
   mat,
 });
 
-export const load = () => (dispatch: Dispatch) => {
-  dispatch(loadInit());
-
-  return fetch('/api/characters', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error('Error - 404 Not Found');
-    }
-
-    return response.json();
-  })
-    .then((characters: Character[]) => {
-      const char = characters.map(character => CharactersTools.hydrater(character));
-      dispatch(loadSuccess(char));
-    })
-    .catch((error) => {
-      dispatch(loadError(error));
-    });
+export const selectCharacter = (mat: number) => (dispatch: Dispatch<any>) => {
+  dispatch(setSelectedCharacter(mat));
 };

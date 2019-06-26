@@ -1,12 +1,13 @@
 import { IStateFrontend } from '@client/reducers';
 import { getSelectedCharacter } from '@client/selector';
+import { Character } from '@models';
 import * as React from 'react';
 import { connect } from 'react-redux';
 
 require('./Endurance.scss');
 
 export interface EnduranceProps {
-  minute?: number;
+  character: Character;
 }
 
 export interface EnduranceState {
@@ -20,10 +21,15 @@ export class EnduranceComponent extends React.Component<EnduranceProps, Enduranc
   }
 
   public render() {
-    const { minute } = this.props;
+
+    if (this.props.character === undefined) {
+      return null;
+    }
+
+    const { minutes } = this.props.character;
     const { currentDate } = this.state;
 
-    if (minute === undefined) {
+    if (minutes === undefined) {
       return <div className="Infos__Endurance">
         <div
           className="progress-bar bg-success"
@@ -34,7 +40,7 @@ export class EnduranceComponent extends React.Component<EnduranceProps, Enduranc
       </div>;
     }
 
-    let dateDiff = minute - currentDate.getMinutes();
+    let dateDiff = minutes - currentDate.getMinutes();
     if (dateDiff <= 0) {
       dateDiff += 60;
     }
@@ -55,7 +61,7 @@ export class EnduranceComponent extends React.Component<EnduranceProps, Enduranc
 }
 
 const mapStateToProps = (state: IStateFrontend) => ({
-  minute: getSelectedCharacter(state).minutes,
+  character: getSelectedCharacter(state),
 });
 
 export const Endurance = connect(

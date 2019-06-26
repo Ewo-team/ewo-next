@@ -30,11 +30,4 @@ server.launch();
 
 store.dispatch(loadDatabases());
 
-/*console.log('prepare command');
-addCommand(CommandList.move, {
-  mat: 1,
-  Direction: Direction.North,
-});
-console.log('end command');*/
-
 RunCommands.startAutoSave();

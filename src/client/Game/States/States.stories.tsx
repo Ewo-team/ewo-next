@@ -15,13 +15,12 @@ const withProvider = (story: any) => (
     {story()}
   </Provider>
 );
-
 const stories = storiesOf('States', module);
+
+store.dispatch(loadSuccess([characterDefault, characterFull, characterDead]));
 
 stories.addDecorator(withProvider);
 stories.addDecorator(withA11y);
-
-store.dispatch(loadSuccess([characterDefault, characterFull, characterDead]));
 
 stories.add('Full Endurance', () => {
   store.dispatch(setSelectedCharacter(1));
