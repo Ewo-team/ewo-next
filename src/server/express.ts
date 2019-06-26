@@ -1,11 +1,9 @@
 import express = require('express');
 import session = require('express-session');
-// import createError = require('http-errors');
 import logger = require('morgan');
 import sassMiddleware = require('node-sass-middleware');
 import path = require('path');
 import indexRoutes from './routes';
-import apiRoutes from './routes/api';
 import usersRoutes from './routes/users';
 
 declare var __basedir;
@@ -22,9 +20,12 @@ export class ExpressServer {
     app.set('views', path.join(__dirname, '/views'));
     app.set('view engine', 'pug');
 
+    const FileStore = require('session-file-store')(session);
+
     // Session manager
     this.session = session({
       secret: 'my-secret',
+      store: new FileStore(),
       cookie: {
         secure: false, // false for dev, true for prod
       },
@@ -48,13 +49,7 @@ export class ExpressServer {
     app.use(this.session);
 
     app.use('/users', usersRoutes);
-    app.use('/api', apiRoutes);
     app.use('*', indexRoutes);
-
-    // catch 404 and forward to error handler
-    /*app.use((req, res, next) => {
-      next(createError(404));
-    });*/
 
     // error handler
     app.use((err, req, res, _next) => {
@@ -68,18 +63,5 @@ export class ExpressServer {
     });
 
     this.app = app;
-
-    // authRoutes(app, store);
-
-    // HTTP server, needed for Socket.IO
-    /*this.http = require('http').Server(app);
-    const port = process.env.PORT || 3000;
-
-    app.set('port', port);
-    // start our simple server up on localhost:3000
-    this.server = this.http.listen(port, () => {
-      // tslint:disable-next-line: no-console
-      console.log('listening on *:' + port);
-    });*/
   }
 }

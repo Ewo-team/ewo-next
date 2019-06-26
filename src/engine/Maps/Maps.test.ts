@@ -18,7 +18,7 @@ describe('MapsTools', () => {
 
   const character1 = CharactersTools.factory(1, 'Test 1');
   const character2 = CharactersTools.factory(2, 'Test 2');
-  // const earth: Plan = { id: 'earth', name: 'Althian' };
+
   const earth = Plans.first() as Plan;
 
   // IMapsState = Map<string, List<Coord>>;

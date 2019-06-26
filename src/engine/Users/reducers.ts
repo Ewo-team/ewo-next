@@ -5,7 +5,7 @@ import { User } from '@models';
 import { List } from 'immutable';
 import { AnyAction } from 'redux';
 import { UsersActions } from './actions';
-import { UsersTools } from './UserTools';
+import { UsersTools } from './UsersTools';
 
 const INITIAL_STATE: IUsersState = List();
 const DATABASE = 'users';

@@ -14,7 +14,6 @@ const views = {
 
 /* GET users listing. */
 router.get('/', checkSignIn, (req, res) => {
-  console.log(req.session);
   res.render(views.index, { title: 'Dashboard', user: req.session.user.name });
 });
 
@@ -37,7 +36,6 @@ router.get('/logout', (req, res) => {
 /* POST users listing. */
 
 const userExist = (value, { req }) => {
-  console.log({ value });
   if (value === '') {
     return true;
   }
@@ -63,8 +61,6 @@ router.post(
 
     const errors = validationResult(req);
 
-    console.log(errors.array());
-
     if (!errors.isEmpty()) {
 
       const body = {
@@ -73,7 +69,6 @@ router.post(
       };
 
       const message = { flash: { type: 'alert-danger', messages: errors.array() }, ...body };
-      console.log(req.body);
 
       res.render(views.signup, message);
     } else {
@@ -112,14 +107,14 @@ router.post(
 
       res.render(views.login, message);
     } else {
-      const user = req.reduxStore.getState().Users.find(u => {
+      const user: User = req.reduxStore.getState().Users.find(u => {
         return u.name === req.body.username;
       });
 
       const hashed = hash(req.body.password);
       if (user && user.hash === hashed) {
-        req.session.user = user;
-        req.reduxStore.dispatch(login(user.username, req.sessionID));
+        req.session.user = { id: user.id, name: user.name };
+        req.reduxStore.dispatch(login(user.name, req.sessionID));
         res.redirect('/');
       } else {
         res.render(views.login, { flash: { type: 'alert-danger', message: 'Invalid credentials!' } });

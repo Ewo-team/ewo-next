@@ -18,5 +18,4 @@ export class SaveDBCommand implements Command {
       saveUserDB(),
     ];
   }
-
 }

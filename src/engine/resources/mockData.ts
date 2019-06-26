@@ -17,16 +17,3 @@ export const characterFull = CharactersTools.factory(3, 'Character in action', {
   currentSpeed: RaceTemplate.an.speed * 0.5,
   currentAgiliy: RaceTemplate.an.agility * 0.75,
 });
-
-/*
-   hp: 200,
-   speed: 6,
-   dexterity: 9,
-   strength: 20,
-   agility: 2,
-   insight: 5,
-   magic: 0,
-   regenHp: 5,
-   regenSpeed: 1,
-   regenAgility: 1,
-*/

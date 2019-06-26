@@ -86,5 +86,17 @@ export class MapsTools {
     return { x: newX, y: newY };
   }
 
-  // public foundType = { key: string, value: Coord } | null;
+  public static getCoordsFromAroundPosition = (center: Coord, plan: Plan, insight: number, store: Store<IStateServer>) => {
+    const xMin = center.x - insight;
+    const xMax = center.x + insight;
+
+    const yMin = center.y - insight;
+    const yMax = center.y + insight;
+
+    return store.getState().Maps.get(plan.id).filter(c =>
+      c.x >= xMin &&
+      c.x <= xMax &&
+      c.y >= yMin &&
+      c.y <= yMax);
+  }
 }
