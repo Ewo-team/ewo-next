@@ -22,7 +22,7 @@ yarn install
 2: Générez l'application React frontend
 
 ```bash
-webpack
+npm run client
 ```
 
 3: Lancez le serveur de dev
@@ -33,7 +33,7 @@ npm run watch
 
 Vous pouvez maintenant vous rendre sur http://localhost:3000 pour accéder à l'application. 
 
-Vous pourrez directement vous connecter avec le compte admin/admin
+Vous devrez créer un compte utilisateur et des personnages (création en cours d'implémentation) 
 
 __Architecture :__
 
