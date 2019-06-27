@@ -8,21 +8,18 @@ import { Infos } from './Infos';
 import { States } from './States';
 import { Views } from './Views';
 
-require('./Game.scss');
-
-export interface GameProps {
+export interface CharacterPageProps {
   selectedCharacter: number;
   loaded: boolean;
   loading: boolean;
   error?: string;
 }
 
-export interface GameComponentProps extends GameProps {
+export interface CharacterPageComponentProps extends CharacterPageProps {
   selectCharacter(mat: number);
-  //loadView(mat: number);
 }
 
-export class GameComponent extends React.Component<GameComponentProps> {
+export class CharacterPageComponent extends React.Component<CharacterPageComponentProps> {
   public render() {
 
     const { loaded, loading, error } = this.props;
@@ -39,24 +36,23 @@ export class GameComponent extends React.Component<GameComponentProps> {
       return <div>Vous n'êtes pas connecté</div>;
     }
 
-    return <div className="Game">
-      <Infos />
-      <Actions />
-      <States />
-      <Views />
-    </div>;
+    return (
+      <div className="Game">
+        <Infos />
+        <Actions />
+        <States />
+        <Views />
+      </div>
+    );
   }
 
   public componentDidMount() {
-    console.log({ props: this.props });
     this.props.selectCharacter(this.props.selectedCharacter);
-    //this.props.loadView(this.props.selectedCharacter);
   }
 
-  public shouldComponentUpdate(nextProps: GameComponentProps) {
+  public shouldComponentUpdate(nextProps: CharacterPageComponentProps) {
     if (nextProps.selectedCharacter !== this.props.selectedCharacter) {
       this.props.selectCharacter(nextProps.selectedCharacter);
-      //this.props.loadView(this.props.selectedCharacter);
       return false;
     }
     return true;
@@ -71,7 +67,6 @@ const mapStateToProps = (state: IStateFrontend) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
   selectCharacter: (mat) => dispatch(selectCharacter(mat)),
-  /*loadView: (mat) => dispatch(loadView(mat)),*/
 });
 
-export const Game = connect(mapStateToProps, mapDispatchToProps)(GameComponent) as React.StatelessComponent<GameProps>;
+export const CharacterPage = connect(mapStateToProps, mapDispatchToProps)(CharacterPageComponent) as React.StatelessComponent<CharacterPageProps>;

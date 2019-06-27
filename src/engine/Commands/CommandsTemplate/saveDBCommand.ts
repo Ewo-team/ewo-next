@@ -1,7 +1,6 @@
 import { saveDatabase as saveUserDB } from '@engine/Users/actions';
 import { Command, CommandList, CommandStatus } from '../Command';
 
-// tslint:disable-next-line: no-empty-interface
 export class SaveDBCommand implements Command {
   public payload: void;
   public readonly command = CommandList.saveDB;

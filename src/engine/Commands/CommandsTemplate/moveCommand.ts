@@ -1,4 +1,4 @@
-import { characterMove } from '@engine/Characters/actions';
+import { move } from '@engine/Characters/actions';
 import { CharactersTools } from '@engine/Characters/CharacterTools';
 import { MapsTools } from '@engine/Maps/MapsTools';
 import { Character, Direction } from '@models';
@@ -17,7 +17,6 @@ export interface MoveMeta {
 
 const costMove = 1;
 
-// tslint:disable-next-line: no-empty-interface
 export class MoveCommand implements Command {
   public readonly command = CommandList.move;
   public readonly payload: MovePayload;
@@ -81,7 +80,7 @@ export class MoveCommand implements Command {
   }
 
   public execute(meta: MoveMeta) {
-    return [characterMove(meta.Character, meta.x, meta.y, costMove)];
+    return [move(meta.Character, meta.x, meta.y, costMove)];
   }
 
 }

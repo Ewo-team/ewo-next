@@ -1,17 +1,18 @@
 
-@import "normalize";
 @import "colors";
 @import "font";
 
-$fonttext: DejaVuSansBook;
-$fonttextB: DejaVuSansBold;
-$fonttextI: DejaVuSansOblique;
-$fonttextBI: DejaVuSansBoldOblique;
+@import '../../../client/App.scss';
 
-$fonttitle: DejaVuSerifBook;
-$fonttitleB: DejaVuSerifBold;
-$fonttitleI: DejaVuSerifOblique;
-$fonttitleBI: DejaVuSerifBoldOblique;
+$fonttext: DejaVuSansBook, sans-serif;
+$fonttextB: DejaVuSansBold, sans-serif;
+$fonttextI: DejaVuSansOblique, sans-serif;
+$fonttextBI: DejaVuSansBoldOblique, sans-serif;
+
+$fonttitle: DejaVuSerifBook, serif;
+$fonttitleB: DejaVuSerifBold, serif;
+$fonttitleI: DejaVuSerifOblique, serif;
+$fonttitleBI: DejaVuSerifBoldOblique, serif;
 
 html, body {
     height: 100%;
@@ -149,8 +150,8 @@ body {
 }
 
 #content_bg, #content_bg_jeu, #footer {
-	min-width: 980px;
-	max-width: 1500px;
+    min-width: 980px;
+    max-width: 1500px;
     width: 80%;
     padding: 30px;
     padding-top: 0px;

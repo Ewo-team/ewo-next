@@ -18,9 +18,6 @@ export const checkCharIsOwnedRest = (req, res, next) => {
 
     if (!req.session.charOwned) {
       const user: User = req.session.user;
-      /*const characters: List<Character> = req.reduxStore.getState().Characters.filter(c => c.owner === user.id);
-
-      req.session.charOwned = characters.toList().map(c => c.mat).toArray();*/
       req.session.charOwned = UsersTools.ownedChar(req.reduxStore, user);
     }
 

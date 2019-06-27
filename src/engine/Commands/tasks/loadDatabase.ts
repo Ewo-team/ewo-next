@@ -5,13 +5,7 @@ import * as path from 'path';
 
 declare var __basedir;
 
-export interface ILoadDatabaseParameters {
-  databaseName: string;
-  modelHydrater: (item: any, additionnalData?: any) => any;
-  additionnalData?: any;
-}
-
-const loadDatabase = <V>({ databaseName, modelHydrater, additionnalData }: ILoadDatabaseParameters): Map<string, V> | List<V> => {
+const loadDatabase = <V>(databaseName: string, modelHydrater: (item: any, additionnalData?: any) => any, additionnalData?: any): Map<string, V> | List<V> => {
 
   const database = path.join(__basedir, './data', `${databaseName}.json`);
 
@@ -47,7 +41,6 @@ const loadDatabase = <V>({ databaseName, modelHydrater, additionnalData }: ILoad
       const current = data.data[key];
       mapOfArray[key] = List((current as any[]).map((item, index, array) => {
         const percent = Math.floor(((index + 1) / array.length) * 100);
-        // console.log({ index, length: array.length, percent, percentOld });
         if (percent !== percentOld) {
           console.log(`loading... ${percent}%`);
           percentOld = percent;
@@ -60,7 +53,7 @@ const loadDatabase = <V>({ databaseName, modelHydrater, additionnalData }: ILoad
   }
 
   const map = {};
-  Object.keys(data.data).forEach((key: string, index: number, array) => {
+  Object.keys(data.data).forEach((key: string, index, array) => {
     const percent = Math.floor(((index + 1) / array.length) * 100);
     console.log({ index, length: array.length });
     if (percent !== percentOld) {
@@ -73,8 +66,8 @@ const loadDatabase = <V>({ databaseName, modelHydrater, additionnalData }: ILoad
 
 };
 
-export const loadDatabaseMap = <V>(props: ILoadDatabaseParameters): Map<string, V> =>
-  loadDatabase(props) as Map<string, V>;
+export const loadDatabaseMap = <V>(databaseName: string, modelHydrater: (item: any, additionnalData?: any) => any, additionnalData?: any): Map<string, V> =>
+  loadDatabase(databaseName, modelHydrater, additionnalData) as Map<string, V>;
 
-export const loadDatabaseList = <V>(props: ILoadDatabaseParameters): List<V> =>
-  loadDatabase(props) as List<V>;
+export const loadDatabaseList = <V>(databaseName: string, modelHydrater: (item: any, additionnalData?: any) => any, additionnalData?: any): List<V> =>
+  loadDatabase(databaseName, modelHydrater, additionnalData) as List<V>;

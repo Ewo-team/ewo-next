@@ -89,18 +89,21 @@ export const Logger = {
       const key = rest[0].replace(/%c/g, '').trim();
       const render = Logger.renderToConsole(rest[2], options.rightArrow);
 
-      switch (key) {
-        case 'prev state': Logger.prevState = render; break;
-        case 'action': Logger.actionDisplay = render; break;
-        case 'next state': Logger.nextState = render; break;
+      if (key === 'prev state') {
+        Logger.prevState = render;
+      } else if (key === 'action') {
+        Logger.actionDisplay = render;
+      } else if (key === 'next state') {
+        Logger.nextState = render;
       }
+
     }
   },
 
   renderToConsole: (obj, rightArrow) => {
     try {
       return Logger.topLevel(obj, rightArrow);
-    } catch (e) {
+    } catch (_e) {
       return obj;
     }
   },

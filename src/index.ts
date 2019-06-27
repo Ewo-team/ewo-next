@@ -2,9 +2,9 @@
   Server Index File
 */
 import { loadDatabases } from '@engine/actions';
+import { RunCommands } from '@engine/Commands/tasks';
 import { makeStore, store } from '@engine/store';
 import { GameServer } from '@server/server';
-import { RunCommands } from '@tasks';
 import * as path from 'path';
 
 require('dotenv').config();

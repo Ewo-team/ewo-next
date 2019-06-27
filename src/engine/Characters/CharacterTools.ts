@@ -1,6 +1,7 @@
+import { capitalizeFirstLetter } from '@engine/Helpers';
 import { IStateServer } from '@engine/reducers';
 import { RaceTemplate } from '@engine/resources';
-import { Character, CharacterPosture, GradeTemplate, RaceFromString, Races } from '@models';
+import { Character, CharacterPosture, CharacterStates, GradeTemplate, RaceFromString, Races } from '@models';
 import { Store } from 'redux';
 
 const levelHpModifier = 1;
@@ -44,7 +45,7 @@ export class CharactersTools {
       CharactersTools.properties.forEach((property) => {
         if (values[property] !== undefined) {
           character[property] = values[property];
-        } else {
+        } else if (CharactersTools.defaultValues[property] !== undefined) {
           character[property] = CharactersTools.defaultValues[property];
         }
       });
@@ -53,7 +54,9 @@ export class CharactersTools {
       character.race = Races.NoRace;
 
       CharactersTools.properties.forEach((property) => {
-        character[property] = CharactersTools.defaultValues[property];
+        if (CharactersTools.defaultValues[property] !== undefined) {
+          character[property] = CharactersTools.defaultValues[property];
+        }
       });
     }
 
@@ -94,58 +97,50 @@ export class CharactersTools {
 
   public static updateCharacter(character: Character): Character {
 
+    // tslint:disable-next-line: no-parameter-reassignment
+    character = CharactersTools.updateBuffs(character);
+
     character.maxHp =
-      (character.levelHp * levelHpModifier) +
-      RaceTemplate[character.race].hp + GradeTemplate(character.grade).hp;
+      (character.levelHp * levelHpModifier) + RaceTemplate[character.race].hp + GradeTemplate(character.grade).hp;
     character.hp = character.maxHp + character.modifHp;
 
     character.maxRegenHp =
-      (character.levelRegenHp * levelRegenHpModifier) +
-      RaceTemplate[character.race].regenHp + GradeTemplate(character.grade).regenHp;
+      (character.levelRegenHp * levelRegenHpModifier) + RaceTemplate[character.race].regenHp + GradeTemplate(character.grade).regenHp;
     character.regenHp = character.maxRegenHp + character.modifRegenHp;
 
     character.maxSpeed =
-      (character.levelSpeed * levelSpeedModifier) +
-      RaceTemplate[character.race].speed + GradeTemplate(character.grade).speed;
+      (character.levelSpeed * levelSpeedModifier) + RaceTemplate[character.race].speed + GradeTemplate(character.grade).speed;
     character.speed = character.maxSpeed + character.modifSpeed;
 
     character.maxRegenSpeed =
-      (character.levelRegenSpeed * levelRegenSpeedModifier) +
-      RaceTemplate[character.race].regenSpeed + GradeTemplate(character.grade).regenSpeed;
+      (character.levelRegenSpeed * levelRegenSpeedModifier) + RaceTemplate[character.race].regenSpeed + GradeTemplate(character.grade).regenSpeed;
     character.regenSpeed = character.maxRegenSpeed + character.modifRegenSpeed;
 
     character.dexterity =
-      (character.levelDexterity * levelDexterityModifier) +
-      RaceTemplate[character.race].dexterity + GradeTemplate(character.grade).dexterity;
+      (character.levelDexterity * levelDexterityModifier) + RaceTemplate[character.race].dexterity + GradeTemplate(character.grade).dexterity;
     character.currentDexterity = character.dexterity + character.modifDexterity;
 
     character.strength =
-      (character.levelStrength * levelStrengthModifier) +
-      RaceTemplate[character.race].strength + GradeTemplate(character.grade).strength;
+      (character.levelStrength * levelStrengthModifier) + RaceTemplate[character.race].strength + GradeTemplate(character.grade).strength;
     character.currentStrength = character.strength + character.modifStrength;
 
     character.insight =
-      (character.levelInsight * levelInsightModifier) +
-      RaceTemplate[character.race].insight + GradeTemplate(character.grade).insight;
+      (character.levelInsight * levelInsightModifier) + RaceTemplate[character.race].insight + GradeTemplate(character.grade).insight;
     character.currentInsight = character.insight + character.modifInsight;
 
     character.maxAgility =
-      (character.levelAgility * levelAgilityModifier) +
-      RaceTemplate[character.race].agility + GradeTemplate(character.grade).agility;
+      (character.levelAgility * levelAgilityModifier) + RaceTemplate[character.race].agility + GradeTemplate(character.grade).agility;
     character.agility = character.maxAgility + character.modifAgility;
 
     character.maxRegenAgility =
-      (character.levelRegenAgility * levelRegenAgilityModifier) +
-      RaceTemplate[character.race].regenAgility + GradeTemplate(character.grade).regenAgility;
+      (character.levelRegenAgility * levelRegenAgilityModifier) + RaceTemplate[character.race].regenAgility + GradeTemplate(character.grade).regenAgility;
     character.regenAgility = character.maxRegenAgility + character.modifRegenAgility;
 
     character.magic =
-      (character.levelMagic * levelMagicModifier) +
-      RaceTemplate[character.race].magic + GradeTemplate(character.grade).magic;
+      (character.levelMagic * levelMagicModifier) + RaceTemplate[character.race].magic + GradeTemplate(character.grade).magic;
     character.currentMagic = character.magic + character.modifMagic;
 
     return character;
-
   }
 
   private static readonly defaultValues = {
@@ -154,8 +149,12 @@ export class CharactersTools {
       minor: 0,
     },
     motd: '',
-    minutes: 0,
     owner: 0,
+    posture: CharacterPosture.Default,
+    xp: 0,
+    ep: 0,
+    buffs: [],
+    maps: 'earth',
     currentHp: 1,
     levelHp: 0,
     levelRegenHp: 0,
@@ -169,11 +168,6 @@ export class CharactersTools {
     levelAgility: 0,
     levelRegenAgility: 0,
     levelMagic: 0,
-    posture: CharacterPosture.Default,
-    xp: 0,
-    ep: 0,
-    buffs: [],
-    maps: 'earth',
   };
 
   private static readonly properties = [
@@ -183,6 +177,11 @@ export class CharactersTools {
     'motd',
     'minutes',
     'owner',
+    'posture',
+    'xp',
+    'ep',
+    'buffs',
+    'maps',
     'currentHp',
     'levelHp',
     'levelRegenHp',
@@ -196,10 +195,51 @@ export class CharactersTools {
     'levelAgility',
     'levelRegenAgility',
     'levelMagic',
-    'posture',
-    'xp',
-    'ep',
-    'buffs',
-    'maps',
   ];
+
+  private static updateBuffs(character: Character): Character {
+
+    const bmDefault = {
+      [CharacterStates.Agility]: 0,
+      [CharacterStates.Dexterity]: 0,
+      [CharacterStates.Hp]: 0,
+      [CharacterStates.Insight]: 0,
+      [CharacterStates.Magic]: 0,
+      [CharacterStates.RegenAgility]: 0,
+      [CharacterStates.RegenHp]: 0,
+      [CharacterStates.RegenSpeed]: 0,
+      [CharacterStates.Speed]: 0,
+      [CharacterStates.Strength]: 0,
+    };
+
+    const buffCalc = character.buffs.reduce(
+      (total, buff) => {
+
+        total[buff.operation][buff.state] += buff.value;
+
+        return total;
+      },
+      {
+        bonus: bmDefault,
+        malus: bmDefault,
+      });
+
+    Object.keys(buffCalc.bonus).forEach(s => {
+      // s = CharacterStates
+      const bonus = buffCalc.bonus[s];
+      const malus = buffCalc.malus[s];
+      const modif = bonus - malus;
+      const state = capitalizeFirstLetter(s);
+
+      const stateBonus = `bonus${state}`;
+      const stateMalus = `malus${state}`;
+      const stateModif = `modif${state}`;
+
+      character[stateBonus] = bonus;
+      character[stateMalus] = malus;
+      character[stateModif] = modif;
+    });
+
+    return character;
+  }
 }

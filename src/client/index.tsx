@@ -4,34 +4,41 @@ import io from 'socket.io-client';
 import { App } from './App';
 import { Provider } from './provider';
 import { startReceiver } from './socket/receiver';
+import { action, actionBatch, update } from './socket/sender';
 import { createStore } from './store';
+import { Actions } from './actions';
 
 const rootElement = document.getElementById('root');
-export const frontendStore = createStore();
+export const socket = io('/');
+
+// Pas la meilleure solution pour envoyer à Socket.IO, mais fera l'affaire pour le moment
+const socketMiddleware = _store => next => reduxAction => {
+  if (reduxAction.type === Actions.SOCKET_ACTION) {
+    action(reduxAction.payload);
+  }
+  if (reduxAction.type === Actions.SOCKET_ACTIONS) {
+    actionBatch(reduxAction.payload);
+  }
+  if (reduxAction.type === Actions.SOCKET_UPDATE) {
+    update(reduxAction.payload);
+  }
+
+  next(reduxAction);
+}
+
+export const frontendStore = createStore(socketMiddleware);
 
 if (rootElement) {
   render(
-    <Provider store={frontendStore}>
-      <App />
-    </Provider>,
+    (
+      <Provider store={frontendStore}>
+        <App />
+      </Provider>
+    ),
     rootElement,
   );
 }
 
-export const socket = io('/');
+
 
 startReceiver(frontendStore);
-
-// const socket = io('http://localhost:3000');
-/*const socket = io('/');
-
-socket.on('characters', (characters) => {
-  frontendStore.dispatch(refreshCharacters(JSON.parse(characters)));
-});
-
-socket.on('maps', (maps) => {
-  const mapsObj = JSON.parse(maps);
-  Object.keys(mapsObj).forEach(mat => {
-    frontendStore.dispatch(refreshMaps(Number(mat), mapsObj[mat]));
-  });
-});*/

@@ -5,9 +5,12 @@ export enum Actions {
   REFRESH_CHARACTERS = 'REFRESH_CHARACTERS',
   REFRESH_MAPS = 'REFRESH_MAPS',
   SET_SELECTED_CHARACTER = 'SET_SELECTED_CHARACTER',
+  SOCKET_ACTION = 'SOCKET_ACTION',
+  SOCKET_ACTIONS = 'SOCKET_ACTIONS',
+  SOCKET_UPDATE = 'SOCKET_UPDATE'
 }
 
-export const refreshCharacters = (characters: Character[]) => ({
+export const refreshCharacters = (characters: Record<string, Character>) => ({
   type: Actions.REFRESH_CHARACTERS,
   characters,
 });

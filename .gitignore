@@ -83,3 +83,13 @@ data
 
 # Session file
 sessions
+
+# test reports
+test/lcov-report
+test/cobertura-coverage.xml
+test/coverage-final.json
+test/junit.xml
+test/lcov.info
+
+# CI
+.scannerwork

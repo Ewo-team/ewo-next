@@ -21,10 +21,12 @@ stories.add('InfoBar all states', withPropsCombinations(
   },
 ));
 
-stories.add('InfoBar', () => <InfoBar
-  message={text('Message', 'message', 'Bar')}
-  inverted={boolean('Inverted', false, 'Bar')}
-/>);
+stories.add('InfoBar', () => (
+  <InfoBar
+    message={text('Message', 'message', 'Bar')}
+    inverted={boolean('Inverted', false, 'Bar')}
+  />
+));
 
 stories.add('SimpleBar all states', withPropsCombinations(
   SimpleBar,
@@ -35,11 +37,13 @@ stories.add('SimpleBar all states', withPropsCombinations(
   },
 ));
 
-stories.add('SimpleBar', () => <SimpleBar
-  actual={number('Actual', 0, { range: true, min: 0, max: 5, step: 1 }, 'Bar')}
-  message={text('Message', '', 'Bar')}
-  inverted={boolean('Inverted', false, 'Bar')}
-/>);
+stories.add('SimpleBar', () => (
+  <SimpleBar
+    actual={number('Actual', 0, { range: true, min: 0, max: 5, step: 1 }, 'Bar')}
+    message={text('Message', '', 'Bar')}
+    inverted={boolean('Inverted', false, 'Bar')}
+  />
+));
 
 stories.add('DoubleBar all states', withPropsCombinations(
   DoubleBar,
@@ -62,9 +66,11 @@ stories.add('DoubleBar colors', withPropsCombinations(
   },
 ));
 
-stories.add('DoubleBar', () => <DoubleBar
-  actual={number('Actual', 0, { range: true, min: 0, max: 10, step: 1 }, 'Bar')}
-  max={number('Max', 10, { range: true, min: 0, max: 10, step: 1 }, 'Bar')}
-  inverted={boolean('Inverted', false, 'Bar')}
-  large={boolean('Large', false, 'Bar')}
-/>);
+stories.add('DoubleBar', () => (
+  <DoubleBar
+    actual={number('Actual', 0, { range: true, min: 0, max: 10, step: 1 }, 'Bar')}
+    max={number('Max', 10, { range: true, min: 0, max: 10, step: 1 }, 'Bar')}
+    inverted={boolean('Inverted', false, 'Bar')}
+    large={boolean('Large', false, 'Bar')}
+  />
+));

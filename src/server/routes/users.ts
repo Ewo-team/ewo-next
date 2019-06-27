@@ -44,6 +44,7 @@ const userExist = (value, { req }) => {
   }) === undefined;
 };
 
+const errorFlash = 'alert-danger';
 router.post(
   '/signup',
   [
@@ -68,7 +69,7 @@ router.post(
         email: req.body.email,
       };
 
-      const message = { flash: { type: 'alert-danger', messages: errors.array() }, ...body };
+      const message = { flash: { type: errorFlash, messages: errors.array() }, ...body };
 
       res.render(views.signup, message);
     } else {
@@ -76,7 +77,7 @@ router.post(
 
       const hashed = hash(password);
 
-      const newUser: User = { name: req.body.username, hash: hashed, email: req.body.email } as User;
+      const newUser = { name: req.body.username, hash: hashed, email: req.body.email } as User;
       req.session.user = newUser;
 
       newUser.token = req.sessionID;
@@ -103,7 +104,7 @@ router.post(
         password: req.body.password,
       };
 
-      const message = { flash: { type: 'alert-danger', messages: errors.array() }, ...body };
+      const message = { flash: { type: errorFlash, messages: errors.array() }, ...body };
 
       res.render(views.login, message);
     } else {
@@ -117,7 +118,7 @@ router.post(
         req.reduxStore.dispatch(login(user.name, req.sessionID));
         res.redirect('/');
       } else {
-        res.render(views.login, { flash: { type: 'alert-danger', message: 'Invalid credentials!' } });
+        res.render(views.login, { flash: { type: errorFlash, message: 'Invalid credentials!' } });
       }
     }
 

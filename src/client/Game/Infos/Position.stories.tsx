@@ -13,21 +13,25 @@ const heaven = Plans.find(p => p.id === 'heaven');
 
 stories.addDecorator(withKnobs);
 
-stories.add('basic Position', () => <PositionComponent
-  character={{
-    position: {
-      plan: select(
-        'Plan',
-        {
-          earth,
-          hell,
-          heaven,
-        },
-        earth),
-      x: number('Position X', 0),
-      y: number('Position Y', 0),
-    },
-  }}
-/>);
+stories.add('basic Position', () => (
+  <PositionComponent
+    character={{
+      position: {
+        plan: select(
+          'Plan',
+          {
+            earth,
+            hell,
+            heaven,
+          },
+          earth),
+        coord: {
+          x: number('Position X', 0),
+          y: number('Position Y', 0),
+        }
+      },
+    }}
+  />
+));
 
 stories.add('Position is empty', () => <PositionComponent character={{}} />);

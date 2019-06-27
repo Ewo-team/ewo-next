@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-require('./Bar.scss');
-
 export type BarColors = 'green' | 'red' | 'blue' | 'yellow' | 'gray' | 'none';
 
 export interface BarProps {
@@ -42,16 +40,12 @@ export interface DoubleBarProps {
 
 // InfoBar are always green
 export const InfoBar = ({ inverted, ...rest }: InfoBarProps) => !inverted ?
-  <Bar
-    ratio={100}
-    actual={1}
-    {...rest}
-  /> :
-  <Bar
-    ratio={0}
-    actual={0}
-    {...rest}
-  />;
+  (
+    <Bar ratio={100} actual={1} {...rest} />
+  ) :
+  (
+    <Bar ratio={0} actual={0} {...rest} />
+  );
 
 // SimpleBar has two state : full (any value other than 0) and empty (0)
 export const SimpleBar = ({ actual, message, inverted, ...rest }: SimpleBarProps) => {
@@ -66,12 +60,14 @@ export const SimpleBar = ({ actual, message, inverted, ...rest }: SimpleBarProps
     msg = String(actual);
   }
 
-  return <Bar
-    actual={actual}
-    ratio={ratio}
-    message={msg}
-    {...rest}
-  />;
+  return (
+    <Bar
+      actual={actual}
+      ratio={ratio}
+      message={msg}
+      {...rest}
+    />
+  );
 };
 
 // DoubleBar receive two value, and display these value
@@ -80,22 +76,26 @@ export const DoubleBar = ({ actual, max, inverted, ...rest }: DoubleBarProps) =>
   const message = `${actual}/${max}`;
 
   if (inverted) {
-    return <Bar
-      actual={actual}
-      max={max}
-      ratio={100 - ratio}
-      message={message}
-      {...rest}
-    />;
+    return (
+      <Bar
+        actual={actual}
+        max={max}
+        ratio={100 - ratio}
+        message={message}
+        {...rest}
+      />
+    );
   }
 
-  return <Bar
-    actual={actual}
-    max={max}
-    ratio={ratio}
-    message={message}
-    {...rest}
-  />;
+  return (
+    <Bar
+      actual={actual}
+      max={max}
+      ratio={ratio}
+      message={message}
+      {...rest}
+    />
+  );
 };
 
 const colorToClass = (color: BarColors): string | null => {
@@ -119,27 +119,31 @@ const colorToClass = (color: BarColors): string | null => {
 export const Bar = ({ ratio, actual, min, max, message, large, backgroundColor, valueColor }: BarProps) => {
   let color = valueColor ? colorToClass(valueColor) : colorToClass('green');
   const fillRatio = 100 - ratio;
-  if (!valueColor && large) {
-    if (ratio > 30 && ratio < 50) {
-      color = colorToClass('yellow');
-    }
+  if (!valueColor && large && ratio > 30 && ratio < 50) {
+    color = colorToClass('yellow');
   }
 
   const background = backgroundColor ? colorToClass(backgroundColor) : colorToClass('red');
 
-  return <div className="States__Bar progress">
-    <div
-      className={`progress-bar ${color}`}
-      role="progressbar"
-      style={{ width: `${ratio}%` }} aria-valuenow={actual}
-      aria-valuemin={min || 0}
-      aria-valuemax={max || actual}></div>
-    {fillRatio > 0 && background !== null ? <div
-      className={`progress-bar ${background}`}
-      role="progressbar"
-      style={{ width: `${fillRatio}%` }} aria-valuenow={fillRatio}
-      aria-valuemin={min || 0}
-      aria-valuemax={max || actual}></div> : null}
-    <span className="Label">{message}</span>
-  </div>;
+  return (
+    <div className="States__Bar progress">
+      <div
+        className={`progress-bar ${color}`}
+        role="progressbar"
+        style={{ width: `${ratio}%` }}
+        aria-valuenow={actual}
+        aria-valuemin={min || 0}
+        aria-valuemax={max || actual}
+      />
+      {fillRatio > 0 && background !== null ? <div
+        className={`progress-bar ${background}`}
+        role="progressbar"
+        style={{ width: `${fillRatio}%` }}
+        aria-valuenow={fillRatio}
+        aria-valuemin={min || 0}
+        aria-valuemax={max || actual}
+      /> : null}
+      <span className="Label">{message}</span>
+    </div>
+  );
 };

@@ -30,11 +30,11 @@ module.exports = async ({ config, mode }) => {
     ]
   });
 
-  /*config.resolve.alias = {
+  config.resolve.alias = {
     '@client': path.resolve(include, 'src/client/'),
     '@engine': path.resolve(include, 'src/engine/'),
     '@models': path.resolve(include, 'src/engine/models/')
-  }*/
+  }
 
   /*config.module.rules.push({
     test: /\.scss$/,

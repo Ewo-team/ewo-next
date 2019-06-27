@@ -1,8 +1,9 @@
 import { SaveDBCommand } from '@commands/saveDBCommand';
-import { addLazyCommand, Command } from '@engine/Commands/Command';
+import { Command } from '@engine/Commands/Command';
 import { store } from '@engine/store';
 import * as async from 'async';
 import { List } from 'immutable';
+import { addLazyCommand } from '../CommandsTools';
 
 export class RunCommands {
 
@@ -26,26 +27,37 @@ export class RunCommands {
     return RunCommands.instance;
   }
 
+  public static resolveCommand(current: Command, callback?: () => void) {
+    console.log(`starting task ${current.command}`);
+    const test = current.eligible(current.payload, store);
+    const meta = typeof test === 'boolean' ? current.payload : { ...test.meta, ...current.payload };
+    const eligible = typeof test === 'boolean' ? test : test.result;
+    console.log({ test, meta, eligible });
+    if (eligible) {
+      const actions = current.execute(meta, store);
+      actions.forEach(action => {
+        store.dispatch(action);
+      });
+    }
+
+    if (callback) {
+      callback();
+    }
+
+    if (current.callback) {
+      current.callback();
+    }
+
+    console.log(`ending task ${current.command}`);
+  }
+
   private static instance: RunCommands = null;
 
   private constructor() {
 
     RunCommands.queueCommand = async.queue(
       (current: Command, callback) => {
-        console.log(`starting task ${current.command}`);
-        const test = current.eligible(current.payload, store);
-        const meta = typeof test === 'boolean' ? current.payload : { ...test.meta, ...current.payload };
-        const eligible = typeof test === 'boolean' ? test : test.result;
-        console.log({ test, meta, eligible });
-        if (eligible) {
-          const actions = current.execute(meta, store);
-          actions.forEach(action => {
-            store.dispatch(action);
-          });
-        }
-
-        callback();
-        console.log(`ending task ${current.command}`);
+        RunCommands.resolveCommand(current, callback);
       },
       1);
 

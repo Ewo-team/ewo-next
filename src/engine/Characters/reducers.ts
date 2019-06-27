@@ -1,12 +1,13 @@
+import * as Tasks from '@engine/Commands/tasks';
 import { IMapsState } from '@engine/Maps/reducers';
 import { Plans } from '@engine/resources';
 import { Character } from '@models';
-import * as Tasks from '@tasks';
 import { Map } from 'immutable';
 import { AnyAction } from 'redux';
 import { CharacterActions, CharactersActions } from './actions';
 import { CharactersTools } from './CharacterTools';
 
+// tslint:disable-next-line: no-unnecessary-type-annotation
 const INITIAL_STATE: ICharactersState = Map();
 const DATABASE = 'characters';
 
@@ -15,8 +16,7 @@ export type ICharactersState = Map<string, Character>;
 export const charactersReducer = (state: ICharactersState = INITIAL_STATE, action: AnyAction) => {
   switch (action.type) {
     case CharactersActions.LOAD_DATABASE:
-      const load = Tasks.loadDatabaseMap({ databaseName: DATABASE, modelHydrater: CharactersTools.hydrater }) as ICharactersState;
-      return load;
+      return Tasks.loadDatabaseMap(DATABASE, CharactersTools.hydrater);
     case CharactersActions.SAVE_DATABASE:
       Tasks.saveDatabaseMap(DATABASE, state);
       return state;
@@ -47,15 +47,6 @@ export const charactersReducer = (state: ICharactersState = INITIAL_STATE, actio
       char.position.coord.y = action.newY;
 
       return state.set(String(char.mat), char);
-    // case CharacterActions.MOVE:
-    /*return state.update(action.maps, (map) => {
-      const coordIndex = map.findIndex(c => c.mat === action.character.mat);
-      return map.update(coordIndex, (coord) => {
-        coord.x = action.newX;
-        coord.y = action.newY;
-        return coord;
-      });
-    });*/
     default:
       return state;
   }

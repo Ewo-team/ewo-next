@@ -5,8 +5,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { DoubleBar, InfoBar, SimpleBar } from './Bar';
 
-require('./States.scss');
-
 // tslint:disable-next-line: no-empty-interface
 export interface StatesProps {
   character: Character;
@@ -23,8 +21,6 @@ export const StatesComponent = (props: StatesProps) => {
   if (character === undefined) {
     return null;
   }
-
-  console.log({ character });
 
   const bmDefault = {
     def: 0,
@@ -44,41 +40,43 @@ export const StatesComponent = (props: StatesProps) => {
     },
     bmDefault);
 
-  return <div className="States Game__Container">
-    <div className="Title">States</div>
-    <div>Px {character.xp} | Pi {character.ep}</div>
-    <div>(Rang 0)</div>
+  return (
+    <div className="States Game__Container">
+      <div className="Title">States</div>
+      <div>Px {character.xp} | Pi {character.ep}</div>
+      <div>(Rang 0)</div>
 
-    <div>Pv</div>
-    <DoubleBar actual={character.currentHp} max={character.hp} large />
+      <div>Pv</div>
+      <DoubleBar actual={character.currentHp} max={character.hp} large={true} />
 
-    <div>Malus</div>
-    <SimpleBar actual={Math.abs(bonusMalus.def)} inverted />
+      <div>Malus</div>
+      <SimpleBar actual={Math.abs(bonusMalus.def)} inverted={true} />
 
-    <div>Pa</div>
-    <DoubleBar actual={character.currentAgility} max={character.agility} />
+      <div>Pa</div>
+      <DoubleBar actual={character.currentAgility} max={character.agility} />
 
-    <div>Mouv</div>
-    <DoubleBar actual={character.currentSpeed} max={character.speed} />
+      <div>Mouv</div>
+      <DoubleBar actual={character.currentSpeed} max={character.speed} />
 
-    <div>Res Magique</div>
-    <SimpleBar actual={bonusMalus.resMagie} inverted backgroundColor="blue" />
+      <div>Res Magique</div>
+      <SimpleBar actual={bonusMalus.resMagie} inverted={true} backgroundColor="blue" />
 
-    <div>Récupération Pv</div>
-    <DoubleBar actual={character.regenHp} max={character.maxRegenHp} />
+      <div>Récupération Pv</div>
+      <DoubleBar actual={character.regenHp} max={character.maxRegenHp} />
 
-    <div>Récup'Malus</div>
-    <DoubleBar actual={character.regenAgility} max={character.maxRegenAgility} />
+      <div>Récup'Malus</div>
+      <DoubleBar actual={character.regenAgility} max={character.maxRegenAgility} />
 
-    <div>Force</div>
-    <DoubleBar actual={character.currentStrength} max={character.strength} />
+      <div>Force</div>
+      <DoubleBar actual={character.currentStrength} max={character.strength} />
 
-    <div>Perception</div>
-    <DoubleBar actual={character.currentInsight} max={character.insight} />
+      <div>Perception</div>
+      <DoubleBar actual={character.currentInsight} max={character.insight} />
 
-    <div>Niveau de magie</div>
-    <InfoBar message={String(character.currentMagic)} />
-  </div>;
+      <div>Niveau de magie</div>
+      <InfoBar message={String(character.currentMagic)} />
+    </div>
+  );
 };
 
 export const States = connect(

@@ -32,10 +32,10 @@
         "engine/tasks/index.ts"
       ],
       "@tasks/*": [
-        "engine/tasks/*"
+        "engine/Commands/tasks/*"
       ],
       "@commands/*": [
-        "engine/Commands/CommandsTemplate/*",
+        "engine/Commands/CommandsTemplate/*"
       ],
       "@engine/*": [
         "engine/*"
@@ -46,6 +46,7 @@
     "./node_modules/@types/node/index.d.ts"
   ],
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "test/mock/*.ts"
   ]
 }

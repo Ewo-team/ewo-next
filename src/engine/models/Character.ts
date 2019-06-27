@@ -16,6 +16,19 @@ export const GradeTemplate = (_grade: CharacterGrade) => ({
   regenAgility: 0,
 });
 
+export enum CharacterStates {
+  Hp = 'hp',
+  RegenHp = 'regenHp',
+  Speed = 'speed',
+  RegenSpeed = 'regenSpeed',
+  Dexterity = 'dexterity',
+  Strength = 'strength',
+  Insight = 'insight',
+  Agility = 'agility',
+  RegenAgility = 'regenAgility',
+  Magic = 'magic',
+}
+
 export interface Character {
 
   mat: number;
@@ -31,96 +44,96 @@ export interface Character {
   owner: number;
 
   //#region HP
-  hp;
+  hp; // calculated
   currentHp;
-  maxHp;
+  maxHp; // calculated
   levelHp;
-  modifHp;
-  bonusHp;
-  malusHp;
+  modifHp; // calculated
+  bonusHp; // calculated
+  malusHp; // calculated
   //#endregion
 
   //#region Regen HP
-  regenHp;
-  maxRegenHp;
+  regenHp; // calculated
+  maxRegenHp; // calculated
   levelRegenHp;
-  modifRegenHp;
-  bonusRegenHp;
-  malusRegenHp;
+  modifRegenHp; // calculated
+  bonusRegenHp; // calculated
+  malusRegenHp; // calculated
   //#endregion
 
   //#region speed
-  speed;
+  speed; // calculated
   currentSpeed;
-  maxSpeed;
+  maxSpeed; // calculated
   levelSpeed;
-  modifSpeed;
-  bonusSpeed;
-  malusSpeed;
+  modifSpeed; // calculated
+  bonusSpeed; // calculated
+  malusSpeed; // calculated
   //#endregion
 
   //#region Regen speed
-  regenSpeed;
-  maxRegenSpeed;
+  regenSpeed; // calculated
+  maxRegenSpeed; // calculated
   levelRegenSpeed;
-  modifRegenSpeed;
-  bonusRegenSpeed;
-  malusRegenSpeed;
+  modifRegenSpeed; // calculated
+  bonusRegenSpeed; // calculated
+  malusRegenSpeed; // calculated
   //#endregion
 
   //#region dexterity
-  currentDexterity;
-  dexterity;
+  currentDexterity; // calculated
+  dexterity; // calculated
   levelDexterity;
-  modifDexterity;
-  bonusDexterity;
-  malusDexterity;
+  modifDexterity; // calculated
+  bonusDexterity; // calculated
+  malusDexterity; // calculated
   //#endregion
 
   //#region strength
-  currentStrength;
-  strength;
+  currentStrength; // calculated
+  strength; // calculated
   levelStrength;
-  modifStrength;
-  bonusStrength;
-  malusStrength;
+  modifStrength; // calculated
+  bonusStrength; // calculated
+  malusStrength; // calculated
   //#endregion
 
   //#region insight
-  currentInsight;
-  insight;
+  currentInsight; // calculated
+  insight; // calculated
   levelInsight;
-  modifInsight;
-  bonusInsight;
-  malusInsight;
+  modifInsight; // calculated
+  bonusInsight; // calculated
+  malusInsight; // calculated
   //#endregion
 
   //#region agility
-  agility;
+  agility; // calculated
   currentAgility;
-  maxAgility;
+  maxAgility; // calculated
   levelAgility;
-  modifAgility;
-  bonusAgility;
-  malusAgility;
+  modifAgility; // calculated
+  bonusAgility; // calculated
+  malusAgility; // calculated
   //#endregion
 
   //#region Regen agility
-  regenAgility;
-  maxRegenAgility;
+  regenAgility; // calculated
+  maxRegenAgility; // calculated
   levelRegenAgility;
-  modifRegenAgility;
-  bonusRegenAgility;
-  malusRegenAgility;
+  modifRegenAgility; // calculated
+  bonusRegenAgility; // calculated
+  malusRegenAgility; // calculated
   //#endregion
 
   //#region magic
-  currentMagic;
-  magic;
+  currentMagic; // calculated
+  magic; // calculated
   levelMagic;
-  modifMagic;
-  bonusMagic;
-  malusMagic;
+  modifMagic; // calculated
+  bonusMagic; // calculated
+  malusMagic; // calculated
   //#endregion
 
   posture: CharacterPosture;

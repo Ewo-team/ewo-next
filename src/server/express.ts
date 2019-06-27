@@ -25,7 +25,7 @@ export class ExpressServer {
     // Session manager
     this.session = session({
       secret: 'my-secret',
-      store: new FileStore(),
+      store: new FileStore({ logFn: () => { } }),
       cookie: {
         secure: false, // false for dev, true for prod
       },

@@ -1,0 +1,80 @@
+
+
+.Views {
+    grid-area: Views;
+
+    --case-height: 38px;
+    --case-width: 44px;
+    //--case-height: minmax(19px, 38px);
+    //--case-width: minmax(22px, 44px);
+
+    //--grid-size: calc((100vw * 0.6) - 332px - 2.5rem);
+    //width: var(--grid-size);
+    //height: var(--grid-size);
+
+    .grid {
+      display: grid;
+      margin: auto;
+      border: 1px solid #245d88;
+
+      .item {
+        width: var(--case-width);
+        height: var(--case-height);
+        display: flex;
+        align-items: center;
+        text-align: center;
+        //position: relative;
+        //width: calc(100% / #{$i * 2 + 1});
+        //height: calc(100% / #{$i * 2 + 1});
+
+        & > *:not(.item--label) {
+          //position: absolute;
+          //left: 0px;
+          //top: 0px;
+          width: var(--case-width);
+          //height: var(--case-height);
+        }
+
+        .item--label {
+          width: var(--case-width);
+        }
+
+        .item--character {
+          z-index: 60;
+        }
+        .item--grade {
+          z-index: 70;
+        }
+
+        .item--move {
+          z-index: 80;
+        }
+
+        .turn45 {
+          transform: rotate(45deg);
+        }
+
+      }
+
+
+
+      /*.item::before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 0;
+        padding-bottom: 100%;
+      }*/
+
+    }
+
+    @for $i from 1 through 15 {
+      .grid-#{$i} {
+        grid-template-columns: repeat($i * 2 + 1, 1fr);
+        grid-template-rows: repeat($i * 2 + 1, 1fr);
+        width: calc(var(--case-width) * #{$i * 2 + 1});
+        height: calc(var(--case-height) * #{$i * 2 + 1});
+      }
+    }
+}
+

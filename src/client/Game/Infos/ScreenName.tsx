@@ -4,8 +4,6 @@ import { Character } from '@models';
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-require('./ScreenName.scss');
-
 export interface ScreenNameProps {
   character: Character;
 }
@@ -17,9 +15,11 @@ export const ScreenNameComponent = (props: ScreenNameProps) => {
   }
   const { name, mat, grade } = props.character;
 
-  return <div className="Infos__ScreenName">
-    <strong>{name}</strong> ({mat}) | Grade {grade.major} galon {grade.minor}
-  </div>;
+  return (
+    <div className="Infos__ScreenName">
+      <strong>{name}</strong> ({mat}) | Grade {grade.major} galon {grade.minor}
+    </div>
+  );
 };
 
 const mapStateToProps = (state: IStateFrontend) => ({

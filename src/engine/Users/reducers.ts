@@ -1,6 +1,6 @@
 import { SaveDBCommand } from '@commands/saveDBCommand';
-import { addLazyCommand } from '@engine/Commands/Command';
-import { loadDatabaseList, saveDatabaseList } from '@engine/tasks';
+import { addLazyCommand } from '@engine/Commands/CommandsTools';
+import { loadDatabaseList, saveDatabaseList } from '@engine/Commands/tasks';
 import { User } from '@models';
 import { List } from 'immutable';
 import { AnyAction } from 'redux';
@@ -32,8 +32,7 @@ export const usersReducers = (state: IUsersState = INITIAL_STATE, action: AnyAct
       return state.update(userIndexLogout, (user: User) => ({ ...user, token: undefined }));
 
     case UsersActions.LOAD_DATABASE:
-      const load = loadDatabaseList({ databaseName: DATABASE, modelHydrater: UsersTools.hydrater }) as IUsersState;
-      return load;
+      return loadDatabaseList(DATABASE, UsersTools.hydrater);
 
     case UsersActions.SAVE_DATABASE:
       saveDatabaseList(DATABASE, state, UsersTools.serializer);

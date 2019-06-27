@@ -14,5 +14,9 @@ export interface Coord {
 export interface CoordFrontend {
   x: number;
   y: number;
-  mat: number;
+  mat?: number;
+  label?: string;
+  type?: string;
+  meta?: any;
+  ui?: string;
 }

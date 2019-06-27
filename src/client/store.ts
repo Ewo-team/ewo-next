@@ -2,11 +2,14 @@ import { applyMiddleware, compose, createStore as reduxCreateStore, Store } from
 import { createLogger } from 'redux-logger';
 import reduxThunk from 'redux-thunk';
 import rootReducer, { IStateFrontend } from './reducers';
-// import createStorybookListener from 'storybook-addon-redux-listener';
 
-export const createStore = (): Store<IStateFrontend> => {
+export const createStore = (socketSendMiddleware?): Store<IStateFrontend> => {
 
   const middlewares = [reduxThunk];
+
+  if(socketSendMiddleware) {
+    middlewares.push(socketSendMiddleware);
+  }
 
   const hasLog = ['1', 'true', 'action'].includes(process.env.CLIENT_LOG);
 
@@ -27,8 +30,6 @@ export const createStore = (): Store<IStateFrontend> => {
     }
 
     const logger = createLogger(options);
-    // const reduxListener = createStorybookListener();
-    // middlewares.push(reduxListener);
     middlewares.push(logger);
   }
 

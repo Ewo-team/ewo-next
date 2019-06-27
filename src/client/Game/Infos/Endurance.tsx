@@ -4,8 +4,6 @@ import { Character } from '@models';
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-require('./Endurance.scss');
-
 export interface EnduranceProps {
   character: Character;
 }
@@ -30,14 +28,18 @@ export class EnduranceComponent extends React.Component<EnduranceProps, Enduranc
     const { currentDate } = this.state;
 
     if (minutes === undefined) {
-      return <div className="Infos__Endurance">
-        <div
-          className="progress-bar bg-success"
-          role="progressbar"
-          style={{ width: '100%' }} aria-valuenow={100}
-          aria-valuemin={0}
-          aria-valuemax={100}></div>
-      </div>;
+      return (
+        <div className="Infos__Endurance">
+          <div
+            className="progress-bar bg-success"
+            role="progressbar"
+            style={{ width: '100%' }}
+            aria-valuenow={100}
+            aria-valuemin={0}
+            aria-valuemax={100}
+          />
+        </div>
+      );
     }
 
     let dateDiff = minutes - currentDate.getMinutes();
@@ -48,14 +50,20 @@ export class EnduranceComponent extends React.Component<EnduranceProps, Enduranc
     const valuenow = 60 - dateDiff;
     const percent = Math.round((valuenow / 60) * 100);
 
-    return <div className="Infos__Endurance progress">
-      <div
-        className="progress-bar progress-bar-striped"
-        role="progressbar"
-        style={{ width: `${percent}%` }} aria-valuenow={valuenow}
-        aria-valuemin={1}
-        aria-valuemax={60}>{dateDiff} minutes</div>
-    </div>;
+    return (
+      <div className="Infos__Endurance progress">
+        <div
+          className="progress-bar progress-bar-striped"
+          role="progressbar"
+          style={{ width: `${percent}%` }}
+          aria-valuenow={valuenow}
+          aria-valuemin={1}
+          aria-valuemax={60}
+        >
+          {dateDiff} minutes
+        </div>
+      </div>
+    );
   }
 
 }

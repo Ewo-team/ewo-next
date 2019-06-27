@@ -2,9 +2,9 @@
 
 import { Character, CharacterPosition, Races } from '@models';
 import { Map } from 'immutable';
-import { characterMove } from './actions';
+import { move } from './actions';
 import { CharactersTools } from './CharacterTools';
-import { charactersReducer, ICharactersState } from './reducers';
+import { charactersReducer } from './reducers';
 
 describe('Character model', () => {
 
@@ -19,7 +19,7 @@ describe('Character model', () => {
         "levelSpeed": 1
       }`;
 
-      const expected = {} as Character;
+      let expected = {} as Character;
 
       expected.mat = 1;
       expected.name = 'perso 1';
@@ -45,10 +45,11 @@ describe('Character model', () => {
       expected.levelRegenSpeed = 0;
       expected.levelStrength = 0;
       expected.maps = 'earth';
-      expected.minutes = 0;
       expected.motd = '';
       expected.posture = 0;
       expected.xp = 0;
+
+      expected = CharactersTools.updateCharacter(expected);
 
       const perso = CharactersTools.hydrater(JSON.parse(json));
 
@@ -70,10 +71,10 @@ describe('Character model', () => {
 
     expect(char1.currentSpeed).toEqual(5);
 
-    const action1 = characterMove(char1, 0, 1, 1);
-    const action2 = characterMove(char2, 0, 2, 2);
+    const action1 = move(char1, 0, 1, 1);
+    const action2 = move(char2, 0, 2, 2);
 
-    const state: ICharactersState = Map({
+    const state = Map({
       1: char1,
       2: char2,
     });
