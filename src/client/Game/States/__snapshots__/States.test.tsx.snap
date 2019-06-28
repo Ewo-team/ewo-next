@@ -1,0 +1,3606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = blue, valueColor = blue: render backgroundColor=blue,valueColor=blue 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = blue, valueColor = gray: render backgroundColor=blue,valueColor=gray 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = blue, valueColor = green: render backgroundColor=blue,valueColor=green 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = blue, valueColor = none: render backgroundColor=blue,valueColor=none 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar null"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = blue, valueColor = red: render backgroundColor=blue,valueColor=red 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = blue, valueColor = yellow: render backgroundColor=blue,valueColor=yellow 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = gray, valueColor = blue: render backgroundColor=gray,valueColor=blue 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = gray, valueColor = gray: render backgroundColor=gray,valueColor=gray 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = gray, valueColor = green: render backgroundColor=gray,valueColor=green 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = gray, valueColor = none: render backgroundColor=gray,valueColor=none 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar null"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = gray, valueColor = red: render backgroundColor=gray,valueColor=red 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = gray, valueColor = yellow: render backgroundColor=gray,valueColor=yellow 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = green, valueColor = blue: render backgroundColor=green,valueColor=blue 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = green, valueColor = gray: render backgroundColor=green,valueColor=gray 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = green, valueColor = green: render backgroundColor=green,valueColor=green 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = green, valueColor = none: render backgroundColor=green,valueColor=none 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar null"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = green, valueColor = red: render backgroundColor=green,valueColor=red 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = green, valueColor = yellow: render backgroundColor=green,valueColor=yellow 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = none, valueColor = blue: render backgroundColor=none,valueColor=blue 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = none, valueColor = gray: render backgroundColor=none,valueColor=gray 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = none, valueColor = green: render backgroundColor=none,valueColor=green 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = none, valueColor = none: render backgroundColor=none,valueColor=none 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar null"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = none, valueColor = red: render backgroundColor=none,valueColor=red 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = none, valueColor = yellow: render backgroundColor=none,valueColor=yellow 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = red, valueColor = blue: render backgroundColor=red,valueColor=blue 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = red, valueColor = gray: render backgroundColor=red,valueColor=gray 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = red, valueColor = green: render backgroundColor=red,valueColor=green 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = red, valueColor = none: render backgroundColor=red,valueColor=none 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar null"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = red, valueColor = red: render backgroundColor=red,valueColor=red 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = red, valueColor = yellow: render backgroundColor=red,valueColor=yellow 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = yellow, valueColor = blue: render backgroundColor=yellow,valueColor=blue 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar "
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = yellow, valueColor = gray: render backgroundColor=yellow,valueColor=gray 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-info"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = yellow, valueColor = green: render backgroundColor=yellow,valueColor=green 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = yellow, valueColor = none: render backgroundColor=yellow,valueColor=none 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar null"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = yellow, valueColor = red: render backgroundColor=yellow,valueColor=red 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar Colors should render with backgroundColor = yellow, valueColor = yellow: render backgroundColor=yellow,valueColor=yellow 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = false, large = false: render actual=80,inverted=false,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={60}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = false, large = true: render actual=80,inverted=false,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={60}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = false, large = undefined: render actual=80,inverted=false,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={60}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = true, large = false: render actual=80,inverted=true,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={40}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = true, large = true: render actual=80,inverted=true,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={40}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = true, large = undefined: render actual=80,inverted=true,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={40}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = undefined, large = false: render actual=80,inverted=undefined,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={60}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = undefined, large = true: render actual=80,inverted=undefined,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-warning"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={60}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 80, inverted = undefined, large = undefined: render actual=80,inverted=undefined,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={60}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "60%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    80/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = false, large = false: render actual=160,inverted=false,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = false, large = true: render actual=160,inverted=false,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = false, large = undefined: render actual=160,inverted=false,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = true, large = false: render actual=160,inverted=true,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = true, large = true: render actual=160,inverted=true,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = true, large = undefined: render actual=160,inverted=true,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={80}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = undefined, large = false: render actual=160,inverted=undefined,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = undefined, large = true: render actual=160,inverted=undefined,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 160, inverted = undefined, large = undefined: render actual=160,inverted=undefined,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={160}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={20}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    160/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = false, large = false: render actual=200,inverted=false,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = false, large = true: render actual=200,inverted=false,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = false, large = undefined: render actual=200,inverted=false,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = true, large = false: render actual=200,inverted=true,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = true, large = true: render actual=200,inverted=true,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = true, large = undefined: render actual=200,inverted=true,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = undefined, large = false: render actual=200,inverted=undefined,large=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = undefined, large = true: render actual=200,inverted=undefined,large=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States DoubleBar should render with actual = 200, inverted = undefined, large = undefined: render actual=200,inverted=undefined,large=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={200}
+    aria-valuemin={0}
+    aria-valuenow={200}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    200/200
+  </span>
+</div>
+`;
+
+exports[`UI States InfoBar should render with inverted = false: render inverted=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={1}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States InfoBar should render with inverted = true: render inverted=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={0}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States InfoBar should render with inverted = undefined: render inverted=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={1}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 0, message = message, inverted = false: render actual=0,message=message,inverted=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={0}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 0, message = message, inverted = true: render actual=0,message=message,inverted=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={0}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 0, message = message, inverted = undefined: render actual=0,message=message,inverted=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={0}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 0, message = undefined, inverted = false: render actual=0,message=undefined,inverted=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={0}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    0
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 0, message = undefined, inverted = true: render actual=0,message=undefined,inverted=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={0}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    0
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 0, message = undefined, inverted = undefined: render actual=0,message=undefined,inverted=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={0}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={0}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    0
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 1, message = message, inverted = false: render actual=1,message=message,inverted=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={1}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 1, message = message, inverted = true: render actual=1,message=message,inverted=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={1}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 1, message = message, inverted = undefined: render actual=1,message=message,inverted=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={1}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 1, message = undefined, inverted = false: render actual=1,message=undefined,inverted=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={1}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    1
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 1, message = undefined, inverted = true: render actual=1,message=undefined,inverted=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={1}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    1
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 1, message = undefined, inverted = undefined: render actual=1,message=undefined,inverted=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={1}
+    aria-valuemin={0}
+    aria-valuenow={1}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    1
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 5, message = message, inverted = false: render actual=5,message=message,inverted=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={5}
+    aria-valuemin={0}
+    aria-valuenow={5}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 5, message = message, inverted = true: render actual=5,message=message,inverted=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={5}
+    aria-valuemin={0}
+    aria-valuenow={5}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={5}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 5, message = message, inverted = undefined: render actual=5,message=message,inverted=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={5}
+    aria-valuemin={0}
+    aria-valuenow={5}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 5, message = undefined, inverted = false: render actual=5,message=undefined,inverted=false 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={5}
+    aria-valuemin={0}
+    aria-valuenow={5}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    5
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 5, message = undefined, inverted = true: render actual=5,message=undefined,inverted=true 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={5}
+    aria-valuemin={0}
+    aria-valuenow={5}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+  <div
+    aria-valuemax={5}
+    aria-valuemin={0}
+    aria-valuenow={100}
+    className="progress-bar bg-danger"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    5
+  </span>
+</div>
+`;
+
+exports[`UI States SimpleBar should render with actual = 5, message = undefined, inverted = undefined: render actual=5,message=undefined,inverted=undefined 1`] = `
+<div
+  className="States__Bar progress"
+>
+  <div
+    aria-valuemax={5}
+    aria-valuemin={0}
+    aria-valuenow={5}
+    className="progress-bar bg-success"
+    role="progressbar"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+  <span
+    className="Label"
+  >
+    5
+  </span>
+</div>
+`;
+
+exports[`UI States States connected component Dead character: dead character 1`] = `
+<div
+  className="States Game__Container"
+>
+  <div
+    className="Title"
+  >
+    States
+  </div>
+  <div>
+    Px 
+    0
+     | Pi 
+    0
+  </div>
+  <div>
+    (Rang 0)
+  </div>
+  <div>
+    Pv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1000}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+    <div
+      aria-valuemax={1000}
+      aria-valuemin={0}
+      aria-valuenow={100}
+      className="progress-bar bg-danger"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0/1000
+    </span>
+  </div>
+  <div>
+    Malus
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={0}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+  <div>
+    Pa
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={48}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+    <div
+      aria-valuemax={48}
+      aria-valuemin={0}
+      aria-valuenow={100}
+      className="progress-bar bg-danger"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0/48
+    </span>
+  </div>
+  <div>
+    Mouv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={24}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+    <div
+      aria-valuemax={24}
+      aria-valuemin={0}
+      aria-valuenow={100}
+      className="progress-bar bg-danger"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0/24
+    </span>
+  </div>
+  <div>
+    Res Magique
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={0}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+  <div>
+    Récupération Pv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={10}
+      aria-valuemin={0}
+      aria-valuenow={10}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      10/10
+    </span>
+  </div>
+  <div>
+    Récup'Malus
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1}
+      aria-valuemin={0}
+      aria-valuenow={1}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      1/1
+    </span>
+  </div>
+  <div>
+    Force
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={100}
+      aria-valuemin={0}
+      aria-valuenow={100}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      100/100
+    </span>
+  </div>
+  <div>
+    Perception
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={10}
+      aria-valuemin={0}
+      aria-valuenow={10}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      10/10
+    </span>
+  </div>
+  <div>
+    Niveau de magie
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1}
+      aria-valuemin={0}
+      aria-valuenow={1}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+</div>
+`;
+
+exports[`UI States States connected component Default character: default character 1`] = `
+<div
+  className="States Game__Container"
+>
+  <div
+    className="Title"
+  >
+    States
+  </div>
+  <div>
+    Px 
+    0
+     | Pi 
+    0
+  </div>
+  <div>
+    (Rang 0)
+  </div>
+  <div>
+    Pv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1000}
+      aria-valuemin={0}
+      aria-valuenow={1000}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      1000/1000
+    </span>
+  </div>
+  <div>
+    Malus
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={0}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+  <div>
+    Pa
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={48}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+    <div
+      aria-valuemax={48}
+      aria-valuemin={0}
+      aria-valuenow={100}
+      className="progress-bar bg-danger"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0/48
+    </span>
+  </div>
+  <div>
+    Mouv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={24}
+      aria-valuemin={0}
+      aria-valuenow={24}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      24/24
+    </span>
+  </div>
+  <div>
+    Res Magique
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={0}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+  <div>
+    Récupération Pv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={10}
+      aria-valuemin={0}
+      aria-valuenow={10}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      10/10
+    </span>
+  </div>
+  <div>
+    Récup'Malus
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1}
+      aria-valuemin={0}
+      aria-valuenow={1}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      1/1
+    </span>
+  </div>
+  <div>
+    Force
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={100}
+      aria-valuemin={0}
+      aria-valuenow={100}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      100/100
+    </span>
+  </div>
+  <div>
+    Perception
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={10}
+      aria-valuemin={0}
+      aria-valuenow={10}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      10/10
+    </span>
+  </div>
+  <div>
+    Niveau de magie
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1}
+      aria-valuemin={0}
+      aria-valuenow={1}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+</div>
+`;
+
+exports[`UI States States connected component Full endurance character: full character 1`] = `
+<div
+  className="States Game__Container"
+>
+  <div
+    className="Title"
+  >
+    States
+  </div>
+  <div>
+    Px 
+    0
+     | Pi 
+    0
+  </div>
+  <div>
+    (Rang 0)
+  </div>
+  <div>
+    Pv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1000}
+      aria-valuemin={0}
+      aria-valuenow={600}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "60%",
+        }
+      }
+    />
+    <div
+      aria-valuemax={1000}
+      aria-valuemin={0}
+      aria-valuenow={40}
+      className="progress-bar bg-danger"
+      role="progressbar"
+      style={
+        Object {
+          "width": "40%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      600/1000
+    </span>
+  </div>
+  <div>
+    Malus
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={0}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+  <div>
+    Pa
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={48}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+    <div
+      aria-valuemax={48}
+      aria-valuemin={0}
+      aria-valuenow={100}
+      className="progress-bar bg-danger"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0/48
+    </span>
+  </div>
+  <div>
+    Mouv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={24}
+      aria-valuemin={0}
+      aria-valuenow={12}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    />
+    <div
+      aria-valuemax={24}
+      aria-valuemin={0}
+      aria-valuenow={50}
+      className="progress-bar bg-danger"
+      role="progressbar"
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      12/24
+    </span>
+  </div>
+  <div>
+    Res Magique
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={0}
+      aria-valuemin={0}
+      aria-valuenow={0}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+  <div>
+    Récupération Pv
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={10}
+      aria-valuemin={0}
+      aria-valuenow={10}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      10/10
+    </span>
+  </div>
+  <div>
+    Récup'Malus
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1}
+      aria-valuemin={0}
+      aria-valuenow={1}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      1/1
+    </span>
+  </div>
+  <div>
+    Force
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={100}
+      aria-valuemin={0}
+      aria-valuenow={100}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      100/100
+    </span>
+  </div>
+  <div>
+    Perception
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={10}
+      aria-valuemin={0}
+      aria-valuenow={10}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      10/10
+    </span>
+  </div>
+  <div>
+    Niveau de magie
+  </div>
+  <div
+    className="States__Bar progress"
+  >
+    <div
+      aria-valuemax={1}
+      aria-valuemin={0}
+      aria-valuenow={1}
+      className="progress-bar bg-success"
+      role="progressbar"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+    <span
+      className="Label"
+    >
+      0
+    </span>
+  </div>
+</div>
+`;
+
+exports[`UI States States connected component no character: no character 1`] = `null`;

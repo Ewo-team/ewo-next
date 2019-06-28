@@ -27,7 +27,8 @@ module.exports = async ({ config, mode }) => {
       {
         loader: require.resolve('react-docgen-typescript-loader'),
       },
-    ]
+    ],
+    exclude: /node_modules/,
   });
 
   config.resolve.alias = {
