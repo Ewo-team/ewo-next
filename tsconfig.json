@@ -12,7 +12,7 @@
     "noUnusedParameters": true,
     "rootDirs": [
       "src",
-      "stories"
+      "test"
     ],
     "baseUrl": "src",
     "paths": {
@@ -42,11 +42,26 @@
       ]
     }
   },
-  "files": [
-    "./node_modules/@types/node/index.d.ts"
-  ],
+  "typedocOptions": {
+    "name": "E.W.O. Next",
+    "mode": "modules",
+    "out": "docs/technical",
+    "theme": "default",
+    "ignoreCompilerErrors": "false",
+    "preserveConstEnums": "true",
+    "exclude": [
+      "**/*+(spec|test|stories).+(ts|js)?(x)",
+      "**/*.module.scss.ts",
+      "node_modules"
+    ],
+    "stripInternal": "false",
+    "excludeExternals": "true"
+  },
   "include": [
     "src/**/*.ts",
     "test/mock/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

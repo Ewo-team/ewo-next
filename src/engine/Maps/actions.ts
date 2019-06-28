@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Maps
+ * Maps actions
+ */
+
 import { ICharactersState } from '@engine/Characters/reducers';
 
 export enum MapsActions {

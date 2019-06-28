@@ -1,3 +1,8 @@
+/**
+ * @module Client.App
+ * Application
+ */
+
 import React from 'react';
 import { Router } from './router';
 

@@ -1,3 +1,8 @@
+/**
+ * @module Client.Store
+ * Redux Store
+ */
+
 import { applyMiddleware, compose, createStore as reduxCreateStore, Store } from 'redux';
 import { createLogger } from 'redux-logger';
 import reduxThunk from 'redux-thunk';
@@ -7,7 +12,7 @@ export const createStore = (socketSendMiddleware?): Store<IStateFrontend> => {
 
   const middlewares = [reduxThunk];
 
-  if(socketSendMiddleware) {
+  if (socketSendMiddleware) {
     middlewares.push(socketSendMiddleware);
   }
 

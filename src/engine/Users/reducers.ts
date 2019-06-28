@@ -1,4 +1,9 @@
-import { SaveDBCommand } from '@commands/saveDBCommand';
+/**
+ * @module Engine.Users
+ * Users reducers
+ */
+
+import { SaveDBCommand } from '@commands/index';
 import { addLazyCommand } from '@engine/Commands/CommandsTools';
 import { loadDatabaseList, saveDatabaseList } from '@engine/Commands/tasks';
 import { User } from '@models';

@@ -1,3 +1,8 @@
+/**
+ * @module Server.Socket.EventReceiver
+ * Socket.IO Event Receiver
+ */
+
 import { addCommandAction, addCommandUpdate } from '@engine/Commands/CommandsTools';
 
 export const registerEventReceiver = (socket: SocketIO.Socket) => {

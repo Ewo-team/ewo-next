@@ -1,3 +1,8 @@
+/**
+ * @module Server.Express
+ * ExpressJS Server
+ */
+
 import express = require('express');
 import session = require('express-session');
 import logger = require('morgan');
@@ -5,8 +10,6 @@ import sassMiddleware = require('node-sass-middleware');
 import path = require('path');
 import indexRoutes from './routes';
 import usersRoutes from './routes/users';
-
-declare var __basedir;
 
 export class ExpressServer {
 
@@ -45,7 +48,7 @@ export class ExpressServer {
       sourceMap: true,
     }));
     app.use(express.static(path.join(__dirname, 'public')));
-    app.use(express.static(path.join(__basedir, 'dist', 'client')));
+    app.use(express.static(path.join(__dirname, '../..', 'dist', 'client')));
     app.use(this.session);
 
     app.use('/users', usersRoutes);

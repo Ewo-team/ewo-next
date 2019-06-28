@@ -1,3 +1,8 @@
+/**
+ * @module Server.Socket
+ * Socket.IO Server
+ */
+
 import { CoordsTools } from '@engine/Maps/CoordsTools';
 import { MapsTools } from '@engine/Maps/MapsTools';
 import { IStateServer } from '@engine/reducers';

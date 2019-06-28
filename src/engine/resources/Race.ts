@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Resources
+ * Resources for Race
+ */
+
 export const RaceTemplate = {
   no: {
     hp: 1,

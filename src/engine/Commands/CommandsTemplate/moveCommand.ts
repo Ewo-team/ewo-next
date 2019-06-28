@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Commands.Templates
+ * Move
+ */
+
 import { move } from '@engine/Characters/actions';
 import { CharactersTools } from '@engine/Characters/CharacterTools';
 import { MapsTools } from '@engine/Maps/MapsTools';

@@ -1,3 +1,8 @@
+/**
+ * @module Server.Express.Routes.Users
+ * ExpressJS Users-related Routes
+ */
+
 import { login, logout, register } from '@engine/Users/actions';
 import { User } from '@models';
 import express = require('express');

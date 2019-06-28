@@ -1,5 +1,9 @@
-import { MotdCommand } from '@commands/motdCommand';
-import { MoveCommand } from '@commands/moveCommand';
+/**
+ * @module Engine.Commands
+ * Commands Tools
+ */
+
+import { MotdCommand, MoveCommand } from '@commands/index';
 import { RunCommands } from '@engine/Commands/tasks';
 import { Command, CommandList } from './Command';
 

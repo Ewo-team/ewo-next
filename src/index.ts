@@ -1,6 +1,8 @@
-/*
-  Server Index File
-*/
+/**
+ * @module index
+ * Server's Bootstrap
+ */
+
 import { loadDatabases } from '@engine/actions';
 import { RunCommands } from '@engine/Commands/tasks';
 import { makeStore, store } from '@engine/store';

@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Commands.Templates
+ * Update the Motd
+ */
+
 import { updateMotd } from '@engine/Characters/actions';
 import { CharactersTools } from '@engine/Characters/CharacterTools';
 import { Character } from '@models';

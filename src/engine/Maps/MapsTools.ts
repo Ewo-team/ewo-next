@@ -1,3 +1,9 @@
+/**
+ * @module Engine.Maps
+ * Maps & Coords
+ * @preferred
+ */
+
 import { IStateServer } from '@engine/reducers';
 import { Coord, Direction, Plan } from '@models';
 import { Store } from 'redux';

@@ -1,3 +1,9 @@
+/**
+ * @module Engine.Commands
+ * Commands
+ * @preferred
+ */
+
 import { IStateServer } from '@engine/reducers';
 import { AnyAction, Store } from 'redux';
 

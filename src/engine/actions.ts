@@ -1,3 +1,8 @@
+/**
+ * @module Engine
+ * Redux Actions
+ */
+
 import { linkToMap, loadDatabase as loadCharacters, saveDatabase as saveCharacters } from './Characters/actions';
 import { loadDatabase as loadMaps, saveDatabase as saveMaps } from './Maps/actions';
 import { IStateServer } from './reducers';

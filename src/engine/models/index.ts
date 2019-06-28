@@ -1,3 +1,9 @@
+/**
+ * @module Engine.Models
+ * All the models
+ * @preferred
+ */
+
 export * from './Buff';
 export * from './Character';
 export * from './DatabaseSchema';

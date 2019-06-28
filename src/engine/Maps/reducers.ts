@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Maps
+ * Maps reducers
+ */
+
 import * as Tasks from '@engine/Commands/tasks';
 import { Coord } from '@models';
 import { List, Map } from 'immutable';

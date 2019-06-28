@@ -1,3 +1,8 @@
+/**
+ * @module Server.Express.Routes
+ * ExpressJS Default Routes
+ */
+
 import express = require('express');
 
 const router = express.Router();

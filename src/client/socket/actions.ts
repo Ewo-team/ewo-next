@@ -1,3 +1,9 @@
+/**
+ * @module Client.Socket
+ * Socket.IO Client
+ * @preferred
+ */
+
 import { CommandList } from '@engine/Commands/Command';
 import { Direction } from '@models';
 import { Actions } from '../actions';

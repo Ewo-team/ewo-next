@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Resources
+ * Resources for Maps
+ */
+
 import { Plan } from '@models';
 import { List } from 'immutable';
 

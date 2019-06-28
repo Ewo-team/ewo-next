@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Characters
+ * Characters actions
+ */
+
 import { IMapsState } from '@engine/Maps/reducers';
 import { Character, Races } from '@models';
 import { Action } from 'redux';

@@ -1,3 +1,8 @@
+/**
+ * @module Client.Game.Infos
+ * Name, grade and level module
+ */
+
 import { IStateFrontend } from '@client/reducers';
 import { getSelectedCharacter } from '@client/selector';
 import { Character } from '@models';

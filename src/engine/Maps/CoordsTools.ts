@@ -1,3 +1,7 @@
+/**
+ * @module Engine.Maps
+ * Coords Tools
+ */
 import { ICharactersState } from '@engine/Characters/reducers';
 import { Coord } from '@models';
 
@@ -7,17 +11,28 @@ export class CoordsTools {
     const character = additionnalData.find(c => c.mat === source.mat);
 
     return {
-      x: source.x,
-      y: source.y,
-      character,
+      x: source.x !== undefined ? source.x : null,
+      y: source.y !== undefined ? source.y : null,
+      character: character !== undefined ? character : null,
     };
   }
 
   public static serializer = (source: Coord): any => {
-    return {
-      x: source.x,
-      y: source.y,
-      mat: source.character.mat,
-    };
+
+    const coordJson: any = {};
+
+    if (source.x !== null) {
+      coordJson.x = source.x;
+    }
+
+    if (source.y !== null) {
+      coordJson.y = source.y;
+    }
+
+    if (source.character !== null) {
+      coordJson.mat = source.character.mat;
+    }
+
+    return coordJson;
   }
 }

@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Models
+ * Character representations
+ */
+
 import { Buff, Plan, Races } from '.';
 import { Coord } from './Maps';
 

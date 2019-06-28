@@ -1,3 +1,8 @@
+/**
+ * @module Engine
+ * Node Console formatter for redux-logger
+ */
+
 const options = {
   downArrow: '▼',
   rightArrow: '▶',

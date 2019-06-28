@@ -38,9 +38,25 @@ describe('Maps actions', () => {
 describe('CoordsTools', () => {
 
   const jsonCoord = JSON.parse('{"x": 0,"y": 0,"mat": 1}');
+  const jsonCoordInvalid1 = JSON.parse('{"x": 0,"y": 0,"mat": 1,"invalid-prop":"invalid-value"}');
+  const jsonCoordInvalid2 = JSON.parse('{"x": 0,"y": 0,"mat": 3}');
+  const jsonCoordMissing1 = JSON.parse('{"x": 0,"y": 0}');
+  const jsonCoordMissing2 = JSON.parse('{"mat": 1}');
   const coord = {
     x: 0,
     y: 0,
+    character: character1,
+  };
+
+  const coordMissing1 = {
+    x: 0,
+    y: 0,
+    character: null,
+  };
+
+  const coordMissing2 = {
+    x: null,
+    y: null,
     character: character1,
   };
 
@@ -49,10 +65,22 @@ describe('CoordsTools', () => {
     const datas = Map({ 1: character1, 2: character2 });
 
     expect(CoordsTools.hydrater(jsonCoord, datas)).toEqual(coord);
+    expect(CoordsTools.hydrater(jsonCoordInvalid1, datas)).toEqual(coord);
+    expect(CoordsTools.hydrater(jsonCoordInvalid2, datas)).toEqual(coordMissing1);
+    expect(CoordsTools.hydrater(jsonCoordMissing1, datas)).toEqual(coordMissing1);
+    expect(CoordsTools.hydrater(jsonCoordMissing2, datas)).toEqual(coordMissing2);
   });
 
   it('should serialize coord', () => {
+    const invalidCoord = {
+      ...coord,
+      invalidProps: 'invalid value',
+    } as Coord;
+
     expect(CoordsTools.serializer(coord)).toEqual(jsonCoord);
+    expect(CoordsTools.serializer(invalidCoord)).toEqual(jsonCoord);
+    expect(CoordsTools.serializer(coordMissing1)).toEqual(jsonCoordMissing1);
+    expect(CoordsTools.serializer(coordMissing2)).toEqual(jsonCoordMissing2);
   });
 });
 

@@ -1,3 +1,8 @@
+/**
+ * @module Engine
+ * Redux Store
+ */
+
 import { isImmutable } from 'immutable';
 import { applyMiddleware, createStore } from 'redux';
 import { createLogger } from 'redux-logger';

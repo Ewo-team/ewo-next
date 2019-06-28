@@ -1,3 +1,8 @@
+/**
+ * @module Client.Socket
+ * Socket.IO Event Sender
+ */
+
 import { socket } from '@client/index';
 
 /**

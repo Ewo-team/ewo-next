@@ -1,3 +1,7 @@
+/**
+ * @module Client.Socket
+ * Socket.IO Event Receiver
+ */
 
 import { IStateFrontend } from '@client/reducers';
 import { Store } from 'redux';

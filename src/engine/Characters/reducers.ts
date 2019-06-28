@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Characters
+ * Characters reducers
+ */
+
 import * as Tasks from '@engine/Commands/tasks';
 import { IMapsState } from '@engine/Maps/reducers';
 import { Plans } from '@engine/resources';

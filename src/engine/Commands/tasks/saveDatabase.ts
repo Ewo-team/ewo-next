@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Commands.Tasks
+ * Save a database file
+ */
+
 import * as fs from 'fs';
 import { List, Map } from 'immutable';
 import * as path from 'path';

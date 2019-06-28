@@ -1,4 +1,9 @@
-import { SaveDBCommand } from '@commands/saveDBCommand';
+/**
+ * @module Engine.Commands.Tasks
+ * Command runner
+ */
+
+import { SaveDBCommand } from '@commands/index';
 import { Command } from '@engine/Commands/Command';
 import { store } from '@engine/store';
 import * as async from 'async';

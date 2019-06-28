@@ -1,3 +1,8 @@
+/**
+ * @module Client.Selector
+ * Selectors for Redux
+ */
+
 import { Character, CoordFrontend } from '@models';
 import { createSelector } from 'reselect';
 import { IStateFrontend } from './reducers';

@@ -1,3 +1,8 @@
+/**
+ * @module Client.Game.Infos
+ * Position module
+ */
+
 import { IStateFrontend } from '@client/reducers';
 import { getSelectedCharacter } from '@client/selector';
 import { Character } from '@models';

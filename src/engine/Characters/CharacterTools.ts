@@ -1,3 +1,9 @@
+/**
+ * @module Engine.Characters
+ * Characters
+ * @preferred
+ */
+
 import { capitalizeFirstLetter } from '@engine/Helpers';
 import { IStateServer } from '@engine/reducers';
 import { RaceTemplate } from '@engine/resources';

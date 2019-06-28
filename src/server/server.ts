@@ -1,3 +1,8 @@
+/**
+ * @module Server
+ * Server Index
+ */
+
 import { IStateServer } from '@engine/reducers';
 import { ExpressServer } from '@server/express';
 import { startSocket } from '@server/socket';
@@ -16,10 +21,10 @@ declare global {
 }
 
 export class GameServer {
+  public readonly express: ExpressServer;
 
   private server: http.Server;
   private readonly port: number | string | false;
-  private readonly express: ExpressServer;
   private readonly store: Store;
 
   public constructor(store: Store<IStateServer>) {

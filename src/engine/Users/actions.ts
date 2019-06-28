@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Users
+ * Users actions
+ */
+
 import { User } from '@models';
 
 export enum UsersActions {

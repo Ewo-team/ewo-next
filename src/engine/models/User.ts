@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Models
+ * User
+ */
+
 export interface User {
   id: number;
   name: string;

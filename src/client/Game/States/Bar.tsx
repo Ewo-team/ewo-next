@@ -1,3 +1,8 @@
+/**
+ * @module Client.Game.States
+ * Display a bar
+ */
+
 import * as React from 'react';
 
 export type BarColors = 'green' | 'red' | 'blue' | 'yellow' | 'gray' | 'none';

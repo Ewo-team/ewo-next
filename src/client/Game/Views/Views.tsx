@@ -1,3 +1,8 @@
+/**
+ * @module Client.Game.Views
+ * Views (checkerboard) module for game page
+ */
+
 import { IStateFrontend } from '@client/reducers';
 import { getSelectedCharacter, getSelectedCoords } from '@client/selector';
 import * as Actions from '@client/socket/actions';

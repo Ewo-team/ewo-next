@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Models
+ * Map, Plan and Coord
+ */
+
 import { Character } from '@models';
 
 export interface Plan {

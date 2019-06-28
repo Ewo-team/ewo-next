@@ -1,3 +1,7 @@
+/**
+ * @module Client.Redux
+ */
+
 import { Character, Coord } from '@models';
 import { Dispatch } from 'redux';
 

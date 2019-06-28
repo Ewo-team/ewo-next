@@ -1,3 +1,8 @@
+/**
+ * @module Server.Express.Auth
+ * ExpressJS Auth Middlewares
+ */
+
 import { UsersTools } from '@engine/Users/UsersTools';
 import { User } from '@models';
 import crypto = require('crypto');

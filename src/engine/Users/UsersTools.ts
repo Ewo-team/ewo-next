@@ -1,3 +1,9 @@
+/**
+ * @module Engine.Users
+ * Users
+ * @preferred
+ */
+
 import { IStateServer } from '@engine/reducers';
 import { User } from '@models';
 import { Store } from 'redux';

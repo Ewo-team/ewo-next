@@ -1,3 +1,8 @@
+/**
+ * @module Engine
+ * Root Reducer
+ */
+
 import { combineReducers } from 'redux';
 import { charactersReducer, ICharactersState } from './Characters/reducers';
 import { IMapsState, mapsReducer } from './Maps/reducers';

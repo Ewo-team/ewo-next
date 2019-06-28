@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Models
+ * Directions
+ */
+
 export enum Direction {
   North,
   NorthEast,

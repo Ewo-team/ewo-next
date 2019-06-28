@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Commands.Tasks
+ * Load a database file
+ */
+
 import { DatabaseSchema } from '@models';
 import * as fs from 'fs';
 import { List, Map } from 'immutable';

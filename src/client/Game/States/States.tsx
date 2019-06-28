@@ -1,3 +1,8 @@
+/**
+ * @module Client.Game.States
+ * All states
+ */
+
 import { IStateFrontend } from '@client/reducers';
 import { getSelectedCharacter } from '@client/selector';
 import { Character } from '@models';

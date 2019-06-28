@@ -1,3 +1,9 @@
+/**
+ * @module Client.Game
+ * Game Engine
+ * @preferred
+ */
+
 import { Character } from '@models';
 import * as React from 'react';
 import { connect } from 'react-redux';

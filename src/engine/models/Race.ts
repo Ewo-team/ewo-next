@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Models
+ * Races
+ */
+
 export enum Races {
   Angel = 'an',
   Demon = 'de',

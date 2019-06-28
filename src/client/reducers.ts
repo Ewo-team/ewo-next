@@ -1,3 +1,9 @@
+/**
+ * @module Client.Redux
+ * Application Redux items
+ * @preferred
+ */
+
 import { Character, CoordFrontend } from '@models';
 import { AnyAction } from 'redux';
 import { Actions } from './actions';

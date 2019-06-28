@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Models
+ * Bonus / Malus objects
+ */
+
 import { CharacterStates } from '@models';
 
 export interface Buff {
