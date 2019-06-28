@@ -21,7 +21,7 @@
     "express": "^4.17.1",
     "express-session": "^1.16.1",
     "express-socket.io-session": "^1.3.5",
-    "express-validator": "^5.3.1",
+    "express-validator": "^6.1.0",
     "immutable": "^4.0.0-rc.12",
     "morgan": "^1.9.1",
     "node-sass": "^4.12.0",
@@ -36,7 +36,8 @@
     "reselect": "^4.0.0",
     "socket.io": "^2.2.0",
     "tslint": "^5.18.0",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "validator": "11.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
