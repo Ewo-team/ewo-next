@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pathfinder</title>
+  <style>
+    table {
+      font-size: xx-small;
+      text-align: center;
+    }
+
+    .block {
+      background-color: black;
+      color: white;
+    }
+
+    .shadow {
+      background-color: darkgray;
+    }
+
+    .path {
+      background-color: cornflowerblue;
+    }
+
+    .perso {
+      background-color: chartreuse;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="root">
+    <table border="1">
+      <tr v-for="(mX, x) in matrix" style="height: 45px;">
+        <td style="width: 41px;" v-for="(mY, y) in mX" @mouseover="displayPath" v-bind:data-x="x" v-bind:data-y="y"
+          v-bind:class="getClass(y, x)">
+          {{x}}/{{y}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/pathfinding-browser.js"></script>
+  <script src="js/pov15.js"></script>
+  <script>
+
+    const persoX = 7; // 8
+    const persoY = 7; // 8
+    const matrix = [
+      [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ];
+
+    const finder = new PF.AStarFinder({
+      allowDiagonal: true
+    });
+    const grid = new PF.Grid(matrix);
+
+    pov15.forEach(ray => {
+
+      let color = 0;
+
+      ray.forEach(point => {
+        const [x, y] = point;
+        const pos = matrix[x][y];
+
+        if (pos === 1) {
+          color = 2;
+        } else {
+          matrix[x][y] = color;
+        }
+      });
+    });
+
+    const results = []
+
+    const ttotal1 = performance.now();
+    for (let x = 0; x <= 14; x++) {
+      for (let y = 0; y <= 14; y++) {
+        const t1 = performance.now();
+        if (results[y] === undefined) {
+          results[y] = [];
+        }
+
+        const resolveGrid = grid.clone();
+
+
+        const path = finder.findPath(persoX, persoY, x, y, resolveGrid);
+
+        results[y][x] = { wall: path.length === 0, path, params: { x, y }, time: performance.now() - t1 };
+
+      }
+    }
+
+    console.log(performance.now() - ttotal1);
+
+    const vm = new Vue({
+      el: '#root',
+      data: {
+        results,
+        matrix,
+        currentPath: []
+      },
+      methods: {
+        displayPath: function (event) {
+          // `this` inside methods points to the Vue instance
+          console.log(event.target.dataset);
+          const { x, y } = event.target.dataset;
+          this.currentPath = this.results[x][y].path;
+          console.log({ path: this.results[x][y].path, params: this.results[x][y].params });
+
+          const resolveGrid = grid.clone();
+          const path = finder.findPath(persoX, persoY, x, y, resolveGrid);
+          console.log(path);
+        },
+        getClass: function (x, y) {
+
+          if (this.matrix[y][x] === 1) {
+            return 'block';
+          }
+
+          if (x === persoX && y === persoY) {
+            return 'perso';
+          }
+
+          const path = this.currentPath.find(couple => couple[0] === x && couple[1] === y);
+
+          if (path !== undefined) {
+            return 'path';
+          }
+
+          if (this.matrix[y][x] === 2) {
+            return 'shadow';
+          }
+
+          return '';
+        }
+      }
+    });
+
+
+  </script>
+</body>
+
+</html>
