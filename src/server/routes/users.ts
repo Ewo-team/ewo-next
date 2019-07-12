@@ -18,8 +18,8 @@ const views = {
 };
 
 /* GET users listing. */
-router.get('/', checkSignIn, (req, res) => {
-  res.render(views.index, { title: 'Dashboard', user: req.session.user.name });
+router.get('/', checkSignIn, (_req, res) => {
+  res.render(views.index);
 });
 
 router.get('/signup', checkAnon, (_req, res) => {

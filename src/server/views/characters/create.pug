@@ -1,0 +1,26 @@
+extends ../layout/layout
+
+block content
+  div#inscription
+    h2 Création de personnage
+    div
+      form(action = "/characters/create" method = "POST" id="create_form" class="validator")
+        include ../layout/flash
+        .form-group
+          label(for="name") Nom du personnage
+          input.form-control(name = "name" type = "text" required placeholder = "Nom du personnage" value = name)
+        if raceChoice
+          .form-group
+            label(for="race") Race
+            select.form-control(name = "race" required value = race)
+              each val, index in races
+                option(value=index)= val
+        else
+          input(name = "race" type = "hidden" required value = race)
+        .form-group
+          label(for="sexe") Sexe
+          select.form-control(name = "sexe" required value = sexe)
+            option(value=0) Féminin
+            option(value=1) Masculin
+            option(value=3) Autre
+        button(type = "Submit" class="btn btn-primary") Valider

@@ -6,6 +6,7 @@ const validate = () => {
 
     const inputs = form.querySelectorAll('input');
     const labels = form.querySelectorAll('label');
+    const selects = form.querySelectorAll('select');
 
     inputs.forEach(input => {
       const name = input.getAttribute('name');
@@ -21,6 +22,15 @@ const validate = () => {
       if (field !== null && fields[field] !== undefined) {
         fields[field].label = label.textContent;
       }
+    });
+
+    selects.forEach(select => {
+      const options = select.querySelectorAll('option');
+      options.forEach(option => {
+        if (option.value === select.value) {
+          option.selected = true;
+        }
+      });
     });
 
     form.addEventListener('change', (e) => {
