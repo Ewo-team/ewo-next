@@ -1,10 +1,73 @@
 /// <reference types="jest" />
 
+import { IMapsState } from '@engine/Maps/reducers';
 import { Character, CharacterPosition, Races } from '@models';
-import { Map } from 'immutable';
-import { move } from './actions';
+import { List, Map } from 'immutable';
+import { loadDatabaseMap, saveDatabaseMap } from '../Commands/tasks';
+import { CharacterActions, CharactersActions, create, linkToMap, loadDatabase, move, saveDatabase, updateMotd } from './actions';
 import { CharactersTools } from './CharacterTools';
 import { charactersReducer } from './reducers';
+
+jest.mock('../Commands/tasks');
+
+const character1 = CharactersTools.factory(1, 'Test 1');
+const character2 = CharactersTools.factory(2, 'Test 2');
+
+describe('Characters actions', () => {
+  it('should create an action to load database', () => {
+    const expectedAction = {
+      type: CharactersActions.LOAD_DATABASE,
+    };
+    expect(loadDatabase()).toEqual(expectedAction);
+  });
+
+  it('should create an action to save database', () => {
+    const expectedAction = {
+      type: CharactersActions.SAVE_DATABASE,
+    };
+    expect(saveDatabase()).toEqual(expectedAction);
+  });
+
+  it('should create an action to link to map database', () => {
+    const expectedAction = {
+      type: CharactersActions.LINK_TO_MAP,
+      maps: Map(),
+    };
+    expect(linkToMap(Map())).toEqual(expectedAction);
+  });
+});
+
+describe('Character actions', () => {
+  it('should create an action to move', () => {
+    const expectedAction = {
+      type: CharacterActions.MOVE,
+      character: character1,
+      newX: 1,
+      newY: 1,
+      cost: 2,
+    };
+    expect(move(character1, 1, 1, 2)).toEqual(expectedAction);
+  });
+
+  it('should create an action to create a character', () => {
+    const expectedAction = {
+      type: CharacterActions.CREATE,
+      owner: 1,
+      name: 'test',
+      race: Races.Angel,
+    };
+    expect(create(1, 'test', Races.Angel)).toEqual(expectedAction);
+  });
+
+  it('should create an action to update the MotD', () => {
+    const expectedAction = {
+      type: CharacterActions.UPDATE_MOTD,
+      character: character1,
+      message: 'jest',
+    };
+    expect(updateMotd(character1, 'jest')).toEqual(expectedAction);
+  });
+});
 
 describe('Character model', () => {
 
@@ -106,4 +169,107 @@ describe('Character model', () => {
     });
   });
 
+});
+
+describe('Characters reducers', () => {
+  it('should return the initial state', () => {
+    expect(charactersReducer(undefined, {} as any)).toEqual(Map());
+  });
+
+  it('should handle LOAD_DATABASE', () => {
+    const response = Map({ jest: List([]) });
+
+    (loadDatabaseMap as any).mockResolvedValue(response);
+
+    const test: Promise<Map<string, List<any>>> = charactersReducer(undefined, loadDatabase()) as any;
+
+    test.then(resp => expect(resp).toEqual(response));
+
+    expect(loadDatabaseMap).toBeCalled();
+  });
+
+  it('should handle SAVE_DATABASE', () => {
+
+    charactersReducer(undefined, saveDatabase());
+    expect(saveDatabaseMap).toBeCalled();
+  });
+
+  it('should handle LINK_TO_MAP', () => {
+    const mapState: IMapsState = Map({
+      earth: List([
+        {
+          x: 0,
+          y: 0,
+          character: character1,
+        },
+        {
+          x: 1,
+          y: 0,
+          character: character2,
+        },
+      ]),
+    });
+
+    const initialState = Map([['1', character1], ['2', character2]]);
+
+    const expected = Map([
+      ['1', {
+        ...character1, position: {
+          coord: { character: character1, x: 0, y: 0 },
+          plan: { id: 'earth', name: 'Althian', rawMapName: 'map_demo' },
+        },
+      }],
+      ['2', {
+        ...character2, position: {
+          coord: { character: character2, x: 1, y: 0 },
+          plan: { id: 'earth', name: 'Althian', rawMapName: 'map_demo' },
+        },
+      }],
+    ]);
+
+    const result = charactersReducer(initialState, linkToMap(mapState));
+
+    expect(result).toEqual(expected);
+
+  });
+
+  it('should handle MOVE', () => {
+
+    const mapState: IMapsState = Map({
+      earth: List([
+        {
+          x: 0,
+          y: 0,
+          character: character1,
+        },
+        {
+          x: 1,
+          y: 0,
+          character: character2,
+        },
+      ]),
+    });
+
+    const initialState = Map([['1', character1], ['2', character2]]);
+
+    const state = charactersReducer(initialState, linkToMap(mapState));
+
+    const result = charactersReducer(state, move(state.get('1'), -3, 0, 3));
+
+    expect(result.get('1')).toEqual({
+      ...character1,
+      currentSpeed: -3,
+      position: {
+        coord: { character: character1, x: -3, y: 0 },
+        plan: { id: 'earth', name: 'Althian', rawMapName: 'map_demo' },
+      },
+    });
+  });
+
+  it('should handle CREATE', () => {
+
+    const result = charactersReducer(undefined, create(character1.owner, character1.name, character1.race));
+
+    expect(result.get('1')).toEqual(character1);
+  });
 });

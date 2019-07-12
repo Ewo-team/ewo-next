@@ -3,6 +3,7 @@
 import { CharactersTools } from '@engine/Characters/CharacterTools';
 import { IStateServer } from '@engine/reducers';
 import { Plans } from '@engine/resources';
+import mapDemo from '@engine/resources/maps/map_demo';
 import { Coord, Direction, Plan } from '@models';
 import { List, Map } from 'immutable';
 import { Store } from 'redux';
@@ -11,6 +12,7 @@ import { loadDatabaseMap, saveDatabaseMap } from '../Commands/tasks';
 import { loadDatabase, MapsActions, saveDatabase } from './actions';
 import { CoordsTools } from './CoordsTools';
 import { MapsTools } from './MapsTools';
+import { POV } from './POV/POV';
 import { mapsReducer } from './reducers';
 
 jest.mock('../Commands/tasks');
@@ -327,5 +329,69 @@ describe('Maps reducers', () => {
 
     mapsReducer(undefined, saveDatabase());
     expect(saveDatabaseMap).toBeCalled();
+  });
+});
+
+describe('Map Demo', () => {
+  it('should have block and meta section', () => {
+    expect(mapDemo.block).not.toBeUndefined();
+    expect(mapDemo.meta).not.toBeUndefined();
+  });
+
+  it('should have correct grid size', () => {
+    expect(mapDemo.block.length).toEqual(100);
+    expect(mapDemo.meta.length).toEqual(100);
+
+    expect(mapDemo.block[0].length).toEqual(100);
+    expect(mapDemo.meta[0].length).toEqual(100);
+  });
+
+  it('should have contain only numbers (block grid)', () => {
+
+    let invalid = 0;
+    mapDemo.block.forEach(l => l.forEach(c => {
+      if (c !== 1 && c !== 0) {
+        invalid += 1;
+      }
+    },
+    ));
+
+    expect(invalid).toEqual(0);
+
+  });
+
+  it('should have contain only null or valid meta (meta grid)', () => {
+
+    let invalid = 0;
+
+    mapDemo.meta.forEach(l => l.forEach(c => {
+      if (!(c === null ||
+        (!c.cost || c.cost !== 1))) {
+        invalid += 1;
+      }
+    }));
+
+    expect(invalid).toEqual(0);
+
+  });
+});
+
+describe('Map POV generator', () => {
+  it('should generate a POV correctly', () => {
+    const rays1 = POV.generatePOV(2);
+
+    expect(rays1.length).toEqual(8);
+  });
+
+  it('should generate a POV correctly (range 2 to 30)', () => {
+    const expected = [];
+    const results = [];
+    for (let range = 2; range <= 30; range += 1) {
+      results.push(POV.generatePOV(range).length);
+      expected.push(Math.floor(range / 2) * 8);
+    }
+
+    expect(expected).toEqual(results);
+
   });
 });
