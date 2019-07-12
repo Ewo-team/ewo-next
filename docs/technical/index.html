@@ -62,15 +62,23 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h4 id="e-w-o-next">E.W.O. :  Next</h4>
+				<h1 id="e-w-o-next">E.W.O. :  Next</h1>
 				<p>E.W.O était un projet francophone de jeu multijoueur online en PHP.
-				Le sujet du jeu est la bataille entre les anges, les démons et les humains, dans un futur alternatif. </p>
-				<p>EWO Next est le nom de code d&#39;une reprise à zéro du projet (redéfinition du gameplay et des technologies) </p>
-				<h3 id="installation">Installation</h3>
+				Le sujet du jeu est la bataille entre les anges, les démons et les humains, dans un futur alternatif.</p>
+				<p>EWO Next est le nom de code d&#39;une reprise à zéro du projet (redéfinition du gameplay et des technologies)</p>
+				<h3 id="badges">Badges</h3>
+				<p>On aime les badges</p>
+				<p><a href="https://sonarcloud.io/dashboard?id=Ewo-team_ewo-next"><img src="https://sonarcloud.io/api/project_badges/measure?project=Ewo-team_ewo-next&amp;metric=alert_status" alt="Quality Gate Status"></a>
+					<a href="https://sonarcloud.io/dashboard?id=Ewo-team_ewo-next"><img src="https://sonarcloud.io/api/project_badges/measure?project=Ewo-team_ewo-next&amp;metric=sqale_rating" alt="Maintainability Rating"></a>
+					<a href="https://sonarcloud.io/dashboard?id=Ewo-team_ewo-next"><img src="https://sonarcloud.io/api/project_badges/measure?project=Ewo-team_ewo-next&amp;metric=bugs" alt="Bugs"></a>
+					<a href="https://sonarcloud.io/dashboard?id=Ewo-team_ewo-next"><img src="https://sonarcloud.io/api/project_badges/measure?project=Ewo-team_ewo-next&amp;metric=code_smells" alt="Code Smells"></a>
+					<a href="https://sonarcloud.io/dashboard?id=Ewo-team_ewo-next"><img src="https://sonarcloud.io/api/project_badges/measure?project=Ewo-team_ewo-next&amp;metric=coverage" alt="Coverage"></a>
+				<a href="https://david-dm.org/Ewo-team/ewo-next"><img src="https://david-dm.org/Ewo-team/ewo-next.svg" alt="Dependency Status"></a></p>
+				<h2 id="installation">Installation</h2>
 				<p>1: Installez les packages</p>
 				<pre><code class="lang-bash">npm install
 </code></pre>
-				<p>ou </p>
+				<p>ou</p>
 				<pre><code class="lang-bash">yarn install
 </code></pre>
 				<p>2: Générez l&#39;application React frontend</p>
@@ -79,9 +87,9 @@
 				<p>3: Lancez le serveur de dev</p>
 				<pre><code class="lang-bash">npm run watch
 </code></pre>
-				<p>Vous pouvez maintenant vous rendre sur <a href="http://localhost:3000">http://localhost:3000</a> pour accéder à l&#39;application. </p>
-				<p>Vous devrez créer un compte utilisateur et des personnages (création en cours d&#39;implémentation) </p>
-				<p><strong>Architecture :</strong></p>
+				<p>Vous pouvez maintenant vous rendre sur <a href="http://localhost:3000">http://localhost:3000</a> pour accéder à l&#39;application.</p>
+				<p>Vous devrez créer un compte utilisateur et des personnages (création en cours d&#39;implémentation)</p>
+				<h3 id="architecture">Architecture</h3>
 				<p>Coté Backend, il y a:</p>
 				<ul>
 					<li>Un serveur de jeu, utilisant Redux + ImmutableJS</li>
@@ -94,19 +102,20 @@
 							<li>l&#39;utilisation des interfaces et ressources du serveur de jeu (pas besoin de réecrire les routines)</li>
 							<li>Une UI managé par Storybook</li>
 						</ul>
-						<p><strong>Développement :</strong></p>
-						<p>Le développement est découpé en 4 phases:</p>
-						<ul>
-							<li><strong>pre-alpha (phase actuelle)</strong></li>
-							<li>alpha</li>
-							<li>beta</li>
-							<li>release</li>
-						</ul>
+					</li>
+				</ul>
+				<h3 id="d-veloppement">Développement</h3>
+				<p> Le développement est découpé en 4 phases:</p>
+				<ul>
+					<li><strong>pre-alpha (phase actuelle)</strong></li>
+					<li>alpha</li>
+					<li>beta</li>
+					<li><p>release</p>
 						<p>la phase <strong>pre-alpha</strong> corresponds à une version non-fonctionnelle du jeu, il manque encore des éléments majeurs. Il n&#39;y a pas de version de test, chaque développeur s&#39;occupant de son code et ses données. Il n&#39;y a pas de CI intégré pour le moment au développement.</p>
-						<p>la phase <strong>alpha</strong> indique qu&#39;un nombre minimal de fonctionnalité existe, mais qu&#39;il est possible de commencer des phases de test. La structure et les règles de jeu peuvent encore changer. Un serveur de test avec des stress-test pourra être mis en place. </p>
+						<p>la phase <strong>alpha</strong> indique qu&#39;un nombre minimal de fonctionnalité existe, mais qu&#39;il est possible de commencer des phases de test. La structure et les règles de jeu peuvent encore changer. Un serveur de test avec des stress-test pourra être mis en place.</p>
 						<p>la phase <strong>beta</strong> indique que la totalité des règles ont été figé en vue de la release, et que l&#39;ajout des fonctionnalité manquantes est en train d&#39;être fait. Le branching du dépos de source est mis en place (il n&#39;y a plus de commit en master mais uniquement dans des branches dédiés avec pull-request, la pull-request doit compiler sans erreur, les tests unitaires doivent passer et couvrir 80% du code au moins). Un serveur de test sera mis en place avec des données persistantes. Si une fonctionnalité mise en place pose de gros problèmes de gameplay, le développement pourra repasser en <strong>alpha</strong>. Si possible, ce passage en <strong>alpha</strong> devra garder les données de jeu <strong>beta</strong> afin de ne pas relancer depuis 0 l&#39;évolution des personnages.</p>
 						<p>la phase <strong>pre-release</strong> indique que toutes les fonctionnalités sont en place. Il s&#39;agit donc des tests utilisateurs. Les seuls modifications de code pendant cette phase sont les correction de code.</p>
-						<p>la phase <strong>release</strong> indique que le code est prêt à être déployé en version 1.0. A partir de cette phase, une nouvelle branche <strong>beta</strong> sera ouverte pour commencer le travail sur la prochaine version. </p>
+						<p>la phase <strong>release</strong> indique que le code est prêt à être déployé en version 1.0. A partir de cette phase, une nouvelle branche <strong>beta</strong> sera ouverte pour commencer le travail sur la prochaine version.</p>
 					</li>
 				</ul>
 			</div>

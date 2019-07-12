@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/19</span>
+        <span class='fraction'>19/19</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/17</span>
+        <span class='fraction'>17/17</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -80,58 +80,58 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module Engine
  * Redux Actions
  */
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import { linkToMap, loadDatabase as loadCharacters, saveDatabase as saveCharacters } from './Characters/actions';</span>
-<span class="cstat-no" title="statement not covered" >import { loadDatabase as loadMaps, saveDatabase as saveMaps } from './Maps/actions';</span>
+import { linkToMap, loadDatabase as loadCharacters, saveDatabase as saveCharacters } from './Characters/actions';
+import { loadDatabase as loadMaps, saveDatabase as saveMaps } from './Maps/actions';
 import { IStateServer } from './reducers';
-<span class="cstat-no" title="statement not covered" >import { loadDatabase as loadUsers, saveDatabase as saveUsers } from './Users/actions';</span>
+import { loadDatabase as loadUsers, saveDatabase as saveUsers } from './Users/actions';
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export enum E</span>ngineActions {</span>
-<span class="cstat-no" title="statement not covered" >  LOAD_DATABASE = 'EngineActions.LOAD_DATABASE',</span>
-<span class="cstat-no" title="statement not covered" >  SAVE_DATABASE = 'EngineActions.SAVE_DATABASE',</span>
+export enum EngineActions {
+  LOAD_DATABASE = 'EngineActions.LOAD_DATABASE',
+  SAVE_DATABASE = 'EngineActions.SAVE_DATABASE',
 }
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >loadDatabases = <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(d</span>ispatch, getState: () =&gt; IStateServer) =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >  console.log('loading all databases');</span>
-<span class="cstat-no" title="statement not covered" >  dispatch(loadCharacters());</span>
-<span class="cstat-no" title="statement not covered" >  dispatch(loadMaps(getState().Characters));</span>
-<span class="cstat-no" title="statement not covered" >  dispatch(linkToMap(getState().Maps));</span>
-<span class="cstat-no" title="statement not covered" >  dispatch(loadUsers());</span>
+export const loadDatabases = () =&gt; (dispatch, getState: () =&gt; IStateServer) =&gt; {
+  console.log('loading all databases');
+  dispatch(loadCharacters());
+  dispatch(loadMaps(getState().Characters));
+  dispatch(linkToMap(getState().Maps));
+  dispatch(loadUsers());
 };
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >saveDatabases = <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >dispatch </span>=&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >  console.log('saving all databases');</span>
-<span class="cstat-no" title="statement not covered" >  dispatch(saveCharacters());</span>
-<span class="cstat-no" title="statement not covered" >  dispatch(saveMaps());</span>
-<span class="cstat-no" title="statement not covered" >  dispatch(saveUsers());</span>
+export const saveDatabases = () =&gt; dispatch =&gt; {
+  console.log('saving all databases');
+  dispatch(saveCharacters());
+  dispatch(saveMaps());
+  dispatch(saveUsers());
 };
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -139,7 +139,7 @@ export const <span class="cstat-no" title="statement not covered" >saveDatabases
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jun 28 2019 15:08:23 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 12 2019 18:32:30 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>
