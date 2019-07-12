@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "strictNullChecks": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "rootDirs": [
       "src",
       "test"

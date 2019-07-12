@@ -50,6 +50,12 @@
       true,
       "check-return-type"
     ],
+    "no-unused": [
+      true,
+      "unused-function-expression-name",
+      "unused-class-expression-name",
+      "unused-catch-binding"
+    ],
     "no-var-before-return": [
       true,
       "allow-destructuring"

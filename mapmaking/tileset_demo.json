@@ -1,0 +1,878 @@
+{ "columns":16,
+ "image":"..\/src\/server\/public\/images\/tileset\/demo.png",
+ "imageheight":512,
+ "imagewidth":512,
+ "margin":0,
+ "name":"demo",
+ "spacing":0,
+ "terrains":[
+        {
+         "name":"Grass",
+         "tile":78
+        }, 
+        {
+         "name":"Ground1",
+         "tile":172
+        }, 
+        {
+         "name":"Road1",
+         "tile":124
+        }, 
+        {
+         "name":"Road2",
+         "tile":76
+        }, 
+        {
+         "name":"Highgrass",
+         "tile":165
+        }, 
+        {
+         "name":"Ground2",
+         "tile":193
+        }],
+ "tilecount":256,
+ "tiledversion":"1.2.4",
+ "tileheight":32,
+ "tiles":[
+        {
+         "id":0,
+         "type":"block"
+        }, 
+        {
+         "id":1,
+         "type":"block"
+        }, 
+        {
+         "id":2,
+         "type":"block"
+        }, 
+        {
+         "id":3,
+         "type":"block"
+        }, 
+        {
+         "id":4,
+         "type":"block"
+        }, 
+        {
+         "id":5,
+         "type":"block"
+        }, 
+        {
+         "id":6,
+         "type":"block"
+        }, 
+        {
+         "id":7,
+         "type":"block"
+        }, 
+        {
+         "id":8,
+         "type":"block"
+        }, 
+        {
+         "id":9,
+         "type":"block"
+        }, 
+        {
+         "id":10,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":11,
+         "terrain":[0, 0, 0, 5]
+        }, 
+        {
+         "id":12,
+         "terrain":[0, 0, 5, 5]
+        }, 
+        {
+         "id":13,
+         "terrain":[0, 0, 5, 0]
+        }, 
+        {
+         "id":14,
+         "terrain":[3, 3, 3, 3],
+         "type":"path"
+        }, 
+        {
+         "id":15,
+         "terrain":[3, 3, 3, 3],
+         "type":"path"
+        }, 
+        {
+         "id":16,
+         "type":"block"
+        }, 
+        {
+         "id":21,
+         "type":"block"
+        }, 
+        {
+         "id":22,
+         "type":"block"
+        }, 
+        {
+         "id":25,
+         "type":"block"
+        }, 
+        {
+         "id":26,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":27,
+         "terrain":[0, 5, 0, 5]
+        }, 
+        {
+         "id":28,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":29,
+         "terrain":[5, 0, 5, 0]
+        }, 
+        {
+         "id":30,
+         "terrain":[3, 3, 3, 3],
+         "type":"path"
+        }, 
+        {
+         "id":31,
+         "terrain":[3, 3, 3, 3],
+         "type":"path"
+        }, 
+        {
+         "id":32,
+         "type":"block"
+        }, 
+        {
+         "id":34,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":35,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":37,
+         "type":"block"
+        }, 
+        {
+         "id":38,
+         "type":"block"
+        }, 
+        {
+         "id":41,
+         "type":"block"
+        }, 
+        {
+         "id":42,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":43,
+         "terrain":[0, 5, 0, 0]
+        }, 
+        {
+         "id":44,
+         "terrain":[5, 5, 0, 0]
+        }, 
+        {
+         "id":45,
+         "terrain":[5, 0, 0, 0]
+        }, 
+        {
+         "id":46,
+         "terrain":[2, 3, 3, 3],
+         "type":"path"
+        }, 
+        {
+         "id":47,
+         "terrain":[3, 2, 3, 3],
+         "type":"path"
+        }, 
+        {
+         "id":48,
+         "type":"block"
+        }, 
+        {
+         "id":50,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":51,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":53,
+         "type":"block"
+        }, 
+        {
+         "id":54,
+         "type":"block"
+        }, 
+        {
+         "id":57,
+         "type":"block"
+        }, 
+        {
+         "id":58,
+         "terrain":[0, 5, 5, 0]
+        }, 
+        {
+         "id":59,
+         "terrain":[5, 5, 5, 3],
+         "type":"path"
+        }, 
+        {
+         "id":60,
+         "terrain":[5, 5, 3, 3],
+         "type":"path"
+        }, 
+        {
+         "id":61,
+         "terrain":[5, 5, 3, 5],
+         "type":"path"
+        }, 
+        {
+         "id":62,
+         "terrain":[3, 3, 2, 3],
+         "type":"path"
+        }, 
+        {
+         "id":63,
+         "terrain":[3, 3, 3, 2],
+         "type":"path"
+        }, 
+        {
+         "id":64,
+         "type":"block"
+        }, 
+        {
+         "id":69,
+         "type":"block"
+        }, 
+        {
+         "id":70,
+         "type":"block"
+        }, 
+        {
+         "id":73,
+         "type":"block"
+        }, 
+        {
+         "id":74,
+         "terrain":[5, 0, 0, 5]
+        }, 
+        {
+         "id":75,
+         "terrain":[5, 3, 5, 3],
+         "type":"path"
+        }, 
+        {
+         "id":76,
+         "terrain":[3, 3, 3, 3],
+         "type":"path"
+        }, 
+        {
+         "id":77,
+         "terrain":[3, 5, 3, 5],
+         "type":"path"
+        }, 
+        {
+         "id":78,
+         "terrain":[0, 0, 0, 0]
+        }, 
+        {
+         "id":79,
+         "terrain":[0, 0, 0, 0]
+        }, 
+        {
+         "id":80,
+         "type":"block"
+        }, 
+        {
+         "id":81,
+         "type":"block"
+        }, 
+        {
+         "id":82,
+         "type":"block"
+        }, 
+        {
+         "id":83,
+         "type":"block"
+        }, 
+        {
+         "id":84,
+         "type":"block"
+        }, 
+        {
+         "id":85,
+         "type":"block"
+        }, 
+        {
+         "id":86,
+         "type":"block"
+        }, 
+        {
+         "id":87,
+         "type":"block"
+        }, 
+        {
+         "id":88,
+         "type":"block"
+        }, 
+        {
+         "id":89,
+         "type":"block"
+        }, 
+        {
+         "id":90,
+         "terrain":[-1, 4, 4, -1],
+         "type":"wild"
+        }, 
+        {
+         "id":91,
+         "terrain":[5, 3, 5, 5],
+         "type":"path"
+        }, 
+        {
+         "id":92,
+         "terrain":[3, 3, 5, 5],
+         "type":"path"
+        }, 
+        {
+         "id":93,
+         "terrain":[3, 5, 5, 5],
+         "type":"path"
+        }, 
+        {
+         "id":94,
+         "terrain":[0, 0, 0, 0]
+        }, 
+        {
+         "id":95,
+         "terrain":[0, 0, 0, 0]
+        }, 
+        {
+         "id":96,
+         "type":"block"
+        }, 
+        {
+         "id":97,
+         "type":"block"
+        }, 
+        {
+         "id":98,
+         "type":"block"
+        }, 
+        {
+         "id":99,
+         "type":"block"
+        }, 
+        {
+         "id":100,
+         "type":"block"
+        }, 
+        {
+         "id":101,
+         "type":"block"
+        }, 
+        {
+         "id":102,
+         "type":"block"
+        }, 
+        {
+         "id":103,
+         "type":"block"
+        }, 
+        {
+         "id":104,
+         "type":"block"
+        }, 
+        {
+         "id":105,
+         "type":"block"
+        }, 
+        {
+         "id":106,
+         "terrain":[4, -1, -1, 4],
+         "type":"wild"
+        }, 
+        {
+         "id":107,
+         "terrain":[5, 5, 5, 2],
+         "type":"path"
+        }, 
+        {
+         "id":108,
+         "terrain":[5, 5, 2, 2],
+         "type":"path"
+        }, 
+        {
+         "id":109,
+         "terrain":[5, 5, 2, 5],
+         "type":"path"
+        }, 
+        {
+         "id":110,
+         "terrain":[0, 5, 5, 5]
+        }, 
+        {
+         "id":111,
+         "terrain":[5, 0, 5, 5]
+        }, 
+        {
+         "id":118,
+         "terrain":[-1, 4, 4, 4],
+         "type":"wild"
+        }, 
+        {
+         "id":119,
+         "terrain":[4, -1, 4, 4],
+         "type":"wild"
+        }, 
+        {
+         "id":120,
+         "terrain":[5, 5, 5, 1]
+        }, 
+        {
+         "id":121,
+         "terrain":[5, 5, 1, 1]
+        }, 
+        {
+         "id":122,
+         "terrain":[5, 5, 1, 5]
+        }, 
+        {
+         "id":123,
+         "terrain":[5, 2, 5, 2],
+         "type":"path"
+        }, 
+        {
+         "id":124,
+         "terrain":[2, 2, 2, 2],
+         "type":"path"
+        }, 
+        {
+         "id":125,
+         "terrain":[2, 5, 2, 5],
+         "type":"path"
+        }, 
+        {
+         "id":126,
+         "terrain":[5, 5, 0, 5]
+        }, 
+        {
+         "id":127,
+         "terrain":[5, 5, 5, 0]
+        }, 
+        {
+         "id":129,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":130,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":134,
+         "terrain":[4, 4, -1, 4],
+         "type":"wild"
+        }, 
+        {
+         "id":135,
+         "terrain":[4, 4, 4, -1],
+         "type":"wild"
+        }, 
+        {
+         "id":136,
+         "terrain":[5, 1, 5, 1]
+        }, 
+        {
+         "id":137,
+         "terrain":[1, 1, 1, 1]
+        }, 
+        {
+         "id":138,
+         "terrain":[1, 5, 1, 5]
+        }, 
+        {
+         "id":139,
+         "terrain":[5, 2, 5, 5],
+         "type":"path"
+        }, 
+        {
+         "id":140,
+         "terrain":[2, 2, 5, 5],
+         "type":"path"
+        }, 
+        {
+         "id":141,
+         "terrain":[2, 5, 5, 5],
+         "type":"path"
+        }, 
+        {
+         "id":142,
+         "terrain":[0, 1, 1, 1]
+        }, 
+        {
+         "id":143,
+         "terrain":[1, 0, 1, 1]
+        }, 
+        {
+         "id":145,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":146,
+         "terrain":[5, 5, 5, 5]
+        }, 
+        {
+         "id":148,
+         "terrain":[-1, -1, -1, 4],
+         "type":"wild"
+        }, 
+        {
+         "id":149,
+         "terrain":[-1, -1, 4, 4],
+         "type":"wild"
+        }, 
+        {
+         "id":150,
+         "terrain":[-1, -1, 4, -1],
+         "type":"wild"
+        }, 
+        {
+         "id":151,
+         "type":"wild"
+        }, 
+        {
+         "id":152,
+         "terrain":[5, 1, 5, 5]
+        }, 
+        {
+         "id":153,
+         "terrain":[1, 1, 5, 5]
+        }, 
+        {
+         "id":154,
+         "terrain":[1, 5, 5, 5]
+        }, 
+        {
+         "id":155,
+         "terrain":[0, 0, 0, 1]
+        }, 
+        {
+         "id":156,
+         "terrain":[0, 0, 1, 1]
+        }, 
+        {
+         "id":157,
+         "terrain":[0, 0, 1, 0]
+        }, 
+        {
+         "id":158,
+         "terrain":[1, 1, 0, 1]
+        }, 
+        {
+         "id":159,
+         "terrain":[1, 1, 1, 0]
+        }, 
+        {
+         "id":163,
+         "type":"toto"
+        }, 
+        {
+         "id":164,
+         "terrain":[-1, 4, -1, 4],
+         "type":"wild"
+        }, 
+        {
+         "id":165,
+         "terrain":[4, 4, 4, 4],
+         "type":"wild"
+        }, 
+        {
+         "id":166,
+         "terrain":[4, -1, 4, -1],
+         "type":"wild"
+        }, 
+        {
+         "id":167,
+         "type":"wild"
+        }, 
+        {
+         "id":168,
+         "type":"wild"
+        }, 
+        {
+         "id":169,
+         "terrain":[5, 1, 1, 1]
+        }, 
+        {
+         "id":170,
+         "terrain":[1, 5, 1, 1]
+        }, 
+        {
+         "id":171,
+         "terrain":[0, 1, 0, 1]
+        }, 
+        {
+         "id":172,
+         "terrain":[1, 1, 1, 1]
+        }, 
+        {
+         "id":173,
+         "terrain":[1, 0, 1, 0]
+        }, 
+        {
+         "id":176,
+         "type":"block"
+        }, 
+        {
+         "id":179,
+         "type":"block"
+        }, 
+        {
+         "id":180,
+         "terrain":[-1, 4, -1, -1],
+         "type":"wild"
+        }, 
+        {
+         "id":181,
+         "terrain":[4, 4, -1, -1],
+         "type":"wild"
+        }, 
+        {
+         "id":182,
+         "terrain":[4, -1, -1, -1],
+         "type":"wild"
+        }, 
+        {
+         "id":183,
+         "terrain":[2, 2, 2, 2],
+         "type":"path"
+        }, 
+        {
+         "id":184,
+         "terrain":[2, 2, 2, 2],
+         "type":"path"
+        }, 
+        {
+         "id":185,
+         "terrain":[1, 1, 5, 1]
+        }, 
+        {
+         "id":186,
+         "terrain":[1, 1, 1, 5]
+        }, 
+        {
+         "id":187,
+         "terrain":[0, 1, 0, 0]
+        }, 
+        {
+         "id":188,
+         "terrain":[1, 1, 0, 0]
+        }, 
+        {
+         "id":189,
+         "terrain":[1, 0, 0, 0]
+        }, 
+        {
+         "id":190,
+         "type":"block"
+        }, 
+        {
+         "id":191,
+         "type":"block"
+        }, 
+        {
+         "id":196,
+         "type":"block"
+        }, 
+        {
+         "id":197,
+         "type":"block"
+        }, 
+        {
+         "id":198,
+         "type":"block"
+        }, 
+        {
+         "id":199,
+         "terrain":[2, 2, 2, 2],
+         "type":"path"
+        }, 
+        {
+         "id":200,
+         "terrain":[2, 2, 2, 2],
+         "type":"path"
+        }, 
+        {
+         "id":203,
+         "type":"block"
+        }, 
+        {
+         "id":205,
+         "type":"block"
+        }, 
+        {
+         "id":208,
+         "type":"block"
+        }, 
+        {
+         "id":211,
+         "type":"block"
+        }, 
+        {
+         "id":212,
+         "type":"block"
+        }, 
+        {
+         "id":213,
+         "type":"block"
+        }, 
+        {
+         "id":214,
+         "type":"block"
+        }, 
+        {
+         "id":217,
+         "type":"block"
+        }, 
+        {
+         "id":218,
+         "type":"block"
+        }, 
+        {
+         "id":219,
+         "type":"block"
+        }, 
+        {
+         "id":220,
+         "type":"block"
+        }, 
+        {
+         "id":221,
+         "type":"block"
+        }, 
+        {
+         "id":224,
+         "type":"block"
+        }, 
+        {
+         "id":225,
+         "type":"block"
+        }, 
+        {
+         "id":226,
+         "type":"block"
+        }, 
+        {
+         "id":227,
+         "type":"block"
+        }, 
+        {
+         "id":228,
+         "type":"block"
+        }, 
+        {
+         "id":229,
+         "type":"block"
+        }, 
+        {
+         "id":230,
+         "type":"block"
+        }, 
+        {
+         "id":231,
+         "type":"block"
+        }, 
+        {
+         "id":232,
+         "type":"block"
+        }, 
+        {
+         "id":233,
+         "type":"block"
+        }, 
+        {
+         "id":234,
+         "type":"block"
+        }, 
+        {
+         "id":235,
+         "type":"block"
+        }, 
+        {
+         "id":236,
+         "type":"block"
+        }, 
+        {
+         "id":237,
+         "type":"block"
+        }, 
+        {
+         "id":241,
+         "type":"block"
+        }, 
+        {
+         "id":242,
+         "type":"block"
+        }, 
+        {
+         "id":244,
+         "type":"block"
+        }, 
+        {
+         "id":245,
+         "type":"block"
+        }, 
+        {
+         "id":246,
+         "type":"block"
+        }, 
+        {
+         "id":247,
+         "type":"block"
+        }, 
+        {
+         "id":248,
+         "type":"block"
+        }, 
+        {
+         "id":249,
+         "type":"block"
+        }, 
+        {
+         "id":250,
+         "type":"block"
+        }, 
+        {
+         "id":251,
+         "type":"block"
+        }, 
+        {
+         "id":252,
+         "type":"block"
+        }, 
+        {
+         "id":253,
+         "type":"block"
+        }, 
+        {
+         "id":254,
+         "type":"block"
+        }, 
+        {
+         "id":255,
+         "type":"block"
+        }],
+ "tilewidth":32,
+ "transparentcolor":"#000000",
+ "type":"tileset",
+ "version":1.2
+}
