@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Maps.POV
+ * Maps actions
+ */
+
 export interface POVPoint {
   x: number;
   y: number;

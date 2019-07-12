@@ -10,6 +10,12 @@ export enum Races {
   NoRace = 'no', // no race, when the race doesn't exist
 }
 
+export const ListRaces = {
+  [Races.Angel]: 'Ange',
+  [Races.Demon]: 'Démon',
+  [Races.Human]: 'Humain',
+};
+
 export const RaceFromString = (race: string): Races => {
   switch (race) {
     case 'an': return Races.Angel;

@@ -7,7 +7,7 @@ import { Plan } from '@models';
 import { List } from 'immutable';
 
 export const Plans = List<Plan>([
-  { id: 'earth', name: 'Althian' },
-  { id: 'hell', name: 'Ciféris' },
-  { id: 'heaven', name: 'Célestia' },
+  { id: 'earth', name: 'Althian', rawMapName: 'map_demo' },
+  { id: 'hell', name: 'Ciféris', rawMapName: 'map_demo' },
+  { id: 'heaven', name: 'Célestia', rawMapName: 'map_demo' },
 ]);

@@ -9,6 +9,7 @@ import logger = require('morgan');
 import sassMiddleware = require('node-sass-middleware');
 import path = require('path');
 import indexRoutes from './routes';
+import charactersRoutes from './routes/characters';
 import usersRoutes from './routes/users';
 
 export class ExpressServer {
@@ -50,8 +51,15 @@ export class ExpressServer {
     app.use(express.static(path.join(__dirname, 'public')));
     app.use(express.static(path.join(__dirname, '../..', 'dist', 'client')));
     app.use(this.session);
+    app.use((req, res: express.Response, next) => {
+      if (req.session !== undefined) {
+        res.locals.user = req.session.user;
+      }
+      next();
+    });
 
     app.use('/users', usersRoutes);
+    app.use('/characters', charactersRoutes);
     app.use('*', indexRoutes);
 
     // error handler

@@ -5,7 +5,7 @@
  */
 
 import { IStateServer } from '@engine/reducers';
-import { Coord, Direction, Plan } from '@models';
+import { Coord, Direction, Plan, RawMap } from '@models';
 import { Store } from 'redux';
 
 export class MapsTools {
@@ -80,4 +80,23 @@ export class MapsTools {
       c.y >= yMin &&
       c.y <= yMax);
   }
+
+  public static getCoordsMeta = (plan: Plan, posX: number, posY: number) => {
+    let rawMap: RawMap;
+    if (!MapsTools.loadedMaps.has(plan.rawMapName)) {
+      // tslint:disable-next-line: non-literal-require
+      rawMap = require(`@engine/resources/maps${plan.rawMapName}.ts`);
+      MapsTools.loadedMaps = MapsTools.loadedMaps.set(plan.rawMapName, rawMap);
+    } else {
+      rawMap = MapsTools.loadedMaps.get(plan.rawMapName);
+    }
+
+    const meta = rawMap.meta[posX][posY] !== null ? rawMap.meta[posX][posY] : {};
+
+    meta.block = rawMap.block[posX][posY] === 1;
+
+    return meta;
+  }
+
+  private static loadedMaps: Map<string, RawMap> = new Map();
 }

@@ -18,7 +18,7 @@ const DATABASE = 'characters';
 
 export type ICharactersState = Map<string, Character>;
 
-export const charactersReducer = (state: ICharactersState = INITIAL_STATE, action: AnyAction) => {
+export const charactersReducer = (state: ICharactersState = INITIAL_STATE, action: AnyAction): ICharactersState => {
   switch (action.type) {
     case CharactersActions.LOAD_DATABASE:
       return Tasks.loadDatabaseMap(DATABASE, CharactersTools.hydrater);
@@ -52,6 +52,12 @@ export const charactersReducer = (state: ICharactersState = INITIAL_STATE, actio
       char.position.coord.y = action.newY;
 
       return state.set(String(char.mat), char);
+    case CharacterActions.CREATE:
+      const newChar = CharactersTools.factory(state.size + 1, action.name, action.race);
+      newChar.owner = action.owner;
+
+      return state.set(String(newChar.mat), newChar);
+
     default:
       return state;
   }
