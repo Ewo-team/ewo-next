@@ -3,23 +3,9 @@
  * Character representations
  */
 
-import { Buff, Plan, Races } from '.';
-import { Coord } from './Maps';
-
-// TODO temp
-export const GradeTemplate = (_grade: CharacterGrade) => ({
-  hp: 0,
-  speed: 0,
-  dexterity: 0,
-  strength: 0,
-  agility: 0,
-  insight: 0,
-  magic: 0,
-
-  regenHp: 0,
-  regenSpeed: 0,
-  regenAgility: 0,
-});
+import { Buff, Classes, Grade, Plan, Race, RaceId } from '@models';
+import { Coord } from '../Maps';
+import { Genre } from './Genre';
 
 export enum CharacterStates {
   Hp = 'hp',
@@ -39,14 +25,21 @@ export interface Character {
   mat: number;
   name: string;
 
-  grade: CharacterGrade;
+  grade: Grade;
+  classes: Classes;
 
   motd: string;
   minutes: number | null;
 
-  race: Races;
+  race: RaceId;
+  genre: Genre;
 
   owner: number;
+
+  /**
+   * maxState = race state + grade state + character leveling
+   * state = max state with bonus / malus
+   */
 
   //#region HP
   hp; // calculated
@@ -146,20 +139,97 @@ export interface Character {
   ep; // enhancement point
 
   buffs: Buff[];
+  position?: {
+    plan: Plan;
+    coord: Coord;
+  };
+
+}
+
+interface CharacterFrontendExclude {
+  position;
+  modifHp;
+  modifRegenHp;
+  modifSpeed;
+  modifRegenSpeed;
+  modifDexterity;
+  modifStrength;
+  modifInsight;
+  modifAgility;
+  modifRegenAgility;
+  modifMagic;
+  bonusHp;
+  bonusRegenHp;
+  bonusSpeed;
+  bonusRegenSpeed;
+  bonusDexterity;
+  bonusStrength;
+  bonusInsight;
+  bonusAgility;
+  bonusRegenAgility;
+  bonusMagic;
+  malusHp;
+  malusRegenHp;
+  malusSpeed;
+  malusRegenSpeed;
+  malusDexterity;
+  malusStrength;
+  malusInsight;
+  malusAgility;
+  malusRegenAgility;
+  malusMagic;
+}
+
+interface CharacterFrontendPick {
+  mat;
+  name;
+  grade;
+  race;
+  genre;
+  xp;
+}
+
+export type CharacterFrontend = Omit<Character, keyof CharacterFrontendExclude> & {
+  coord?: {
+    x: number;
+    y: number,
+    plan: string,
+  };
+};
+export type CharacterLimitedFrontend = Pick<CharacterFrontend, keyof CharacterFrontendPick>;
+
+interface CharacterDatabasePick {
+  mat;
+  name;
+  race;
+  grade;
+  classes;
+  motd;
+  minutes;
+  owner;
+  posture;
+  xp;
+  ep;
+  buffs;
+  currentHp;
+  levelHp;
+  levelRegenHp;
+  currentSpeed;
+  levelSpeed;
+  levelRegenSpeed;
+  levelDexterity;
+  levelStrength;
+  levelInsight;
+  currentAgility;
+  levelAgility;
+  levelRegenAgility;
+  levelMagic;
+}
+
+export type CharacterDatabase = Pick<Character, keyof CharacterDatabasePick> & {
+  genre: number;
   maps: string;
-
-  position?: CharacterPosition; // shorthand property for front-end character
-}
-
-export interface CharacterGrade {
-  major: number;
-  minor: number;
-}
-
-export interface CharacterPosition {
-  plan: Plan;
-  coord: Coord;
-}
+};
 
 export enum CharacterPosture {
   Default,

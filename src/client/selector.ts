@@ -3,17 +3,17 @@
  * Selectors for Redux
  */
 
-import { Character, CoordFrontend } from '@models';
+import { CharacterFrontend, ViewFrontend } from '@models';
 import { createSelector } from 'reselect';
 import { IStateFrontend } from './reducers';
 
 export const getMat = (state: IStateFrontend) => state.selectedCharacter;
 export const getCharacters = (state: IStateFrontend) => state.characters;
-export const getCoords = (state: IStateFrontend) => state.coords;
+export const getView = (state: IStateFrontend) => state.views;
 
 export const getSelectedCharacter = createSelector(
   [getCharacters, getMat],
-  (characters: Record<string, Character>, mat): Character => {
+  (characters: Record<string, CharacterFrontend>, mat): CharacterFrontend => {
 
     if (mat !== undefined) {
       if (characters[mat] !== undefined) {
@@ -30,13 +30,13 @@ export const getSelectedCharacter = createSelector(
   },
 );
 
-export const getSelectedCoords = createSelector(
-  [getCoords, getMat],
-  (coords: { [key: string]: CoordFrontend[] }, mat): CoordFrontend[] => {
-    if (coords[mat] !== undefined) {
-      return coords[mat];
+export const getSelectedView = createSelector(
+  [getView, getMat],
+  (views: { [key: string]: ViewFrontend }, mat): ViewFrontend => {
+    if (views[mat] !== undefined) {
+      return views[mat];
     }
 
-    return [];
+    return null;
   },
 );

@@ -14,7 +14,7 @@ export class RunCommands {
 
   public static queueCommand: async.AsyncQueue<Command>;
   public static lazyCommands: List<Command> = List();
-  public static timerTenMinute: NodeJS.Timeout;
+  public static timerTenMinute: NodeJS.Timeout | number;
 
   public static startAutoSave = () => {
 

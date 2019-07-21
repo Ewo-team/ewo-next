@@ -5,12 +5,12 @@
 
 import * as Tasks from '@engine/Commands/tasks';
 import { IMapsState } from '@engine/Maps/reducers';
-import { Plans } from '@engine/resources';
-import { Character } from '@models';
+import { Character, CharacterFrontend, CharacterDatabase } from '@models';
 import { Map } from 'immutable';
 import { AnyAction } from 'redux';
 import { CharacterActions, CharactersActions } from './actions';
 import { CharactersTools } from './CharacterTools';
+import { Plans } from '@engine/resources';
 
 // tslint:disable-next-line: no-unnecessary-type-annotation
 const INITIAL_STATE: ICharactersState = Map();
@@ -21,24 +21,26 @@ export type ICharactersState = Map<string, Character>;
 export const charactersReducer = (state: ICharactersState = INITIAL_STATE, action: AnyAction): ICharactersState => {
   switch (action.type) {
     case CharactersActions.LOAD_DATABASE:
-      return Tasks.loadDatabaseMap(DATABASE, CharactersTools.hydrater);
+      return Tasks.loadDatabaseMap(DATABASE, CharactersTools.factory);
     case CharactersActions.SAVE_DATABASE:
       Tasks.saveDatabaseMap(DATABASE, state);
       return state;
     case CharactersActions.LINK_TO_MAP:
       const maps: IMapsState = action.maps;
 
+      // Technically, we can threat
       return state.map(character => {
 
-        const map = maps.get(character.maps);
-
-        const plan = Plans.find(p => p.id === character.maps);
+        if (character.position === undefined || character.position.plan === undefined) {
+          return character;
+        }
+        const map = maps.get(character.position.plan.id);
 
         const coord = map.find(m => m.character.mat === character.mat);
 
         return {
           ...character, position: {
-            plan,
+            plan: character.position.plan,
             coord,
           },
         };
@@ -53,8 +55,7 @@ export const charactersReducer = (state: ICharactersState = INITIAL_STATE, actio
 
       return state.set(String(char.mat), char);
     case CharacterActions.CREATE:
-      const newChar = CharactersTools.factory(state.size + 1, action.name, action.race);
-      newChar.owner = action.owner;
+      const newChar = CharactersTools.factory({ mat: state.size + 1, name: action.name, race: action.race, owner: action.owner, genre: action.genre });
 
       return state.set(String(newChar.mat), newChar);
 

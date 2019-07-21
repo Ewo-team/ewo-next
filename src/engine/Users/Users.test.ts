@@ -124,12 +124,14 @@ describe('UsersTools', () => {
   const jsonUserInvalid = JSON.parse('{"id": 0,"name": "jest","hash": "hash","email": "email", "invalid-prop": "invalid-value"}');
   const jsonUserMissing1 = JSON.parse('{"id": 0,"name": "jest"}');
   const jsonUserMissing2 = JSON.parse('{"hash": "hash","email": "email"}');
+  const jsonUserAdmin = JSON.parse('{"id": 0,"name": "jest","hash": "hash","email": "email","role": 20}');
 
   const user = {
     id: 0,
     name: 'jest',
     hash: 'hash',
     email: 'email',
+    role: 1,
   };
 
   const userMissing1 = {
@@ -137,6 +139,7 @@ describe('UsersTools', () => {
     name: 'jest',
     hash: null,
     email: null,
+    role: 1,
   };
 
   const userMissing2 = {
@@ -144,6 +147,15 @@ describe('UsersTools', () => {
     name: null,
     hash: 'hash',
     email: 'email',
+    role: 1,
+  };
+
+  const userAdmin = {
+    id: 0,
+    name: 'jest',
+    hash: 'hash',
+    email: 'email',
+    role: 20,
   };
 
   it('should hydrate user', () => {
@@ -151,25 +163,30 @@ describe('UsersTools', () => {
     expect(UsersTools.hydrater(jsonUserInvalid)).toEqual(user);
     expect(UsersTools.hydrater(jsonUserMissing1)).toEqual(userMissing1);
     expect(UsersTools.hydrater(jsonUserMissing2)).toEqual(userMissing2);
+    expect(UsersTools.hydrater(jsonUserAdmin)).toEqual(userAdmin);
   });
 
-  it('should serialize coord', () => {
+  it('should serialize user', () => {
     const invalidUser = {
       ...user,
       invalidProps: 'invalid value',
     } as User;
+    const jsonUserWithRole = { ...jsonUser, role: 1 };
+    const jsonUserMissing1WithRole = { ...jsonUserMissing1, role: 1 };
+    const jsonUserMissing2WithRole = { ...jsonUserMissing2, role: 1 };
 
-    expect(UsersTools.serializer(user)).toEqual(jsonUser);
-    expect(UsersTools.serializer(invalidUser)).toEqual(jsonUser);
-    expect(UsersTools.serializer(userMissing1)).toEqual(jsonUserMissing1);
-    expect(UsersTools.serializer(userMissing2)).toEqual(jsonUserMissing2);
+    expect(UsersTools.serializer(user)).toEqual(jsonUserWithRole);
+    expect(UsersTools.serializer(invalidUser)).toEqual(jsonUserWithRole);
+    expect(UsersTools.serializer(userMissing1)).toEqual(jsonUserMissing1WithRole);
+    expect(UsersTools.serializer(userMissing2)).toEqual(jsonUserMissing2WithRole);
+    expect(UsersTools.serializer(userAdmin)).toEqual(jsonUserAdmin);
   });
 
   it('should get user mats', () => {
 
-    const character1 = CharactersTools.factory(1, 'Test 1', { owner: 1 });
-    const character2 = CharactersTools.factory(2, 'Test 2', { owner: 2 });
-    const character3 = CharactersTools.factory(3, 'Test 3', { owner: 1 });
+    const character1 = CharactersTools.factory({ mat: 1, name: 'Test 1', owner: 1 });
+    const character2 = CharactersTools.factory({ mat: 2, name: 'Test 2', owner: 2 });
+    const character3 = CharactersTools.factory({ mat: 3, name: 'Test 3', owner: 1 });
 
     const characters = Map({
       1: character1,

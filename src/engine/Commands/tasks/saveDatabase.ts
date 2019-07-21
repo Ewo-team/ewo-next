@@ -11,11 +11,11 @@ declare var __basedir: string;
 
 const saveDatabase = (databaseName: string, values: Map<string, any> | List<any>, format: string, serializer?: (source) => any): void => {
 
-  if (!fs.existsSync(path.join(__basedir, './data'))) {
-    fs.mkdirSync(path.join(__basedir, './data'));
+  if (!fs.existsSync(path.join(__basedir, process.env.SERVER_DATA))) {
+    fs.mkdirSync(path.join(__basedir, process.env.SERVER_DATA));
   }
 
-  const database = path.join(__basedir, './data', `${databaseName}.json`);
+  const database = path.join(__basedir, process.env.SERVER_DATA, `${databaseName}.json`);
 
   console.log(`saving database ${database}`);
 

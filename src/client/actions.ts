@@ -2,7 +2,7 @@
  * @module Client.Redux
  */
 
-import { Character, Coord } from '@models';
+import { CharacterFrontend, ViewFrontend } from '@models';
 import { Dispatch } from 'redux';
 
 export enum Actions {
@@ -11,18 +11,18 @@ export enum Actions {
   SET_SELECTED_CHARACTER = 'SET_SELECTED_CHARACTER',
   SOCKET_ACTION = 'SOCKET_ACTION',
   SOCKET_ACTIONS = 'SOCKET_ACTIONS',
-  SOCKET_UPDATE = 'SOCKET_UPDATE'
+  SOCKET_UPDATE = 'SOCKET_UPDATE',
 }
 
-export const refreshCharacters = (characters: Record<string, Character>) => ({
+export const refreshCharacters = (characters: Record<string, CharacterFrontend>) => ({
   type: Actions.REFRESH_CHARACTERS,
   characters,
 });
 
-export const refreshMaps = (mat: number, coords: Coord[]) => ({
+export const refreshMaps = (mat: number, views: ViewFrontend[]) => ({
   type: Actions.REFRESH_MAPS,
   mat,
-  coords,
+  views,
 });
 
 export const setSelectedCharacter = (mat: number) => ({

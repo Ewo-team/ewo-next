@@ -5,12 +5,13 @@
 
 import { IStateFrontend } from '@client/reducers';
 import { getSelectedCharacter } from '@client/selector';
-import { Character } from '@models';
+import { CharacterFrontend, Plan } from '@models';
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Plans } from '@engine/resources';
 
 export interface PositionProps {
-  character: Character;
+  character: CharacterFrontend;
 }
 
 export const PositionComponent = (props: PositionProps) => {
@@ -19,9 +20,11 @@ export const PositionComponent = (props: PositionProps) => {
     return null;
   }
 
-  if (props.character.position) {
-    const { plan, coord: { x, y } } = props.character.position;
-    return <div className="Infos__Position">Sur <a href="gps">{plan.name}</a> en X = {x} <b>| </b>Y = {y}</div>;
+
+  if (props.character.coord) {
+    const { plan, x, y } = props.character.coord;
+    const planObj: Plan = Plans[plan];
+    return <div className="Infos__Position">Sur <a href="gps">{planObj.name}</a> en X = {x} <b>| </b>Y = {y}</div>;
   }
   return <div className="Infos__Position">Nullepart</div>;
 };

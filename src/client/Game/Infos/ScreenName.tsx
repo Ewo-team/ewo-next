@@ -5,12 +5,12 @@
 
 import { IStateFrontend } from '@client/reducers';
 import { getSelectedCharacter } from '@client/selector';
-import { Character } from '@models';
+import { CharacterFrontend } from '@models';
 import * as React from 'react';
 import { connect } from 'react-redux';
 
 export interface ScreenNameProps {
-  character: Character;
+  character: CharacterFrontend;
 }
 
 export const ScreenNameComponent = (props: ScreenNameProps) => {

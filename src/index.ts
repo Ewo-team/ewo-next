@@ -15,6 +15,9 @@ require('dotenv').config();
 declare namespace NodeJS {
   // tslint:disable-next-line: interface-name
   interface Global {
+    /**
+     * Store the project base dir path
+     */
     __basedir: string;
   }
 }

@@ -13,14 +13,14 @@ block content
           .form-group
             label(for="race") Race
             select.form-control(name = "race" required value = race)
-              each val, index in races
-                option(value=index)= val
+              each race in races
+                option(value=race.id)= race.name
         else
           input(name = "race" type = "hidden" required value = race)
         .form-group
-          label(for="sexe") Sexe
-          select.form-control(name = "sexe" required value = sexe)
+          label(for="genre") Sexe
+          select.form-control(name = "genre" required value = genre)
             option(value=0) Féminin
             option(value=1) Masculin
-            option(value=3) Autre
+            option(value=2) Autre
         button(type = "Submit" class="btn btn-primary") Valider

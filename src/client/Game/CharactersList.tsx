@@ -4,14 +4,14 @@
  * @preferred
  */
 
-import { Character } from '@models';
+import { CharacterFrontend } from '@models';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IStateFrontend } from '../reducers';
 
 export interface CharactersListProps {
-  characters: Record<string, Character>;
+  characters: Record<string, CharacterFrontend>;
   loaded: boolean;
   loading: boolean;
   error?: string;
@@ -61,7 +61,7 @@ export class CharactersListComponent extends React.Component<CharactersListProps
     );
   }
 
-  private renderLine(character: Character) {
+  private renderLine(character: CharacterFrontend) {
     return (
       <tr key={character.mat}>
         <td />

@@ -16,20 +16,12 @@ import { socket } from '@client/index';
  * and a message (if errors or string formating)
  */
 
-export const action = (payload) => {
-  socket.emit('action', payload, resp => {
+const emit = (request, payload) => {
+  socket.emit(request, payload, resp => {
     console.log(resp);
   });
 };
 
-export const actionBatch = (payload) => {
-  socket.emit('actionBatch', payload, resp => {
-    console.log(resp);
-  });
-};
-
-export const update = (payload) => {
-  socket.emit('update', payload, resp => {
-    console.log(resp);
-  });
-};
+export const action = (payload) => emit('action', payload);
+export const actionBatch = (payload) => emit('actionBatch', payload);
+export const update = (payload) => emit('update', payload);

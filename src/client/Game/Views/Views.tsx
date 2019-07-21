@@ -4,18 +4,28 @@
  */
 
 import { IStateFrontend } from '@client/reducers';
-import { getSelectedCharacter, getSelectedCoords } from '@client/selector';
+import { getSelectedCharacter, getSelectedView } from '@client/selector';
 import * as Actions from '@client/socket/actions';
 import { MapsTools } from '@engine/Maps/MapsTools';
-import { Character, CoordFrontend, Direction } from '@models';
+import { CharacterFrontend, CoordCharacterFrontend, CoordFrontend, Direction, POVState, ViewFrontend } from '@models';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Action, bindActionCreators, Dispatch } from 'redux';
 
 export interface ViewsProps {
-  character: Character;
-  coords: CoordFrontend[];
+  character: CharacterFrontend;
+  view: ViewFrontend;
   actions: any;
+}
+
+export interface CoordLabel extends CoordFrontend {
+  label: string;
+}
+
+export interface CoordMeta extends CoordFrontend {
+  category: string;
+  ui: string;
+  meta: any;
 }
 
 export class ViewsComponent extends React.Component<ViewsProps> {
@@ -45,29 +55,32 @@ export class ViewsComponent extends React.Component<ViewsProps> {
     const maxX = centerX + insight;
     const minY = centerY - insight;
     const maxY = centerY + insight;
-    const borders: CoordFrontend[] = [];
+    const borders: CoordLabel[] = [];
 
     for (let x = minX + 1; x < maxX; x += 1) {
-      borders.push({ x, y: minY, label: String(x) });
-      borders.push({ x, y: maxY, label: String(x) });
+      borders.push({ x, y: minY, label: String(x), type: 'lab' });
+      borders.push({ x, y: maxY, label: String(x), type: 'lab' });
     }
 
     for (let y = minY + 1; y < maxY; y += 1) {
-      borders.push({ x: minX, y, label: String(y) });
-      borders.push({ x: maxX, y, label: String(y) });
+      borders.push({ x: minX, y, label: String(y), type: 'lab' });
+      borders.push({ x: maxX, y, label: String(y), type: 'lab' });
     }
 
     return borders;
 
   }
 
-  private generateMoveCoord(id: number, pos: { x, y }, coords: CoordFrontend[]): CoordFrontend[] {
-    const found = coords.find(c => c.x === pos.x && c.y === pos.y);
+  private generateMoveCoord(direction: number, pos: { x, y }, coords: any[]): any[] {
+
+    const { view } = this.props;
+
+    const found = view.pov.find(c => c.x === pos.x && c.y === pos.y && c.state === POVState.Block);
     if (found === undefined) {
 
       let className = '';
 
-      switch (id) {
+      switch (direction) {
         case Direction.North:
           className = 'fas fa-arrow-up';
           break;
@@ -94,52 +107,85 @@ export class ViewsComponent extends React.Component<ViewsProps> {
           break;
       }
 
-      return [...coords, {
+      const move: CoordMeta = {
         x: pos.x,
         y: pos.y,
-        type: 'move',
+        type: 'met',
+        category: 'move',
         ui: className,
-        meta: id,
-      }];
+        meta: direction,
+      };
+
+      return [...coords, move];
     }
 
     return coords;
   }
 
-  private generateMoveCoords(coord: CoordFrontend, coords: CoordFrontend[]) {
-
+  private generateMoveCoords(x: number, y: number, coords: any[]) {
     // tslint:disable: no-parameter-reassignment
-    coords = this.generateMoveCoord(Direction.North, MapsTools.getRelativePosition(coord.x, coord.y, Direction.North), coords);
-    coords = this.generateMoveCoord(Direction.NorthEast, MapsTools.getRelativePosition(coord.x, coord.y, Direction.NorthEast), coords);
-    coords = this.generateMoveCoord(Direction.East, MapsTools.getRelativePosition(coord.x, coord.y, Direction.East), coords);
-    coords = this.generateMoveCoord(Direction.SouthEast, MapsTools.getRelativePosition(coord.x, coord.y, Direction.SouthEast), coords);
-    coords = this.generateMoveCoord(Direction.South, MapsTools.getRelativePosition(coord.x, coord.y, Direction.South), coords);
-    coords = this.generateMoveCoord(Direction.SouthWest, MapsTools.getRelativePosition(coord.x, coord.y, Direction.SouthWest), coords);
-    coords = this.generateMoveCoord(Direction.West, MapsTools.getRelativePosition(coord.x, coord.y, Direction.West), coords);
-    coords = this.generateMoveCoord(Direction.NorthWest, MapsTools.getRelativePosition(coord.x, coord.y, Direction.NorthWest), coords);
+    coords = this.generateMoveCoord(Direction.North, MapsTools.getRelativePosition(x, y, Direction.North), coords);
+    coords = this.generateMoveCoord(Direction.NorthEast, MapsTools.getRelativePosition(x, y, Direction.NorthEast), coords);
+    coords = this.generateMoveCoord(Direction.East, MapsTools.getRelativePosition(x, y, Direction.East), coords);
+    coords = this.generateMoveCoord(Direction.SouthEast, MapsTools.getRelativePosition(x, y, Direction.SouthEast), coords);
+    coords = this.generateMoveCoord(Direction.South, MapsTools.getRelativePosition(x, y, Direction.South), coords);
+    coords = this.generateMoveCoord(Direction.SouthWest, MapsTools.getRelativePosition(x, y, Direction.SouthWest), coords);
+    coords = this.generateMoveCoord(Direction.West, MapsTools.getRelativePosition(x, y, Direction.West), coords);
+    coords = this.generateMoveCoord(Direction.NorthWest, MapsTools.getRelativePosition(x, y, Direction.NorthWest), coords);
 
     return coords;
+  }
+
+  private renderCase(coord: any): JSX.Element {
+    if (coord.type !== undefined) {
+
+      switch (coord.type) {
+        case 'lab': return <div className="item--label">{coord.label}</div>;
+        case 'met':
+          if (coord.category === 'move') {
+            return (
+              <div
+                role="button"
+                className={`item--move ${coord.ui}`}
+                onClick={() => { this.clickDirection(coord.meta); }}
+              />
+            );
+          }
+        case 'cha': return <div className="item--character">{coord.mat}</div>;
+      }
+
+    }
+    return null;
   }
 
   private renderGrid() {
 
-    const { character, coords } = this.props;
+    const { character, view } = this.props;
 
-    const position = coords.find(c => c.mat === character.mat);
-
-    if (position === undefined) {
+    if (character.coord === undefined) {
       return <section>Votre personnage n'est plus de ce monde.</section>;
     }
 
-    const centerX = position.x;
-    const centerY = position.y;
+    const centerX = character.coord.x;
+    const centerY = character.coord.y;
+
+    const coordCharacter: CoordCharacterFrontend = {
+      x: centerX,
+      y: centerY,
+      character,
+      type: 'cha',
+    };
 
     let gridCoords = [
-      ...coords,
+      coordCharacter,
+      ...view.characters,
+      ...view.pov,
       ...this.generateCoordsBorder(centerX, centerY, character.currentInsight),
     ];
 
-    gridCoords = this.generateMoveCoords(position, gridCoords);
+    gridCoords = this.generateMoveCoords(centerX, centerY, gridCoords);
+
+    console.log({ gridCoords });
 
     return (
       <section className={`grid grid-${character.currentInsight}`}>
@@ -155,14 +201,7 @@ export class ViewsComponent extends React.Component<ViewsProps> {
               gridRow: offsetY,
             }}
           >
-            {coord.label && <div className="item--label">{coord.label}</div>}
-            {coord.mat && <div className="item--character">{coord.mat}</div>}
-            {coord.type === 'move' && <div
-              role="button"
-              className={`item--move ${coord.ui}`}
-              onClick={() => { this.clickDirection(coord.meta); }}
-            />
-            }
+            {this.renderCase(coord)}
           </div>;
         })}
       </section>
@@ -176,7 +215,7 @@ export class ViewsComponent extends React.Component<ViewsProps> {
 
 const mapStateToProps = (state: IStateFrontend) => ({
   character: getSelectedCharacter(state),
-  coords: getSelectedCoords(state),
+  view: getSelectedView(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({

@@ -3,6 +3,11 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "es6",
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
     "outDir": "dist",
     "jsx": "react",
     "moduleResolution": "node",
@@ -40,7 +45,11 @@
       "@engine/*": [
         "engine/*"
       ]
-    }
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ]
   },
   "typedocOptions": {
     "name": "E.W.O. Next",

@@ -4,10 +4,13 @@
  */
 
 import { Plan } from '@models';
-import { List } from 'immutable';
 
-export const Plans = List<Plan>([
-  { id: 'earth', name: 'Althian', rawMapName: 'map_demo' },
-  { id: 'hell', name: 'Ciféris', rawMapName: 'map_demo' },
-  { id: 'heaven', name: 'Célestia', rawMapName: 'map_demo' },
-]);
+export const Althian: Plan = { id: 'althian', name: 'Althian', rawMapName: 'map_demo' };
+export const Ciferis: Plan = { id: 'ciferis', name: 'Ciféris', rawMapName: 'map_demo' };
+export const Celestia: Plan = { id: 'celestia', name: 'Célestia', rawMapName: 'map_demo' };
+
+export const Plans = {
+  althian: Althian,
+  ciferis: Ciferis,
+  celestia: Celestia,
+};

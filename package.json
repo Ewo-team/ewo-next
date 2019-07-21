@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --silent --outputFile=test/jest-test-results.json",
-    "watch": "nodemon -e ts -w ./src -x npm run watch:serve",
-    "watch:serve": "node -r ts-node/register -r tsconfig-paths/register --inspect src/index.ts",
+    "server": "nodemon -e ts -w ./src -x npm run server:watch",
+    "server:watch": "node -r ts-node/register -r tsconfig-paths/register --inspect src/index.ts --lib node",
     "client": "webpack --watch",
     "prestorybook": "node-sass ./src/client/App.scss ./dist/client/App.css",
     "storybook": "start-storybook -p 6006",
@@ -36,8 +36,8 @@
     "reselect": "^4.0.0",
     "socket.io": "^2.2.0",
     "tslint": "^5.18.0",
-    "typescript": "3.4.5",
-    "validator": "11.0.0"
+    "typescript": "^3.4.5",
+    "validator": "^11.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

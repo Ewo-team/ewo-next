@@ -1,7 +1,8 @@
 /// <reference types="jest" />
 
 import { IMapsState } from '@engine/Maps/reducers';
-import { Character, CharacterPosition, Races } from '@models';
+import { Races } from '@engine/resources';
+import { Character, Coord, Genre, Classes } from '@models';
 import { List, Map } from 'immutable';
 import { loadDatabaseMap, saveDatabaseMap } from '../Commands/tasks';
 import { CharacterActions, CharactersActions, create, linkToMap, loadDatabase, move, saveDatabase, updateMotd } from './actions';
@@ -10,8 +11,19 @@ import { charactersReducer } from './reducers';
 
 jest.mock('../Commands/tasks');
 
-const character1 = CharactersTools.factory(1, 'Test 1');
-const character2 = CharactersTools.factory(2, 'Test 2');
+const character1 = CharactersTools.factory({ mat: 1, name: 'Test 1' });
+const character2 = CharactersTools.factory({ mat: 2, name: 'Test 2' });
+const character3 = CharactersTools.factory({ mat: 1, name: 'Test 3', race: 'an', genre: 0 });
+
+character1.position = {
+  coord: { x: 0, y: 0 } as Coord,
+  plan: { id: 'althian', name: 'Althian', rawMapName: 'map_demo' },
+};
+
+character2.position = {
+  coord: { x: 1, y: 0 } as Coord,
+  plan: { id: 'althian', name: 'Althian', rawMapName: 'map_demo' },
+};
 
 describe('Characters actions', () => {
   it('should create an action to load database', () => {
@@ -54,9 +66,10 @@ describe('Character actions', () => {
       type: CharacterActions.CREATE,
       owner: 1,
       name: 'test',
-      race: Races.Angel,
+      race: 'an',
+      genre: Genre.Male,
     };
-    expect(create(1, 'test', Races.Angel)).toEqual(expectedAction);
+    expect(create(1, 'test', 'an', Genre.Male)).toEqual(expectedAction);
   });
 
   it('should create an action to update the MotD', () => {
@@ -86,14 +99,16 @@ describe('Character model', () => {
 
       expected.mat = 1;
       expected.name = 'perso 1';
-      expected.race = Races.Angel;
+      expected.race = 'an';
       expected.owner = 1;
       expected.levelSpeed = 1;
       expected.buffs = [];
+      expected.classes = Classes.Base;
       expected.currentAgility = 0;
       expected.currentHp = 1;
       expected.currentSpeed = 0;
       expected.ep = 0;
+      expected.genre = Genre.Other;
       expected.grade = {
         major: 0,
         minor: 0,
@@ -107,14 +122,13 @@ describe('Character model', () => {
       expected.levelRegenHp = 0;
       expected.levelRegenSpeed = 0;
       expected.levelStrength = 0;
-      expected.maps = 'earth';
       expected.motd = '';
       expected.posture = 0;
       expected.xp = 0;
 
       expected = CharactersTools.updateCharacter(expected);
 
-      const perso = CharactersTools.hydrater(JSON.parse(json));
+      const perso = CharactersTools.factory(JSON.parse(json));
 
       expect(perso).toEqual(expected);
     });
@@ -125,12 +139,12 @@ describe('Character model', () => {
     const char1 = {} as Character;
     char1.currentSpeed = 5;
     char1.mat = 1;
-    char1.position = { coord: { x: 1, y: 1 } } as CharacterPosition;
+    char1.position = { coord: { x: 1, y: 1 } } as any;
 
     const char2 = {} as Character;
     char2.currentSpeed = 5;
     char2.mat = 2;
-    char2.position = { coord: { x: 1, y: 2 } } as CharacterPosition;
+    char2.position = { coord: { x: 1, y: 2 } } as any;
 
     expect(char1.currentSpeed).toEqual(5);
 
@@ -196,7 +210,7 @@ describe('Characters reducers', () => {
 
   it('should handle LINK_TO_MAP', () => {
     const mapState: IMapsState = Map({
-      earth: List([
+      althian: List([
         {
           x: 0,
           y: 0,
@@ -216,13 +230,13 @@ describe('Characters reducers', () => {
       ['1', {
         ...character1, position: {
           coord: { character: character1, x: 0, y: 0 },
-          plan: { id: 'earth', name: 'Althian', rawMapName: 'map_demo' },
+          plan: { id: 'althian', name: 'Althian', rawMapName: 'map_demo' },
         },
       }],
       ['2', {
         ...character2, position: {
           coord: { character: character2, x: 1, y: 0 },
-          plan: { id: 'earth', name: 'Althian', rawMapName: 'map_demo' },
+          plan: { id: 'althian', name: 'Althian', rawMapName: 'map_demo' },
         },
       }],
     ]);
@@ -236,7 +250,7 @@ describe('Characters reducers', () => {
   it('should handle MOVE', () => {
 
     const mapState: IMapsState = Map({
-      earth: List([
+      althian: List([
         {
           x: 0,
           y: 0,
@@ -261,15 +275,17 @@ describe('Characters reducers', () => {
       currentSpeed: -3,
       position: {
         coord: { character: character1, x: -3, y: 0 },
-        plan: { id: 'earth', name: 'Althian', rawMapName: 'map_demo' },
+        plan: { id: 'althian', name: 'Althian', rawMapName: 'map_demo' },
       },
     });
   });
 
   it('should handle CREATE', () => {
 
-    const result = charactersReducer(undefined, create(character1.owner, character1.name, character1.race));
+    const result = charactersReducer(undefined, create(character3.owner, character3.name, 'an', character3.genre));
 
-    expect(result.get('1')).toEqual(character1);
+    console.log(result);
+
+    expect(result.last()).toEqual(character3);
   });
 });

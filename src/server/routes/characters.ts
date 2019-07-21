@@ -3,7 +3,9 @@
  * ExpressJS Users-related Routes
  */
 
-import { ListRaces } from '@models';
+import { create } from '@engine/Characters/actions';
+import { Races, RacesList } from '@engine/resources';
+import { GenreFromString, UserRole } from '@models';
 import express = require('express');
 import { check, CustomValidator, validationResult } from 'express-validator/check';
 import { checkSignIn } from '../auth';
@@ -14,26 +16,39 @@ const views = {
   create: 'characters/create',
 };
 
-const raceSelector = (req: express.Request): string[] | null => {
+const availlableRaces = (req: express.Request): Array<{ id: string, name: string }> => {
   const characters = req.reduxStore.getState().Characters.filter(c => c.owner === req.session.user.id).toList();
+  const user = req.reduxStore.getState().Users.find(u => u.id === req.session.user.id);
 
-  return characters.size === 0 ? null : [...characters.map(c => String(c.race)).toSet()];
+  if (user.role >= UserRole.Admin) {
+    return RacesList.map(r => ({ id: r.id, name: r.name }));
+  }
+
+  if (characters.size === 0) {
+    return RacesList.filter(r => r.playable).map(r => ({ id: r.id, name: r.name }));
+  }
+
+  const camps = characters.map(c => Races[c.race].camps);
+
+  return RacesList.filter(r => camps.contains(r.camps) && r.playable).map(r => ({ id: r.id, name: r.name }));
+
 };
 
 /* GET characters listing. */
 router.get('/create', checkSignIn, (req, res) => {
-  const races = raceSelector(req);
+
+  const races = availlableRaces(req);
 
   const options = {
-    races: ListRaces,
+    races,
     raceChoice: false,
-    race: '',
+    race: null,
   };
 
-  if (races === null || races.length === 0) {
+  if (races.length !== 1) {
     options.raceChoice = true;
   } else {
-    options.race = races[0];
+    options.race = races[0].id;
   }
 
   res.render(views.create, options);
@@ -52,13 +67,13 @@ const nameExist: CustomValidator = (value: string, { req }) => {
 
 const raceAllowed: CustomValidator = (value: string, { req }) => {
 
-  const races = raceSelector(req as express.Request);
+  const races = availlableRaces(req as express.Request);
 
   if (races === null || races.length === 0) {
     return true;
   }
 
-  return races.includes(value);
+  return races.find(r => r.id === value);
 };
 
 const errorFlash = 'alert-danger';
@@ -68,12 +83,12 @@ router.post(
     checkSignIn,
     check('name', 'Le nom de personnage est requis').exists(),
     check('race', 'La race est requise').exists(),
-    check('sexe', 'Le sexe est requis').exists(),
-    check('sexe', "le sexe n'est pas valide").isInt({ min: 0, max: 2 }),
+    check('genre', 'Le sexe est requis').exists(),
+    check('genre', "le sexe n'est pas valide").isInt({ min: 0, max: 2 }),
     check('race', "La race n'est pas valide").custom(raceAllowed),
     check('name', 'Le personnage existe déjà').custom(nameExist),
   ],
-  (req, res) => {
+  (req: express.Request, res) => {
 
     const errors = validationResult(req);
 
@@ -82,24 +97,17 @@ router.post(
       const body = {
         name: req.body.name,
         race: req.body.race,
-        sexe: req.body.sexe,
+        genre: req.body.genre,
       };
 
       const message = { flash: { type: errorFlash, messages: errors.array() }, ...body };
 
       res.render(views.create, message);
     } else {
-      /*const password = req.body.password;
 
-      const hashed = hash(password);
-
-      const newUser = { name: req.body.username, hash: hashed, email: req.body.email } as User;
-      req.session.user = newUser;
-
-      newUser.token = req.sessionID;
-      req.reduxStore.dispatch(register(newUser));
-      res.redirect('/users/');*/
-      console.log(req.body);
+      const genre = GenreFromString(req.body.genre);
+      req.reduxStore.dispatch(create(req.session.user.id, req.body.name, req.body.race, genre));
+      res.redirect('/');
     }
   });
 

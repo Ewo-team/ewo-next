@@ -8,7 +8,7 @@ import { createLogger } from 'redux-logger';
 import reduxThunk from 'redux-thunk';
 import rootReducer, { IStateFrontend } from './reducers';
 
-export const createStore = (socketSendMiddleware?): Store<IStateFrontend> => {
+export const createStore = (socketSendMiddleware?, initialState?): Store<IStateFrontend> => {
 
   const middlewares = [reduxThunk];
 
@@ -38,6 +38,6 @@ export const createStore = (socketSendMiddleware?): Store<IStateFrontend> => {
     middlewares.push(logger);
   }
 
-  return reduxCreateStore(rootReducer, undefined, compose(applyMiddleware(...middlewares)));
+  return reduxCreateStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));
 
 };

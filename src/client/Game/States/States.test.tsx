@@ -1,28 +1,23 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { States } from '.';
-import { characterDeadMat2, characterDefaultMat1, characterFullMat3 } from '../../../../test/mock/character';
-import { Character } from '../../../engine/models';
+import { CharacterFrontend } from '../../../engine/models';
 import { refreshCharacters, setSelectedCharacter } from '../../actions';
 import { Provider } from '../../provider';
 import { createStore } from '../../store';
 import { InfoBar, SimpleBar, DoubleBar, BarColors } from './Bar';
+import { characterFrontendDefaultMat1, characterFrontendDeadMat2, characterFrontendFullMat3 } from '../../../../test/mock/character';
+import { frontendInitialState } from '../../../../test/mock/frontendStore';
 
 describe('UI States', () => {
 
   describe('States connected component', () => {
 
-    const store = createStore();
+    const store = createStore(undefined, frontendInitialState);
 
-    const def = characterDefaultMat1;
-    const full: Character = characterFullMat3;
-    const dead: Character = characterDeadMat2;
-
-    store.dispatch(refreshCharacters({
-      [def.mat]: characterDefaultMat1,
-      [full.mat]: characterFullMat3,
-      [dead.mat]: characterDeadMat2,
-    }));
+    const def: CharacterFrontend = characterFrontendDefaultMat1;
+    const dead: CharacterFrontend = characterFrontendDeadMat2;
+    const full: CharacterFrontend = characterFrontendFullMat3;
 
     it('Default character', () => {
 

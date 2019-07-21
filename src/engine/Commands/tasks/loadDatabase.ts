@@ -12,7 +12,7 @@ declare var __basedir;
 
 const loadDatabase = <V>(databaseName: string, modelHydrater: (item: any, additionnalData?: any) => any, additionnalData?: any): Map<string, V> | List<V> => {
 
-  const database = path.join(__basedir, './data', `${databaseName}.json`);
+  const database = path.resolve(__basedir, process.env.SERVER_DATA, `${databaseName}.json`);
 
   console.log(`loading database ${database}`);
 
@@ -27,7 +27,6 @@ const loadDatabase = <V>(databaseName: string, modelHydrater: (item: any, additi
   if (data.format === 'array') {
     const dataArray = (data.data as any[]).map((item, index, array) => {
       const percent = Math.floor(((index + 1) / array.length) * 100);
-      console.log({ index, length: array.length });
       if (percent !== percentOld) {
         console.log(`loading... ${percent}%`);
         percentOld = percent;

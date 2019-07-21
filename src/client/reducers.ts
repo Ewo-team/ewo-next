@@ -4,14 +4,14 @@
  * @preferred
  */
 
-import { Character, CoordFrontend } from '@models';
+import { CharacterFrontend, ViewFrontend } from '@models';
 import { AnyAction } from 'redux';
 import { Actions } from './actions';
 
 export interface IStateFrontend {
   selectedCharacter?: number;
-  characters: Record<string, Character>;
-  coords: Record<string, CoordFrontend[]>;
+  characters: Record<string, CharacterFrontend>;
+  views: Record<string, ViewFrontend>;
   loaded: boolean;
   loading: boolean;
   error?: string;
@@ -21,7 +21,7 @@ const initialState: IStateFrontend = {
   loading: false,
   loaded: false,
   characters: {},
-  coords: {},
+  views: {},
 };
 
 const reducer = (state: IStateFrontend = initialState, action: AnyAction): IStateFrontend => {
@@ -29,7 +29,7 @@ const reducer = (state: IStateFrontend = initialState, action: AnyAction): IStat
     case Actions.REFRESH_CHARACTERS:
       return { ...state, loading: false, loaded: true, characters: action.characters };
     case Actions.REFRESH_MAPS:
-      return { ...state, loading: false, loaded: true, coords: { ...state.coords, [action.mat]: action.coords } };
+      return { ...state, loading: false, loaded: true, views: { ...state.views, [action.mat]: action.views } };
     case Actions.SET_SELECTED_CHARACTER:
       return { ...state, selectedCharacter: action.mat };
   }

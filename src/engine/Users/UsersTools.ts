@@ -5,7 +5,7 @@
  */
 
 import { IStateServer } from '@engine/reducers';
-import { User } from '@models';
+import { User, UserRole } from '@models';
 import { Store } from 'redux';
 
 export class UsersTools {
@@ -15,6 +15,7 @@ export class UsersTools {
       name: source.name !== undefined ? source.name : null,
       hash: source.hash !== undefined ? source.hash : null,
       email: source.email !== undefined ? source.email : null,
+      role: source.role !== undefined ? source.role : UserRole.User,
     };
   }
 
@@ -36,6 +37,10 @@ export class UsersTools {
 
     if (source.email !== null) {
       userJson.email = source.email;
+    }
+
+    if (source.role !== null) {
+      userJson.role = source.role;
     }
 
     return userJson;

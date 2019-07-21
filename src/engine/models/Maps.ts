@@ -4,6 +4,7 @@
  */
 
 import { Character } from '@models';
+import { CharacterFrontend, CharacterLimitedFrontend } from './Character/Character';
 
 export interface Plan {
   id: string;
@@ -17,14 +18,40 @@ export interface Coord {
   character: Character;
 }
 
+export enum POVState {
+  Fog,
+  Block,
+}
+
+export interface CoordDatabase {
+  x: number;
+  y: number;
+  mat: number;
+}
+
 export interface CoordFrontend {
   x: number;
   y: number;
-  mat?: number;
-  label?: string;
-  type?: string;
-  meta?: any;
-  ui?: string;
+  type: 'cha' | 'pov' | 'env' | 'lab' | 'met';
+}
+
+export interface CoordCharacterFrontend extends CoordFrontend {
+  character: CharacterFrontend | CharacterLimitedFrontend;
+}
+
+export interface CoordPovFrontend extends CoordFrontend {
+  state: POVState;
+}
+
+export interface CoordEnvironmentFrontend extends CoordFrontend {
+  tile: number;
+  layer: number;
+}
+
+export interface ViewFrontend {
+  characters: CoordCharacterFrontend[];
+  pov: CoordPovFrontend[];
+  map?: string;
 }
 
 /**
@@ -33,6 +60,7 @@ export interface CoordFrontend {
 export interface RawMap {
   block: number[][];
   meta: MapMeta[][];
+  tiles: {[key: number]: number}[][];
 }
 
 export interface MapMeta {

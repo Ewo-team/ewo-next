@@ -7,28 +7,26 @@ import { Plans } from '../../../engine/resources/Maps';
 
 const stories = storiesOf('Infos/Position', module);
 
-const earth = Plans.find(p => p.id === 'earth');
-const hell = Plans.find(p => p.id === 'hell');
-const heaven = Plans.find(p => p.id === 'heaven');
+const althian = Plans.althian.id;
+const ciferis = Plans.ciferis.id;
+const celestia = Plans.celestia.id;
 
 stories.addDecorator(withKnobs);
 
 stories.add('basic Position', () => (
   <PositionComponent
     character={{
-      position: {
+      coord: {
         plan: select(
           'Plan',
           {
-            earth,
-            hell,
-            heaven,
+            althian,
+            ciferis,
+            celestia,
           },
-          earth),
-        coord: {
-          x: number('Position X', 0),
-          y: number('Position Y', 0),
-        }
+          althian),
+        x: number('Position X', 0),
+        y: number('Position Y', 0),
       },
     }}
   />

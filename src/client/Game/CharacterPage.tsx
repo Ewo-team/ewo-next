@@ -13,13 +13,32 @@ import { States } from './States';
 import { Views } from './Views';
 
 export interface CharacterPageProps {
+  /**
+   * The current selected character, by matricule
+   */
   selectedCharacter: number;
+
+  /**
+   * Flag if the page is loaded
+   */
   loaded: boolean;
+
+  /**
+   * Flag if the page is curently loading
+   */
   loading: boolean;
+
+  /**
+   * Error message
+   */
   error?: string;
 }
 
 export interface CharacterPageComponentProps extends CharacterPageProps {
+  /**
+   * Action for selecting the character
+   * @param mat CHaracter matricule
+   */
   selectCharacter(mat: number);
 }
 

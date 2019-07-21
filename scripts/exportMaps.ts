@@ -43,16 +43,20 @@ maps.forEach(mapPath => {
 
   const blockGrid = [];
   const metaGrid = [];
+  const tileGrid = [];
 
   for (let line = 0; line < height; line += 1) {
     const arrBlock = [];
     const arrMeta = [];
+    const arrTile = [];
     for (let column = 0; column < width; column += 1) {
       arrBlock.push(0);
       arrMeta.push(null);
+      arrTile.push({});
     }
     blockGrid.push(arrBlock);
     metaGrid.push(arrMeta);
+    tileGrid.push(arrTile);
   }
 
   map.layers.forEach(layer => {
@@ -74,6 +78,10 @@ maps.forEach(mapPath => {
           blockGrid[line][column] = definition.block;
         }
 
+        if (tileId !== -1) {
+          tileGrid[line][column][layer.id] = tileId;
+        }
+
         if (definition.cost !== 1) {
           if (metaGrid[line][column] === null) {
             metaGrid[line][column] = { cost: definition.cost };
@@ -90,11 +98,13 @@ maps.forEach(mapPath => {
   const saveMapPath = path.resolve(destination, `${mapPath.substr(0, mapPath.length - 5)}.ts`);
   const stringBlockGrid = blockGrid.map(l => `      [${l.join(', ')}],\n`).join('');
   const stringMetaGrid = metaGrid.map(l => `      [${l.map(c => JSON.stringify(c)).join(',')}],\n`).join('').replace(/"/g, '');
+  const stringTileGrid = tileGrid.map(l => `      [${l.map(c => JSON.stringify(c)).join(',')}],\n`).join('').replace(/"/g, '');
 
   fs.writeFileSync(saveMapPath, `export default {
-    // tslint:disable: max-line-length
+    // tslint:disable
     block: [\n${stringBlockGrid}    ],
-    meta: [\n${stringMetaGrid}    ]
+    meta: [\n${stringMetaGrid}    ],
+    tiles: [\n${stringTileGrid}    ],
   };\n`);
 
 });

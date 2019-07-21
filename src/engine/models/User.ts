@@ -9,4 +9,12 @@ export interface User {
   hash: string;
   email: string;
   token?: string; // Token for socket.io
+  role?: UserRole;
+}
+
+export enum UserRole {
+  NonValidated = 0,
+  User = 1,
+  AntiCheat = 10,
+  Admin = 20,
 }

@@ -2,11 +2,12 @@
  * @module Engine.Maps
  * Coords Tools
  */
+import { CharactersTools } from '@engine/Characters/CharacterTools';
 import { ICharactersState } from '@engine/Characters/reducers';
-import { Coord } from '@models';
+import { Coord, CoordCharacterFrontend, CoordDatabase } from '@models';
 
 export class CoordsTools {
-  public static hydrater = (source: any, additionnalData: ICharactersState): Coord => {
+  public static hydrater = (source: CoordDatabase, additionnalData: ICharactersState): Coord => {
 
     const character = additionnalData.find(c => c.mat === source.mat);
 
@@ -17,9 +18,9 @@ export class CoordsTools {
     };
   }
 
-  public static serializer = (source: Coord): any => {
+  public static serializer = (source: Coord): CoordDatabase => {
 
-    const coordJson: any = {};
+    const coordJson: Partial<CoordDatabase> = {};
 
     if (source.x !== null) {
       coordJson.x = source.x;
@@ -33,6 +34,30 @@ export class CoordsTools {
       coordJson.mat = source.character.mat;
     }
 
-    return coordJson;
+    return coordJson as CoordDatabase;
+  }
+
+  public static toFrontend = (source: Coord): CoordCharacterFrontend => {
+
+    const character = CharactersTools.toFrontEnd(source.character);
+
+    return {
+      x: source.x,
+      y: source.y,
+      character,
+      type: 'cha',
+    };
+  }
+
+  public static toFrontendLimited = (source: Coord): CoordCharacterFrontend => {
+
+    const character = CharactersTools.toFrontEndLimited(source.character);
+
+    return {
+      x: source.x,
+      y: source.y,
+      character,
+      type: 'cha',
+    };
   }
 }

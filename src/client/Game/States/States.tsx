@@ -5,14 +5,14 @@
 
 import { IStateFrontend } from '@client/reducers';
 import { getSelectedCharacter } from '@client/selector';
-import { Character } from '@models';
+import { CharacterFrontend } from '@models';
 import React from 'react';
 import { connect } from 'react-redux';
 import { DoubleBar, InfoBar, SimpleBar } from './Bar';
 
 // tslint:disable-next-line: no-empty-interface
 export interface StatesProps {
-  character: Character;
+  character: CharacterFrontend;
 }
 
 const mapStateToProps = (state: IStateFrontend) => ({

@@ -2,14 +2,19 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 //import configureStore from 'redux-mock-store';
 import { EnduranceComponent, ScreenNameComponent } from '.';
-import { characterDeadMat2, characterDefaultMat1, characterFullMat3 } from '../../../../test/mock/character';
-import { Character } from '../../../engine/models';
+import {
+  characterFrontendDeadMat2,
+  characterFrontendDefaultMat1,
+  characterFrontendFullMat3,
+} from '../../../../test/mock/character';
+import { CharacterFrontend } from '../../../engine/models';
 import { Plans } from '../../../engine/resources';
 import { refreshCharacters, setSelectedCharacter } from '../../actions';
 import { Provider } from '../../provider';
 import { createStore } from '../../store';
 import { Infos } from './Infos';
 import { PositionComponent } from './Position';
+import { frontendInitialState } from '../../../../test/mock/frontendStore';
 
 // tslint:disable
 const mockedDate = new Date(2019, 0, 1, 10, 0, 0, 0);
@@ -26,17 +31,11 @@ describe('UI Infos', () => {
 
   describe('Info connected component', () => {
 
-    const store = createStore();
+    const store = createStore(undefined, frontendInitialState);
 
-    const def = characterDefaultMat1;
-    const full: Character = characterFullMat3;
-    const dead: Character = characterDeadMat2;
-
-    store.dispatch(refreshCharacters({
-      [def.mat]: characterDefaultMat1,
-      [full.mat]: characterFullMat3,
-      [dead.mat]: characterDeadMat2,
-    }));
+    const def: CharacterFrontend = characterFrontendDefaultMat1
+    const dead: CharacterFrontend = characterFrontendDeadMat2;
+    const full: CharacterFrontend = characterFrontendFullMat3;
 
     it('Default character', () => {
 
@@ -58,7 +57,7 @@ describe('UI Infos', () => {
 
       renderer.act(() => {
         store.dispatch(setSelectedCharacter(dead.mat));
-    });
+      });
 
       const component = renderer.create(
         <Provider store={store}>
@@ -109,7 +108,7 @@ describe('UI Infos', () => {
 
       const character = {
         minutes: 10,
-      } as Character;
+      } as CharacterFrontend;
 
       const component = renderer.create(
         <EnduranceComponent
@@ -125,7 +124,7 @@ describe('UI Infos', () => {
 
       const character = {
         minutes: 45,
-      } as Character;
+      } as CharacterFrontend;
 
       const component = renderer.create(
         <EnduranceComponent
@@ -138,7 +137,7 @@ describe('UI Infos', () => {
     });
 
     it('should render with no minute', () => {
-      const character = {} as Character;
+      const character = {} as CharacterFrontend;
 
       const component = renderer.create(
 
@@ -169,17 +168,15 @@ describe('UI Infos', () => {
   describe('Position', () => {
     it('should render with position in 0 / 0 on Althian', () => {
 
-      const earth = Plans.find(p => p.id === 'earth');
+      const althian = Plans.althian.id;
 
       const character = {
-        position: {
-          plan: earth,
-          coord: {
-            x: 0,
-            y: 0,
-          },
+        coord: {
+          plan: althian,
+          x: 0,
+          y: 0,
         },
-      } as Character;
+      } as CharacterFrontend;
 
       const component = renderer.create(
         <PositionComponent
@@ -192,7 +189,7 @@ describe('UI Infos', () => {
     });
 
     it('should render with no position', () => {
-      const character = {} as Character;
+      const character = {} as CharacterFrontend;
 
       const component = renderer.create(
 
@@ -230,7 +227,7 @@ describe('UI Infos', () => {
           major: 2,
           minor: 3,
         },
-      } as Character;
+      } as CharacterFrontend;
 
       const component = renderer.create(
         <ScreenNameComponent

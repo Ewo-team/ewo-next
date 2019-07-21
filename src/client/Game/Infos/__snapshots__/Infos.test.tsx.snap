@@ -83,9 +83,9 @@ exports[`UI Infos Info connected component Dead character: dead character 1`] = 
      (
     2
     ) | Grade 
-    0
+    2
      galon 
-    0
+    1
   </div>
   <div
     className="Infos__Endurance"
@@ -120,26 +120,26 @@ exports[`UI Infos Info connected component Default character: default character 
       Althian
     </a>
      en X = 
-    1
+    15
      
     <b>
       | 
     </b>
     Y = 
-    2
+    -5
   </div>
   <div
     className="Infos__ScreenName"
   >
     <strong>
-      Basic Character
+      Character in action
     </strong>
      (
     1
     ) | Grade 
-    0
+    2
      galon 
-    0
+    1
   </div>
   <div
     className="Infos__Endurance progress"
@@ -174,29 +174,29 @@ exports[`UI Infos Info connected component Full endurance character: full charac
     <a
       href="gps"
     >
-      Ciféris
+      Althian
     </a>
      en X = 
-    15
+    1
      
     <b>
       | 
     </b>
     Y = 
-    -5
+    2
   </div>
   <div
     className="Infos__ScreenName"
   >
     <strong>
-      Character in action
+      Full Endurance Character
     </strong>
      (
     3
     ) | Grade 
-    0
+    2
      galon 
-    0
+    1
   </div>
   <div
     className="Infos__Endurance"

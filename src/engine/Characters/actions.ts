@@ -4,7 +4,8 @@
  */
 
 import { IMapsState } from '@engine/Maps/reducers';
-import { Character, Races } from '@models';
+import { Character, RaceId } from '@models';
+import { Genre } from '@models/Character/Genre';
 import { Action } from 'redux';
 
 //#region ActionType
@@ -27,7 +28,7 @@ export enum CharactersActions {
 export type CharacterActionsType = Action<CharacterActions>;
 
 export type MoveAction = CharacterActionsType & { character: Character, newX: number, newY: number, cost: number };
-export type CreateAction = CharacterActionsType & { owner: number, name: string, race: Races };
+export type CreateAction = CharacterActionsType & { owner: number, name: string, race: RaceId, genre: Genre };
 export type UpdateMotdAction = CharacterActionsType & { character: Character, message: string };
 
 //#endregion ActionType
@@ -40,11 +41,12 @@ export const move = (character: Character, newX: number, newY: number, cost: num
   cost,
 });
 
-export const create = (owner: number, name: string, race: Races): CreateAction => ({
+export const create = (owner: number, name: string, race: RaceId, genre: Genre): CreateAction => ({
   type: CharacterActions.CREATE,
   owner,
   name,
   race,
+  genre,
 });
 
 export const updateMotd = (character: Character, message: string): UpdateMotdAction => ({

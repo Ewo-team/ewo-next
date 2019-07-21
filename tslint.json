@@ -18,6 +18,7 @@
     "max-file-line-count": true,
     "no-namespace": true,
     "no-console": false,
+    /*"completed-docs": true,*/
     /* Deactivation of some rules */
     "arrow-parens": false,
     "import-name": false,

@@ -17,8 +17,8 @@ import { mapsReducer } from './reducers';
 
 jest.mock('../Commands/tasks');
 
-const character1 = CharactersTools.factory(1, 'Test 1');
-const character2 = CharactersTools.factory(2, 'Test 2');
+const character1 = CharactersTools.factory({ mat: 1, name: 'Test 1' });
+const character2 = CharactersTools.factory({ mat: 2, name: 'Test 2' });
 
 describe('Maps actions', () => {
   it('should create an action to load database', () => {
@@ -91,93 +91,13 @@ describe('MapsTools', () => {
 
   const mockStore = configureStore();
 
-  const defaultCharacterState = {
-    agility: 1,
-    bonusAgility: 0,
-    bonusDexterity: 0,
-    bonusHp: 0,
-    bonusInsight: 0,
-    bonusMagic: 0,
-    bonusRegenAgility: 0,
-    bonusRegenHp: 0,
-    bonusRegenSpeed: 0,
-    bonusSpeed: 0,
-    bonusStrength: 0,
-    buffs: [],
-    currentAgility: 0,
-    currentDexterity: 1,
-    currentHp: 1,
-    currentInsight: 1,
-    currentMagic: 0,
-    currentSpeed: 0,
-    currentStrength: 1,
-    dexterity: 1,
-    ep: 0,
-    grade: {
-      major: 0,
-      minor: 0,
-    },
-    hp: 1,
-    insight: 1,
-    levelAgility: 0,
-    levelDexterity: 0,
-    levelHp: 0,
-    levelInsight: 0,
-    levelMagic: 0,
-    levelRegenAgility: 0,
-    levelRegenHp: 0,
-    levelRegenSpeed: 0,
-    levelSpeed: 0,
-    levelStrength: 0,
-    magic: 0,
-    malusAgility: 0,
-    malusDexterity: 0,
-    malusHp: 0,
-    malusInsight: 0,
-    malusMagic: 0,
-    malusRegenAgility: 0,
-    malusRegenHp: 0,
-    malusRegenSpeed: 0,
-    malusSpeed: 0,
-    malusStrength: 0,
-    maps: 'earth',
-    mat: undefined,
-    maxAgility: 1,
-    maxHp: 1,
-    maxRegenAgility: 1,
-    maxRegenHp: 1,
-    maxRegenSpeed: 1,
-    maxSpeed: 1,
-    modifAgility: 0,
-    modifDexterity: 0,
-    modifHp: 0,
-    modifInsight: 0,
-    modifMagic: 0,
-    modifRegenAgility: 0,
-    modifRegenHp: 0,
-    modifRegenSpeed: 0,
-    modifSpeed: 0,
-    modifStrength: 0,
-    motd: '',
-    name: undefined,
-    owner: 0,
-    posture: 0,
-    race: 'no',
-    regenAgility: 1,
-    regenHp: 1,
-    regenSpeed: 1,
-    speed: 1,
-    strength: 1,
-    xp: 0,
-  };
-
   // tslint:disable-next-line: no-useless-cast
-  const earth = Plans.first() as Plan;
+  const althian = Plans.althian;
 
   // IMapsState = Map<string, List<Coord>>;
   const initialState = {
     Maps: Map({
-      earth: List([
+      althian: List([
         {
           x: 0,
           y: 0,
@@ -201,29 +121,27 @@ describe('MapsTools', () => {
   it('coords from position', () => {
     const expected = {
       character: {
-        ...defaultCharacterState,
         mat: 1,
         name: 'Test 1',
       },
       x: 0,
       y: 0,
     };
-    const result = MapsTools.getCoordFromPosition(earth, 0, 0, store);
-    expect(result).toEqual(expected);
+    const result = MapsTools.getCoordFromPosition(althian, 0, 0, store);
+    expect(result).toMatchObject(expected);
 
     const expected2 = {
       character: {
-        ...defaultCharacterState,
         mat: 2,
         name: 'Test 2',
       },
       x: 1,
       y: 0,
     };
-    const result2 = MapsTools.getCoordFromPosition(earth, 1, 0, store);
-    expect(result2).toEqual(expected2);
+    const result2 = MapsTools.getCoordFromPosition(althian, 1, 0, store);
+    expect(result2).toMatchObject(expected2);
 
-    const resultNull = MapsTools.getCoordFromPosition(earth, 0, 5, store);
+    const resultNull = MapsTools.getCoordFromPosition(althian, 0, 5, store);
     expect(resultNull).toBeNull();
 
     const planIsNull = MapsTools.getCoordFromPosition({ id: null } as Plan, 0, 0, store);
@@ -285,7 +203,7 @@ describe('MapsTools', () => {
 
     const viewStore = mockStore({
       Maps: Map({
-        earth: List<Coord>([
+        althian: List<Coord>([
           coord1,
           coord2,
           coord3,
@@ -296,7 +214,7 @@ describe('MapsTools', () => {
       }),
     });
     // Map<string, List<Coord>>
-    const result = MapsTools.getCoordsFromAroundPosition(coord4, earth, 8, viewStore);
+    const result = MapsTools.getCoordsFromAroundPosition(coord4.x, coord4.y, althian.id, 8, viewStore);
 
     expect(result).toEqual(List([
       coord1,

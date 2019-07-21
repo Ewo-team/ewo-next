@@ -253,7 +253,7 @@
   --sub-color: #accee8;
   --font-size: 1rem;
   font-size: var(--font-size);
-  font-family: DejaVuSansBold;
+  font-family: DejaVuSansBold, sans-serif;
   font-weight: 400;
   font-stretch: 100%;
   line-height: normal;
@@ -290,15 +290,15 @@ html, body {
 
 body {
   margin: 0;
-  font: 0.8em DejaVuSansBook;
+  font: 0.8em DejaVuSansBook, sans-serif;
   color: #333; }
 
 b {
-  font-family: DejaVuSansBold;
+  font-family: DejaVuSansBold, sans-serif;
   font-weight: normal; }
 
 i, a {
-  font-family: DejaVuSansOblique; }
+  font-family: DejaVuSansOblique, sans-serif; }
 
 a {
   color: #000;
@@ -308,25 +308,25 @@ a:hover {
   text-decoration: underline; }
 
 b i, i b {
-  font-family: DejaVuSansBoldOblique; }
+  font-family: DejaVuSansBoldOblique, sans-serif; }
 
 h1, h2, h3 {
   text-shadow: 0 1px 0 #ffffff;
-  font-family: DejaVuSerifBook; }
+  font-family: DejaVuSerifBook, serif; }
 
 h1 {
   font-size: 2em; }
 
 h1 b, h2 b, h3 b {
-  font-family: DejaVuSerifBold; }
+  font-family: DejaVuSerifBold, serif; }
 
 h1 i, h2 i, h3 i,
 h1 a, h2 a, h3 a {
-  font-family: DejaVuSerifOblique; }
+  font-family: DejaVuSerifOblique, serif; }
 
 h1 b i, h2 b i, h3 b i,
 h1 i b, h2 i b, h3 i b {
-  font-family: DejaVuSerifBoldOblique; }
+  font-family: DejaVuSerifBoldOblique, serif; }
 
 img {
   border: 0; }
@@ -357,7 +357,7 @@ ul {
   text-decoration: underline; }
 
 .bold {
-  font-family: DejaVuSansBold; }
+  font-family: DejaVuSansBold, sans-serif; }
 
 .lien {
   font-size: 0.8em;
@@ -366,7 +366,7 @@ ul {
 .lien_carte {
   color: #68551F;
   text-decoration: none;
-  font-family: DejaVuSansBold; }
+  font-family: DejaVuSansBold, sans-serif; }
 
 #content h2 {
   color: #933a25;
@@ -532,7 +532,7 @@ nav div {
 
 /* main level link */
 #menuDeroulant a {
-  font-family: DejaVuSansBook;
+  font-family: DejaVuSansBook, sans-serif;
   color: #2c2a2e;
   text-decoration: none;
   display: block;
@@ -717,7 +717,7 @@ nav {
   border-radius: 5px; }
 
 a.dropdown {
-  font-family: DejaVuSansBold; }
+  font-family: DejaVuSansBold, sans-serif; }
 
 #connection {
   line-height: 12px; }

@@ -3,13 +3,14 @@ import { withA11y } from '@storybook/addon-a11y';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Infos } from '.';
-import { characterDeadMat2, characterDefaultMat1, characterFullMat3 } from '../../../../test/mock/character';
-import { Character } from '../../../engine/models';
+import { characterFrontendDeadMat2, characterFrontendDefaultMat1, characterFrontendFullMat3 } from '../../../../test/mock/character';
+import { CharacterFrontend } from '../../../engine/models';
 import { refreshCharacters, setSelectedCharacter } from '../../actions';
 import { Provider } from '../../provider';
 import { createStore } from '../../store';
+import { frontendInitialState } from '../../../../test/mock/frontendStore';
 
-export const store = createStore();
+export const store = createStore(undefined, frontendInitialState);
 
 const withProvider = (story: any) => (
   <Provider store={store}>
@@ -22,15 +23,10 @@ const stories = storiesOf('Infos', module);
 stories.addDecorator(withProvider);
 stories.addDecorator(withA11y);
 
-const def = characterDefaultMat1;
-const full: Character = characterFullMat3;
-const dead: Character = characterDeadMat2;
+const def: CharacterFrontend = characterFrontendDefaultMat1;
+const dead: CharacterFrontend = characterFrontendDeadMat2;
+const full: CharacterFrontend = characterFrontendFullMat3;
 
-store.dispatch(refreshCharacters({
-  [def.mat]: characterDefaultMat1,
-  [full.mat]: characterFullMat3,
-  [dead.mat]: characterDeadMat2,
-}));
 
 stories.add('Full Endurance', () => {
   store.dispatch(setSelectedCharacter(full.mat));

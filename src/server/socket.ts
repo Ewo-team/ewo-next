@@ -3,10 +3,13 @@
  * Socket.IO Server
  */
 
+import { CharactersTools } from '@engine/Characters/CharacterTools';
 import { CoordsTools } from '@engine/Maps/CoordsTools';
 import { MapsTools } from '@engine/Maps/MapsTools';
 import { IStateServer } from '@engine/reducers';
+import { Plans } from '@engine/resources';
 import { UsersTools } from '@engine/Users/UsersTools';
+import { ViewFrontend } from '@models';
 import { Store } from 'redux';
 import { registerEventReceiver } from './eventReceiver';
 
@@ -18,23 +21,31 @@ export interface ClientPool {
 }
 
 export const getClientState = (charId: number[], store: Store<IStateServer>) => {
-  const charactersObj = store.getState().Characters.filter(c => charId.includes(c.mat));
-  const mapsObj = {};
+  const charactersObj = store.getState().Characters.filter(c => charId.includes(c.mat)).map(CharactersTools.toFrontEnd);
+
+  const view: Record<string, ViewFrontend> = {};
   charactersObj.forEach(character => {
-    if (!character.position) {
-      mapsObj[character.mat] = [];
+
+    view[character.mat] = {} as ViewFrontend;
+
+    view[character.mat].pov = [];
+
+    if (!character.coord) {
+      view[character.mat].characters = [];
     } else {
-      mapsObj[character.mat] = MapsTools.getCoordsFromAroundPosition(
-        character.position.coord,
-        character.position.plan,
-        // character.currentInsight,
-        5,
-        store).map(CoordsTools.serializer);
+      view[character.mat].map = Plans[character.coord.plan].rawMapName;
+
+      view[character.mat].characters = MapsTools.getCoordsFromAroundPosition(
+        character.coord.x,
+        character.coord.y,
+        character.coord.plan,
+        character.currentInsight,
+        store).map(CoordsTools.toFrontendLimited).toArray();
     }
   });
 
   const characters = JSON.stringify(charactersObj);
-  const maps = JSON.stringify(mapsObj);
+  const maps = JSON.stringify(view);
 
   return {
     characters,
