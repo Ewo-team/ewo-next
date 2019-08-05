@@ -1,4 +1,5 @@
 # Concepts
+[retour](index)
 
 Un joueur dirige 1 ou plusieurs personnages. Un personnage est définis par :
 * Un n° de matricule

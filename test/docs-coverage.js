@@ -1,5 +1,22 @@
 const fs = require('fs');
 const path = require('path');
+const regex1 = /(<a href="([a-z0-9\\\.]+)index.html">All files<\/a>)/gmi;
+const regex2 = / All files/gmi;
+const subst1 = `<a href="..\\$2">E.W.O. Next</a> / $1`;
+const subst2 = `<a href="..">E.W.O. Next</a> / All files`;
+
+
+function alterFileHeader(file) {
+  const content = fs.readFileSync(file, { encoding: "utf8" });
+  if (regex1.test(content)) {
+    const result = content.replace(regex1, subst1);
+    fs.writeFileSync(file, result);
+  } else {
+    const result = content.replace(regex2, subst2);
+    fs.writeFileSync(file, result);
+  }
+
+}
 
 function copyFileSync(source, target) {
 
@@ -33,6 +50,7 @@ function copyFolderRecursiveSync(source, target) {
         copyFolderRecursiveSync(curSource, targetFolder);
       } else {
         copyFileSync(curSource, targetFolder);
+        alterFileHeader(path.join(targetFolder, file))
       }
     });
   }

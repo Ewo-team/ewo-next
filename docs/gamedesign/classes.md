@@ -1,4 +1,6 @@
 # Classes et talents
+[retour](..)
+
 ## Classes
 Il existe 9 classes possibles par race (sauf le Paria qui n'en possède qu'une seule). La classe sert à la fois pour le roleplay et pour le gameplay.
 

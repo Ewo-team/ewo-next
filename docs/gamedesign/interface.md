@@ -1,4 +1,6 @@
 # Interface
+[retour](..)
+
 ## Interface générale
 L'interface de jeu se présente ainsi :
 

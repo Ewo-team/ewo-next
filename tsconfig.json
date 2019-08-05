@@ -55,7 +55,7 @@
     "name": "E.W.O. Next",
     "mode": "modules",
     "out": "docs/technical",
-    "theme": "default",
+    "theme": "tsdoc-theme",
     "ignoreCompilerErrors": "false",
     "preserveConstEnums": "true",
     "exclude": [
