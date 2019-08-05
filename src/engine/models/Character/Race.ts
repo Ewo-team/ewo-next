@@ -1,10 +1,10 @@
-import { Plan } from '@models/Maps';
-import { Color } from 'csstype';
-
 /**
- * @module Engine.Models
+ * @module Engine.Models.Character
  * Races
  */
+
+import { Plan } from '@models/Maps';
+import { Color } from 'csstype';
 
 export interface Race {
   id: string;

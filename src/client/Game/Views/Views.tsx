@@ -151,6 +151,7 @@ export class ViewsComponent extends React.Component<ViewsProps> {
               />
             );
           }
+          break;
         case 'cha': return <div className="item--character">{coord.mat}</div>;
       }
 

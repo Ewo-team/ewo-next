@@ -121,6 +121,7 @@
       "json",
       "lcov",
       "text-summary",
+      "clover",
       "cobertura"
     ],
     "reporters": [

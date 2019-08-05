@@ -40,6 +40,7 @@ maps.forEach(mapPath => {
 
   // only one tilesets is supported for the moment
   const tileset = tilesets[map.tilesets[0].source];
+  const tilesetImage = tileset.image.substr(tileset.image.lastIndexOf('/') + 1);
 
   const blockGrid = [];
   const metaGrid = [];
@@ -100,11 +101,16 @@ maps.forEach(mapPath => {
   const stringMetaGrid = metaGrid.map(l => `      [${l.map(c => JSON.stringify(c)).join(',')}],\n`).join('').replace(/"/g, '');
   const stringTileGrid = tileGrid.map(l => `      [${l.map(c => JSON.stringify(c)).join(',')}],\n`).join('').replace(/"/g, '');
 
-  fs.writeFileSync(saveMapPath, `export default {
-    // tslint:disable
-    block: [\n${stringBlockGrid}    ],
-    meta: [\n${stringMetaGrid}    ],
-    tiles: [\n${stringTileGrid}    ],
-  };\n`);
+  fs.writeFileSync(saveMapPath, `/**
+ * @module Engine.Resources.Maps
+ * Maps
+ */
+export default {
+  // tslint:disable
+  block: [\n${stringBlockGrid}    ],
+  meta: [\n${stringMetaGrid}    ],
+  tiles: [\n${stringTileGrid}    ],
+  image: '${tilesetImage}',
+};\n`);
 
 });

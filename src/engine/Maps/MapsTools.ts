@@ -68,14 +68,29 @@ export class MapsTools {
     return { x: newX, y: newY };
   }
 
-  public static getCoordsFromAroundPosition = (centerX: number, centerY: number, plan: string, insight: number, store: Store<IStateServer>) => {
+  public static getPositionsFromAroundPosition = (centerX: number, centerY: number, insight: number) => {
     const xMin = centerX - insight;
     const xMax = centerX + insight;
 
     const yMin = centerY - insight;
     const yMax = centerY + insight;
 
-    const getCoords = store.getState().Maps.get(plan);
+    return {
+      xMin,
+      xMax,
+      yMin,
+      yMax,
+    };
+  }
+
+  public static getCoordsFromAroundPosition = (plan: Plan, positions: {xMin: number, yMin: number, xMax: number, yMax: number}, store: Store<IStateServer>) => {
+    const getCoords = store.getState().Maps.get(plan.id);
+    const {
+      xMin,
+      xMax,
+      yMin,
+      yMax,
+    } = positions;
 
     if (getCoords !== undefined) {
       return getCoords.filter(c =>
@@ -106,8 +121,15 @@ export class MapsTools {
     return meta;
   }
 
-  public static getCoordsEnvironment = (plan: Plan, minX: number, minY: number, maxX: number, maxY: number) => {
+  public static getCoordsEnvironment = (plan: Plan, positions: {xMin: number, yMin: number, xMax: number, yMax: number}) => {
     let rawMap: RawMap;
+    const {
+      xMin,
+      xMax,
+      yMin,
+      yMax,
+    } = positions;
+
     if (!MapsTools.loadedMaps.has(plan.rawMapName)) {
       // tslint:disable-next-line: non-literal-require
       rawMap = require(`../resources/maps/${plan.rawMapName}`);
@@ -119,8 +141,8 @@ export class MapsTools {
 
     const metas: CoordEnvironmentFrontend[] = [];
 
-    for (let posX = minX; posX <= maxX; posX += 1) {
-      for (let posY = minY; posY <= maxY; posY += 1) {
+    for (let posX = xMin; posX <= xMax; posX += 1) {
+      for (let posY = yMin; posY <= yMax; posY += 1) {
 
         const tiles = rawMap.tiles[posX][posY];
 
@@ -141,6 +163,22 @@ export class MapsTools {
 
     return metas;
   }
+
+  public static getMapsInfo = (plan: Plan) => {
+    if (!MapsTools.loadedMaps.has(plan.rawMapName)) {
+      // tslint:disable-next-line: non-literal-require
+      const rawMap = require(`../resources/maps/${plan.rawMapName}`);
+      // import * from '../resources/maps/'
+      MapsTools.loadedMaps = MapsTools.loadedMaps.set(plan.rawMapName, rawMap);
+
+      return rawMap.image;
+    }
+
+      return MapsTools.loadedMaps.get(plan.rawMapName).image;
+
+
+
+  };
 
   private static loadedMaps: Map<string, RawMap> = new Map();
 }

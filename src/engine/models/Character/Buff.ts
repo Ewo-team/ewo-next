@@ -1,5 +1,5 @@
 /**
- * @module Engine.Models
+ * @module Engine.Models.Character
  * Bonus / Malus objects
  */
 

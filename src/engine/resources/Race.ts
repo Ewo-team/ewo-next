@@ -1,5 +1,10 @@
-import { Camp, Race } from "@models";
-import { Plans } from "./Maps";
+/**
+ * @module Engine.Resources
+ * Resources for Races
+ */
+
+import { Camp, Race } from '@models';
+import { Plans } from './Maps';
 import strings from './strings';
 
 /**

@@ -51,7 +51,8 @@ export interface CoordEnvironmentFrontend extends CoordFrontend {
 export interface ViewFrontend {
   characters: CoordCharacterFrontend[];
   pov: CoordPovFrontend[];
-  map?: string;
+  environment: CoordEnvironmentFrontend[];
+  tileImage: string;
 }
 
 /**
@@ -61,6 +62,7 @@ export interface RawMap {
   block: number[][];
   meta: MapMeta[][];
   tiles: {[key: number]: number}[][];
+  image: string;
 }
 
 export interface MapMeta {

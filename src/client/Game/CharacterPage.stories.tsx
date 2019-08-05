@@ -5,7 +5,6 @@ import * as React from 'react';
 import { characterFrontendDeadMat2, characterFrontendDefaultMat1, characterFrontendFullMat3 } from '../../../test/mock/character';
 import { frontendInitialState } from '../../../test/mock/frontendStore';
 import { CharacterFrontend } from '../../engine/models';
-import { refreshCharacters, refreshMaps } from '../actions';
 import { Provider } from '../provider';
 import { createStore } from '../store';
 import { CharacterPage } from './CharacterPage';

@@ -33,14 +33,14 @@ export const getClientState = (charId: number[], store: Store<IStateServer>) => 
     if (!character.coord) {
       view[character.mat].characters = [];
     } else {
-      view[character.mat].map = Plans[character.coord.plan].rawMapName;
+      const plan = Plans[character.coord.plan];
 
-      view[character.mat].characters = MapsTools.getCoordsFromAroundPosition(
-        character.coord.x,
-        character.coord.y,
-        character.coord.plan,
-        character.currentInsight,
-        store).map(CoordsTools.toFrontendLimited).toArray();
+      const positions = MapsTools.getPositionsFromAroundPosition(character.coord.x, character.coord.y, character.insight);
+
+      view[character.mat].environment = MapsTools.getCoordsEnvironment(plan, positions);
+      view[character.mat].tileImage = MapsTools.getMapsInfo(plan);
+
+      view[character.mat].characters = MapsTools.getCoordsFromAroundPosition(positions, store).map(CoordsTools.toFrontendLimited).toArray();
     }
   });
 

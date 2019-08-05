@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Models.Character
+ * Genre
+ */
+
 export enum Genre {
   Female,
   Male,

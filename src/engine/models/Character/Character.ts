@@ -1,9 +1,10 @@
 /**
- * @module Engine.Models
+ * @module Engine.Models.Character
  * Character representations
+ * @preferred
  */
 
-import { Buff, Classes, Grade, Plan, Race, RaceId } from '@models';
+import { Buff, Classes, Grade, Plan, RaceId } from '@models';
 import { Coord } from '../Maps';
 import { Genre } from './Genre';
 

@@ -1,3 +1,8 @@
+/**
+ * @module Engine.Resources
+ * Resources for Grade
+ */
+
 import { Grade } from '@models';
 
 // tslint:disable-next-line: max-func-body-length
