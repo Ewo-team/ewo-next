@@ -1,20 +1,19 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-//import configureStore from 'redux-mock-store';
 import { EnduranceComponent, ScreenNameComponent } from '.';
 import {
   characterFrontendDeadMat2,
   characterFrontendDefaultMat1,
   characterFrontendFullMat3,
 } from '../../../../test/mock/character';
+import { frontendInitialState } from '../../../../test/mock/frontendStore';
 import { CharacterFrontend } from '../../../engine/models';
 import { Plans } from '../../../engine/resources';
-import { refreshCharacters, setSelectedCharacter } from '../../actions';
+import { setSelectedCharacter } from '../../actions';
 import { Provider } from '../../provider';
 import { createStore } from '../../store';
 import { Infos } from './Infos';
 import { PositionComponent } from './Position';
-import { frontendInitialState } from '../../../../test/mock/frontendStore';
 
 // tslint:disable
 const mockedDate = new Date(2019, 0, 1, 10, 0, 0, 0);

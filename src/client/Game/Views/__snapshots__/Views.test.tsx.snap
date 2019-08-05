@@ -1,0 +1,3898 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI Views Views Views connected component Dead character: dead character 1`] = `
+<div
+  className="Views Game__Container"
+>
+  <div
+    className="Title"
+  >
+    Views
+  </div>
+  <section>
+    Votre personnage n'est plus de ce monde.
+  </section>
+</div>
+`;
+
+exports[`UI Views Views Views connected component Default character: default character 1`] = `
+<div
+  className="Views Game__Container"
+>
+  <div
+    className="Title"
+  >
+    Views
+  </div>
+  <section
+    className="grid grid-10"
+  >
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--character"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 3,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 3,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 4,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 4,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 5,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 5,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 6,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 6,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 7,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 7,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 8,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 8,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 9,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        12
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 9,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        12
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 10,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        13
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 10,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        13
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        14
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        14
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        15
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        15
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        16
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        16
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 14,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        17
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 14,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        17
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 15,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        18
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 15,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        18
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 16,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        19
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 16,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        19
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 17,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        20
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 17,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        20
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 18,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        21
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 18,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        21
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 19,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        22
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 19,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        22
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 20,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        23
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 20,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        23
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 21,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        24
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 21,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        24
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 3,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -14
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 3,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -14
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 4,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -13
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 4,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -13
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 5,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -12
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 5,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -12
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 6,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 6,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 7,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 7,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 8,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 8,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 9,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 9,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 10,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 10,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 14,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 14,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 15,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 15,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 16,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 16,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 17,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 17,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 18,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 18,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 19,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 19,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 20,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 20,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 21,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 21,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-up"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-up turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-right"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-right turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-down"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-down turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-left"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-left turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+  </section>
+</div>
+`;
+
+exports[`UI Views Views Views connected component Full endurance character: full character 1`] = `
+<div
+  className="Views Game__Container"
+>
+  <div
+    className="Title"
+  >
+    Views
+  </div>
+  <section
+    className="grid grid-10"
+  >
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--character"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 26,
+          "gridRow": 5,
+        }
+      }
+    >
+      <div
+        className="item--character"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 3,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 3,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 4,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 4,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 5,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 5,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 6,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 6,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 7,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 7,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 8,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 8,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 9,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 9,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 10,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 10,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 14,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 14,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 15,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 15,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 16,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 16,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 17,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 17,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 18,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 18,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 19,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 19,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 20,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 20,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 21,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 21,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 3,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 3,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 4,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 4,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 5,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 5,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 6,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 6,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 7,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 7,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 8,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 8,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 9,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 9,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 10,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 10,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 14,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 14,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 15,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 15,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 16,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 16,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 17,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 17,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 18,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 18,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 19,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 19,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 20,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 20,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 21,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 21,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-up"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-up turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-right"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-right turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-down"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-down turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-left"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-left turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+  </section>
+</div>
+`;
+
+exports[`UI Views Views Views connected component no character: no character 1`] = `null`;
+
+exports[`UI Views Views should render: render 1`] = `
+<div
+  className="Views Game__Container"
+>
+  <div
+    className="Title"
+  >
+    Views
+  </div>
+  <section
+    className="grid grid-10"
+  >
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--character"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 3,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 3,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 4,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 4,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 5,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 5,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 6,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 6,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 7,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 7,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 8,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 8,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 9,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        12
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 9,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        12
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 10,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        13
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 10,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        13
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        14
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        14
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        15
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        15
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        16
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        16
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 14,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        17
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 14,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        17
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 15,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        18
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 15,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        18
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 16,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        19
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 16,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        19
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 17,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        20
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 17,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        20
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 18,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        21
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 18,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        21
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 19,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        22
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 19,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        22
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 20,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        23
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 20,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        23
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 21,
+          "gridRow": 2,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        24
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 21,
+          "gridRow": 22,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        24
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 3,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -14
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 3,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -14
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 4,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -13
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 4,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -13
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 5,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -12
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 5,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -12
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 6,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 6,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -11
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 7,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 7,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -10
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 8,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 8,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -9
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 9,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 9,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -8
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 10,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 10,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -7
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -6
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -5
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 14,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 14,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 15,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 15,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 16,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 16,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        -1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 17,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 17,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 18,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 18,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 19,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 19,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 20,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 20,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 2,
+          "gridRow": 21,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 22,
+          "gridRow": 21,
+        }
+      }
+    >
+      <div
+        className="item--label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-up"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-up turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-right"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 13,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-right turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 12,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-down"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 13,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-down turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 12,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-left"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+    <div
+      className="item"
+      style={
+        Object {
+          "gridColumn": 11,
+          "gridRow": 11,
+        }
+      }
+    >
+      <div
+        className="item--move fas fa-arrow-left turn45"
+        onClick={[Function]}
+        role="button"
+      />
+    </div>
+  </section>
+</div>
+`;

@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { States } from '.';
+import { characterFrontendDeadMat2, characterFrontendDefaultMat1, characterFrontendFullMat3 } from '../../../../test/mock/character';
+import { frontendInitialState } from '../../../../test/mock/frontendStore';
 import { CharacterFrontend } from '../../../engine/models';
-import { refreshCharacters, setSelectedCharacter } from '../../actions';
+import { setSelectedCharacter } from '../../actions';
 import { Provider } from '../../provider';
 import { createStore } from '../../store';
-import { InfoBar, SimpleBar, DoubleBar, BarColors } from './Bar';
-import { characterFrontendDefaultMat1, characterFrontendDeadMat2, characterFrontendFullMat3 } from '../../../../test/mock/character';
-import { frontendInitialState } from '../../../../test/mock/frontendStore';
+import { BarColors, DoubleBar, InfoBar, SimpleBar } from './Bar';
 
 describe('UI States', () => {
 

@@ -17,6 +17,7 @@ const loadDatabase = <V>(databaseName: string, modelHydrater: (item: any, additi
   console.log(`loading database ${database}`);
 
   const databaseExist = fs.existsSync(database);
+
   if (!databaseExist) {
     return List([]);
   }
@@ -59,7 +60,7 @@ const loadDatabase = <V>(databaseName: string, modelHydrater: (item: any, additi
   const map = {};
   Object.keys(data.data).forEach((key: string, index, array) => {
     const percent = Math.floor(((index + 1) / array.length) * 100);
-    console.log({ index, length: array.length });
+
     if (percent !== percentOld) {
       percentOld = percent;
     }
