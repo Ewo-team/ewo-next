@@ -13,39 +13,41 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="../index.html" class="title">E.W.O. Next</a>
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js"
+				data-base="..">
+				<div class="field">
+					<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+					<input id="tsd-search-field" type="text" />
 				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+				<ul class="results">
+					<li class="state loading">Preparing search index...</li>
+					<li class="state failure">The search index is not available</li>
+				</ul>
+				<a href="../.." class="title">E.W.O. Next</a> |
+				<a href="../index.html" class="title">Docs</a>
+			</div>
+			<div class="table-cell" id="tsd-widgets">
+				<div id="tsd-filter">
+					<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+					<div class="tsd-filter-group">
+						<div class="tsd-select" id="tsd-filter-visibility">
+							<span class="tsd-select-label">All</span>
+							<ul class="tsd-select-list">
+								<li data-value="public">Public</li>
+								<li data-value="protected">Public/Protected</li>
+								<li data-value="private" class="selected">All</li>
+							</ul>
 						</div>
+						<input type="checkbox" id="tsd-filter-inherited" checked />
+						<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						<input type="checkbox" id="tsd-filter-only-exported" />
+						<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
 				</div>
+				<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
 			</div>
 		</div>
+	</div>
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
@@ -75,15 +77,15 @@
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="client.selector.html#getselectedcharacter" class="tsd-kind-icon">get<wbr>Selected<wbr>Character</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="client.selector.html#getselectedcoords" class="tsd-kind-icon">get<wbr>Selected<wbr>Coords</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="client.selector.html#getselectedview" class="tsd-kind-icon">get<wbr>Selected<wbr>View</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="client.selector.html#getcharacters" class="tsd-kind-icon">get<wbr>Characters</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="client.selector.html#getcoords" class="tsd-kind-icon">get<wbr>Coords</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="client.selector.html#getmat" class="tsd-kind-icon">get<wbr>Mat</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="client.selector.html#getview" class="tsd-kind-icon">get<wbr>View</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,20 +96,20 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
 					<a name="getselectedcharacter" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Selected<wbr>Character</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Selected<wbr>Character<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;createSelector([getCharacters, getMat],(characters: Record&lt;string, Character&gt;, mat): Character &#x3D;&gt; {if (mat !&#x3D;&#x3D; undefined) {if (characters[mat] !&#x3D;&#x3D; undefined) {return characters[mat];}const firstMat &#x3D; Object.keys(characters);if (firstMat.length &gt; 0) {return characters[firstMat[0]];}}return;},)</span></div>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Selected<wbr>Character<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;createSelector([getCharacters, getMat],(characters: Record&lt;string, CharacterFrontend&gt;, mat): CharacterFrontend &#x3D;&gt; {if (mat !&#x3D;&#x3D; undefined) {if (characters[mat] !&#x3D;&#x3D; undefined) {return characters[mat];}const firstMat &#x3D; Object.keys(characters);if (firstMat.length &gt; 0) {return characters[firstMat[0]];}}return;},)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/bda899c/src/client/selector.ts#L14">client/selector.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/client/selector.ts#L14">client/selector.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="getselectedcoords" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Selected<wbr>Coords</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Selected<wbr>Coords<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;createSelector([getCoords, getMat],(coords: { [key: string]: CoordFrontend[] }, mat): CoordFrontend[] &#x3D;&gt; {if (coords[mat] !&#x3D;&#x3D; undefined) {return coords[mat];}return [];},)</span></div>
+					<a name="getselectedview" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Selected<wbr>View</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Selected<wbr>View<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;createSelector([getView, getMat],(views: { [key: string]: ViewFrontend }, mat): ViewFrontend &#x3D;&gt; {if (views[mat] !&#x3D;&#x3D; undefined) {return views[mat];}return null;},)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/bda899c/src/client/selector.ts#L33">client/selector.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/client/selector.ts#L33">client/selector.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -124,32 +126,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/bda899c/src/client/selector.ts#L11">client/selector.ts:11</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>state: <a href="../interfaces/client.redux.istatefrontend.html" class="tsd-signature-type">IStateFrontend</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
-							<ul class="tsd-parameters">
-							</ul>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getcoords" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Coords</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Coords<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="../interfaces/client.redux.istatefrontend.html" class="tsd-signature-type">IStateFrontend</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/bda899c/src/client/selector.ts#L12">client/selector.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/client/selector.ts#L11">client/selector.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -174,7 +151,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/bda899c/src/client/selector.ts#L10">client/selector.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/client/selector.ts#L10">client/selector.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -184,6 +161,31 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="getview" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>View</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>View<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="../interfaces/client.redux.istatefrontend.html" class="tsd-signature-type">IStateFrontend</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/client/selector.ts#L12">client/selector.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <a href="../interfaces/client.redux.istatefrontend.html" class="tsd-signature-type">IStateFrontend</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -203,16 +205,16 @@
 						<a href="client.selector.html#getselectedcharacter" class="tsd-kind-icon">get<wbr>Selected<wbr>Character</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="client.selector.html#getselectedcoords" class="tsd-kind-icon">get<wbr>Selected<wbr>Coords</a>
+						<a href="client.selector.html#getselectedview" class="tsd-kind-icon">get<wbr>Selected<wbr>View</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="client.selector.html#getcharacters" class="tsd-kind-icon">get<wbr>Characters</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="client.selector.html#getcoords" class="tsd-kind-icon">get<wbr>Coords</a>
+						<a href="client.selector.html#getmat" class="tsd-kind-icon">get<wbr>Mat</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="client.selector.html#getmat" class="tsd-kind-icon">get<wbr>Mat</a>
+						<a href="client.selector.html#getview" class="tsd-kind-icon">get<wbr>View</a>
 					</li>
 				</ul>
 			</nav>

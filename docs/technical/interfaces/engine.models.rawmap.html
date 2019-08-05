@@ -13,39 +13,41 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="../index.html" class="title">E.W.O. Next</a>
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js"
+				data-base="..">
+				<div class="field">
+					<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+					<input id="tsd-search-field" type="text" />
 				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+				<ul class="results">
+					<li class="state loading">Preparing search index...</li>
+					<li class="state failure">The search index is not available</li>
+				</ul>
+				<a href="../.." class="title">E.W.O. Next</a> |
+				<a href="../index.html" class="title">Docs</a>
+			</div>
+			<div class="table-cell" id="tsd-widgets">
+				<div id="tsd-filter">
+					<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+					<div class="tsd-filter-group">
+						<div class="tsd-select" id="tsd-filter-visibility">
+							<span class="tsd-select-label">All</span>
+							<ul class="tsd-select-list">
+								<li data-value="public">Public</li>
+								<li data-value="protected">Public/Protected</li>
+								<li data-value="private" class="selected">All</li>
+							</ul>
 						</div>
+						<input type="checkbox" id="tsd-filter-inherited" checked />
+						<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						<input type="checkbox" id="tsd-filter-only-exported" />
+						<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
 				</div>
+				<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
 			</div>
 		</div>
+	</div>
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
@@ -93,7 +95,9 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="engine.models.rawmap.html#block" class="tsd-kind-icon">block</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="engine.models.rawmap.html#image" class="tsd-kind-icon">image</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="engine.models.rawmap.html#meta" class="tsd-kind-icon">meta</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="engine.models.rawmap.html#tiles" class="tsd-kind-icon">tiles</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,7 +111,17 @@
 					<div class="tsd-signature tsd-kind-icon">block<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/bda899c/src/engine/models/Maps.ts#L34">engine/models/Maps.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/engine/models/Maps.ts#L62">engine/models/Maps.ts:62</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="image" class="tsd-anchor"></a>
+					<h3>image</h3>
+					<div class="tsd-signature tsd-kind-icon">image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/engine/models/Maps.ts#L65">engine/models/Maps.ts:65</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -117,7 +131,17 @@
 					<div class="tsd-signature tsd-kind-icon">meta<span class="tsd-signature-symbol">:</span> <a href="engine.models.mapmeta.html" class="tsd-signature-type">MapMeta</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/bda899c/src/engine/models/Maps.ts#L35">engine/models/Maps.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/engine/models/Maps.ts#L63">engine/models/Maps.ts:63</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="tiles" class="tsd-anchor"></a>
+					<h3>tiles</h3>
+					<div class="tsd-signature tsd-kind-icon">tiles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Leomaradan/node-ewo/blob/418f794/src/engine/models/Maps.ts#L64">engine/models/Maps.ts:64</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -134,34 +158,31 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/engine.models.characterposture.html" class="tsd-kind-icon">Character<wbr>Posture</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/engine.models.characterstates.html" class="tsd-kind-icon">Character<wbr>States</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
 						<a href="../enums/engine.models.direction.html" class="tsd-kind-icon">Direction</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/engine.models.races.html" class="tsd-kind-icon">Races</a>
+						<a href="../enums/engine.models.povstate.html" class="tsd-kind-icon">POVState</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="engine.models.buff.html" class="tsd-kind-icon">Buff</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="engine.models.character.html" class="tsd-kind-icon">Character</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="engine.models.charactergrade.html" class="tsd-kind-icon">Character<wbr>Grade</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="engine.models.characterposition.html" class="tsd-kind-icon">Character<wbr>Position</a>
+					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+						<a href="../enums/engine.models.userrole.html" class="tsd-kind-icon">User<wbr>Role</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="engine.models.coord.html" class="tsd-kind-icon">Coord</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="engine.models.coordcharacterfrontend.html" class="tsd-kind-icon">Coord<wbr>Character<wbr>Frontend</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="engine.models.coorddatabase.html" class="tsd-kind-icon">Coord<wbr>Database</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="engine.models.coordenvironmentfrontend.html" class="tsd-kind-icon">Coord<wbr>Environment<wbr>Frontend</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="engine.models.coordfrontend.html" class="tsd-kind-icon">Coord<wbr>Frontend</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="engine.models.coordpovfrontend.html" class="tsd-kind-icon">Coord<wbr>Pov<wbr>Frontend</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="engine.models.databaseschema.html" class="tsd-kind-icon">Database<wbr>Schema</a>
@@ -181,7 +202,13 @@
 								<a href="engine.models.rawmap.html#block" class="tsd-kind-icon">block</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="engine.models.rawmap.html#image" class="tsd-kind-icon">image</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="engine.models.rawmap.html#meta" class="tsd-kind-icon">meta</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="engine.models.rawmap.html#tiles" class="tsd-kind-icon">tiles</a>
 							</li>
 						</ul>
 					</li>
@@ -190,14 +217,8 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="engine.models.user.html" class="tsd-kind-icon">User</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/engine.models.html#gradetemplate" class="tsd-kind-icon">Grade<wbr>Template</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/engine.models.html#racefromstring" class="tsd-kind-icon">Race<wbr>From<wbr>String</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
-						<a href="../modules/engine.models.html#listraces" class="tsd-kind-icon">List<wbr>Races</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="engine.models.viewfrontend.html" class="tsd-kind-icon">View<wbr>Frontend</a>
 					</li>
 				</ul>
 			</nav>
