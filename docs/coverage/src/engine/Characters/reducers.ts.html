@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/engine/Characters</a> reducers.ts
+      <a href="..\..\..\..\">E.W.O. Next</a> / <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/engine/Characters</a> reducers.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">96.3% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>29/29</span>
+        <span class='fraction'>26/27</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">90.91% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>7/7</span>
+        <span class='fraction'>10/11</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">96.15% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>27/27</span>
+        <span class='fraction'>25/26</span>
       </div>
     </div>
     <p class="quiet">
@@ -110,28 +110,29 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,9 +141,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,12 +169,11 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
@@ -181,12 +183,12 @@
 &nbsp;
 import * as Tasks from '@engine/Commands/tasks';
 import { IMapsState } from '@engine/Maps/reducers';
-import { Plans } from '@engine/resources';
-import { Character } from '@models';
+import { Character, CharacterFrontend, CharacterDatabase } from '@models';
 import { Map } from 'immutable';
 import { AnyAction } from 'redux';
 import { CharacterActions, CharactersActions } from './actions';
 import { CharactersTools } from './CharacterTools';
+import { Plans } from '@engine/resources';
 &nbsp;
 // tslint:disable-next-line: no-unnecessary-type-annotation
 const INITIAL_STATE: ICharactersState = Map();
@@ -197,24 +199,26 @@ export type ICharactersState = Map&lt;string, Character&gt;;
 export const charactersReducer = (state: ICharactersState = INITIAL_STATE, action: AnyAction): ICharactersState =&gt; {
   switch (action.type) {
     case CharactersActions.LOAD_DATABASE:
-      return Tasks.loadDatabaseMap(DATABASE, CharactersTools.hydrater);
+      return Tasks.loadDatabaseMap(DATABASE, CharactersTools.factory);
     case CharactersActions.SAVE_DATABASE:
       Tasks.saveDatabaseMap(DATABASE, state);
       return state;
     case CharactersActions.LINK_TO_MAP:
       const maps: IMapsState = action.maps;
 &nbsp;
+      // Technically, we can threat
       return state.map(character =&gt; {
 &nbsp;
-        const map = maps.get(character.maps);
-&nbsp;
-        const plan = Plans.find(p =&gt; p.id === character.maps);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (character.position === undefined || character.position.plan === undefined) {
+<span class="cstat-no" title="statement not covered" >          return character;</span>
+        }
+        const map = maps.get(character.position.plan.id);
 &nbsp;
         const coord = map.find(m =&gt; m.character.mat === character.mat);
 &nbsp;
         return {
           ...character, position: {
-            plan,
+            plan: character.position.plan,
             coord,
           },
         };
@@ -229,8 +233,7 @@ export const charactersReducer = (state: ICharactersState = INITIAL_STATE, actio
 &nbsp;
       return state.set(String(char.mat), char);
     case CharacterActions.CREATE:
-      const newChar = CharactersTools.factory(state.size + 1, action.name, action.race);
-      newChar.owner = action.owner;
+      const newChar = CharactersTools.factory({ mat: state.size + 1, name: action.name, race: action.race, owner: action.owner, genre: action.genre });
 &nbsp;
       return state.set(String(newChar.mat), newChar);
 &nbsp;
@@ -244,7 +247,7 @@ export const charactersReducer = (state: ICharactersState = INITIAL_STATE, actio
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 12 2019 18:32:30 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 30 2019 16:32:24 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>

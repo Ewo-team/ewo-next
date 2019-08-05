@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/engine/Commands/tasks</a> loadDatabase.ts
+      <a href="..\..\..\..\..\">E.W.O. Next</a> / <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/engine/Commands/tasks</a> loadDatabase.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">13.95% </span>
+        <span class="strong">14.29% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/43</span>
+        <span class='fraction'>6/42</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">13.95% </span>
+        <span class="strong">14.29% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/43</span>
+        <span class='fraction'>6/42</span>
       </div>
     </div>
     <p class="quiet">
@@ -123,26 +123,25 @@
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,7 +149,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -197,10 +195,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module Engine.Commands.Tasks
@@ -216,7 +214,7 @@ declare var __basedir;
 &nbsp;
 const loadDatabase = <span class="fstat-no" title="function not covered" >&lt;V&gt;(d</span>atabaseName: string, modelHydrater: (item: any, additionnalData?: any) =&gt; any, additionnalData?: any): Map&lt;string, V&gt; | List&lt;V&gt; =&gt; {
 &nbsp;
-  const database = <span class="cstat-no" title="statement not covered" >path.join(__basedir, './data', `${databaseName}.json`);</span>
+  const database = <span class="cstat-no" title="statement not covered" >path.resolve(__basedir, process.env.SERVER_DATA, `${databaseName}.json`);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  console.log(`loading database ${database}`);</span>
 &nbsp;
@@ -231,7 +229,6 @@ const loadDatabase = <span class="fstat-no" title="function not covered" >&lt;V&
 <span class="cstat-no" title="statement not covered" >  if (data.format === 'array') {</span>
     const dataArray = (<span class="cstat-no" title="statement not covered" >data.data as any[]).map(<span class="fstat-no" title="function not covered" >(i</span>tem, index, array) =&gt; {</span>
       const percent = <span class="cstat-no" title="statement not covered" >Math.floor(((index + 1) / array.length) * 100);</span>
-<span class="cstat-no" title="statement not covered" >      console.log({ index, length: array.length });</span>
 <span class="cstat-no" title="statement not covered" >      if (percent !== percentOld) {</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`loading... ${percent}%`);</span>
 <span class="cstat-no" title="statement not covered" >        percentOld = percent;</span>
@@ -286,7 +283,7 @@ export const loadDatabaseList = <span class="fstat-no" title="function not cover
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 12 2019 18:32:30 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 30 2019 16:32:24 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="..\..\..\..\prettify.js"></script>

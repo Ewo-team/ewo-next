@@ -20,7 +20,8 @@ export const frontendInitialState: IStateFrontend = {
     1: {
       characters: [],
       pov: [],
-      map: characterDefaultMat1.position.plan.rawMapName,
+      environment: [],
+      tileImage: 'demo.png',
     },
     3: {
       characters: [
@@ -31,7 +32,8 @@ export const frontendInitialState: IStateFrontend = {
           type: 'cha',
         }],
       pov: [],
-      map: characterFullMat3.position.plan.rawMapName,
+      environment: [],
+      tileImage: 'demo.png',
     },
   },
 };

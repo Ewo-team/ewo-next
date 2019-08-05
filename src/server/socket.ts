@@ -40,7 +40,7 @@ export const getClientState = (charId: number[], store: Store<IStateServer>) => 
       view[character.mat].environment = MapsTools.getCoordsEnvironment(plan, positions);
       view[character.mat].tileImage = MapsTools.getMapsInfo(plan);
 
-      view[character.mat].characters = MapsTools.getCoordsFromAroundPosition(positions, store).map(CoordsTools.toFrontendLimited).toArray();
+      view[character.mat].characters = MapsTools.getCoordsFromAroundPosition(plan, positions, store).map(CoordsTools.toFrontendLimited).toArray();
     }
   });
 

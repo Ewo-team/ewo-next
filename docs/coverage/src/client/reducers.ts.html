@@ -16,35 +16,35 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">src/client</a> reducers.ts
+      <a href="..\..\..\">E.W.O. Next</a> / <a href="..\..\index.html">All files</a> / <a href="index.html">src/client</a> reducers.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">88.89% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>8/9</span>
+        <span class='fraction'>0/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">88.89% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/9</span>
+        <span class='fraction'>0/9</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,7 +94,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,75 +104,75 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module Client.Redux
  * Application Redux items
  * @preferred
  */
 &nbsp;
-import { Character, CoordFrontend } from '@models';
+import { CharacterFrontend, ViewFrontend } from '@models';
 import { AnyAction } from 'redux';
-import { Actions } from './actions';
+<span class="cstat-no" title="statement not covered" >import { Actions } from './actions';</span>
 &nbsp;
 export interface IStateFrontend {
   selectedCharacter?: number;
-  characters: Record&lt;string, Character&gt;;
-  coords: Record&lt;string, CoordFrontend[]&gt;;
+  characters: Record&lt;string, CharacterFrontend&gt;;
+  views: Record&lt;string, ViewFrontend&gt;;
   loaded: boolean;
   loading: boolean;
   error?: string;
 }
 &nbsp;
-const initialState: IStateFrontend = {
+const initialState: IStateFrontend = <span class="cstat-no" title="statement not covered" >{</span>
   loading: false,
   loaded: false,
   characters: {},
-  coords: {},
+  views: {},
 };
 &nbsp;
-const reducer = (state: IStateFrontend = initialState, action: AnyAction): IStateFrontend =&gt; {
-  switch (action.type) {
+const reducer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>tate: IStateFrontend = <span class="branch-0 cbranch-no" title="branch not covered" >initialState,</span> action: AnyAction): IStateFrontend =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  switch (action.type) {</span>
     case Actions.REFRESH_CHARACTERS:
-      return { ...state, loading: false, loaded: true, characters: action.characters };
-<span class="branch-1 cbranch-no" title="branch not covered" >    case Actions.REFRESH_MAPS:</span>
-<span class="cstat-no" title="statement not covered" >      return { ...state, loading: false, loaded: true, coords: { ...state.coords, [action.mat]: action.coords } };</span>
+<span class="cstat-no" title="statement not covered" >      return { ...state, loading: false, loaded: true, characters: action.characters };</span>
+    case Actions.REFRESH_MAPS:
+<span class="cstat-no" title="statement not covered" >      return { ...state, loading: false, loaded: true, views: { ...state.views, [action.mat]: action.views } };</span>
     case Actions.SET_SELECTED_CHARACTER:
-      return { ...state, selectedCharacter: action.mat };
+<span class="cstat-no" title="statement not covered" >      return { ...state, selectedCharacter: action.mat };</span>
   }
 &nbsp;
-  return state;
+<span class="cstat-no" title="statement not covered" >  return state;</span>
 };
 &nbsp;
-export default reducer;
+<span class="cstat-no" title="statement not covered" >export default reducer;</span>
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 12 2019 18:32:30 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 30 2019 16:32:24 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

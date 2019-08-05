@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">src/server</a> socket.ts
+      <a href="..\..\..\">E.W.O. Next</a> / <a href="..\..\index.html">All files</a> / <a href="index.html">src/server</a> socket.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/56</span>
+        <span class='fraction'>0/61</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/53</span>
+        <span class='fraction'>0/58</span>
       </div>
     </div>
     <p class="quiet">
@@ -188,7 +188,35 @@
 <a name='L140'></a><a href='#L140'>140</a>
 <a name='L141'></a><a href='#L141'>141</a>
 <a name='L142'></a><a href='#L142'>142</a>
-<a name='L143'></a><a href='#L143'>143</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,21 +225,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -335,10 +357,13 @@
  * Socket.IO Server
  */
 &nbsp;
+<span class="cstat-no" title="statement not covered" >import { CharactersTools } from '@engine/Characters/CharacterTools';</span>
 <span class="cstat-no" title="statement not covered" >import { CoordsTools } from '@engine/Maps/CoordsTools';</span>
 <span class="cstat-no" title="statement not covered" >import { MapsTools } from '@engine/Maps/MapsTools';</span>
 import { IStateServer } from '@engine/reducers';
+<span class="cstat-no" title="statement not covered" >import { Plans } from '@engine/resources';</span>
 <span class="cstat-no" title="statement not covered" >import { UsersTools } from '@engine/Users/UsersTools';</span>
+import { ViewFrontend } from '@models';
 import { Store } from 'redux';
 <span class="cstat-no" title="statement not covered" >import { registerEventReceiver } from './eventReceiver';</span>
 &nbsp;
@@ -350,23 +375,31 @@ export interface ClientPool {
 }
 &nbsp;
 export const <span class="cstat-no" title="statement not covered" >getClientState = <span class="fstat-no" title="function not covered" >(c</span>harId: number[], store: Store&lt;IStateServer&gt;) =&gt; {</span>
-  const charactersObj = <span class="cstat-no" title="statement not covered" >store.getState().Characters.filter(<span class="fstat-no" title="function not covered" >c </span>=&gt; <span class="cstat-no" title="statement not covered" >charId.includes(c.mat))</span>;</span>
-  const mapsObj = <span class="cstat-no" title="statement not covered" >{};</span>
+  const charactersObj = <span class="cstat-no" title="statement not covered" >store.getState().Characters.filter(<span class="fstat-no" title="function not covered" >c </span>=&gt; <span class="cstat-no" title="statement not covered" >charId.includes(c.mat))</span>.map(CharactersTools.toFrontEnd);</span>
+&nbsp;
+  const view: Record&lt;string, ViewFrontend&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >  charactersObj.forEach(<span class="fstat-no" title="function not covered" >character </span>=&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (!character.position) {</span>
-<span class="cstat-no" title="statement not covered" >      mapsObj[character.mat] = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    view[character.mat] = {} as ViewFrontend;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    view[character.mat].pov = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!character.coord) {</span>
+<span class="cstat-no" title="statement not covered" >      view[character.mat].characters = [];</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      mapsObj[character.mat] = MapsTools.getCoordsFromAroundPosition(</span>
-        character.position.coord,
-        character.position.plan,
-        // character.currentInsight,
-        5,
-        store).map(CoordsTools.serializer);
+<span class="cstat-no" title="statement not covered" >      view[character.mat].map = Plans[character.coord.plan].rawMapName;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      view[character.mat].characters = MapsTools.getCoordsFromAroundPosition(</span>
+        character.coord.x,
+        character.coord.y,
+        character.coord.plan,
+        character.currentInsight,
+        store).map(CoordsTools.toFrontendLimited).toArray();
     }
   });
 &nbsp;
   const characters = <span class="cstat-no" title="statement not covered" >JSON.stringify(charactersObj);</span>
-  const maps = <span class="cstat-no" title="statement not covered" >JSON.stringify(mapsObj);</span>
+  const maps = <span class="cstat-no" title="statement not covered" >JSON.stringify(view);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return {</span>
     characters,
@@ -478,7 +511,7 @@ export const <span class="cstat-no" title="statement not covered" >startSocket =
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 12 2019 18:32:30 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 22 2019 10:16:00 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

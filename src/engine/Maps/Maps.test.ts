@@ -214,7 +214,8 @@ describe('MapsTools', () => {
       }),
     });
     // Map<string, List<Coord>>
-    const result = MapsTools.getCoordsFromAroundPosition(coord4.x, coord4.y, althian.id, 8, viewStore);
+    const positions = {xMin: coord4.x - 8, yMin: coord4.y - 8, xMax: coord4.x + 8, yMax: coord4.y + 8};
+    const result = MapsTools.getCoordsFromAroundPosition(althian, positions, viewStore);
 
     expect(result).toEqual(List([
       coord1,
