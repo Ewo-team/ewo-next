@@ -5,6 +5,8 @@ Le sujet du jeu est la bataille entre les anges, les démons et les humains, dan
 
 EWO Next est le nom de code d'une reprise à zéro du projet (redéfinition du gameplay et des technologies)
 
+__[Lien vers la documentation](https://ewo-team.github.io/ewo-next)__
+
 ### Badges
 On aime les badges
 

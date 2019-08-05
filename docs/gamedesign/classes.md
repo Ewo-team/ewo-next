@@ -4,7 +4,24 @@ Il existe 9 classes possibles par race (sauf le Paria qui n'en possède qu'une s
 
 Une classe défini le character du personnage, et influence donc le gameplay. La classe d'un personnage de son camps est affiché sur sa fiche de jeu.
 
-Le choix d'une classe est aussi déterminant pour les talents. Chaque classe propose l'accès à 3 arbres de talents parmis les 9
+Le choix d'une classe est aussi déterminant pour les talents. Chaque classe propose l'accès à 3 arbres de talents parmis les 9.
+
+Les classes sont reprises des classes rolesplay de Ewo V1, à savoir :
+
+| Ange | Démon | Humain |
+| ------------- |-------------| -----|
+|L'Ordre de Cristal - 1er Ciel: Les Tempérés|L'Ordre des Ardents - 5ème Caveau: Les Colériques|Confrérie des Indépendants - 1ère Maison: Les Pacifistes|
+|L'Ordre de Cristal - 3ème Ciel: Les Adorateurs|L'Ordre des Ardents - 6ème Caveau: Les Hérétiques|Confrérie des Indépendants - 2ème Maison: Les Neutres|
+|L'Ordre de Cristal - 7ème Ciel: Les Possessifs|L'Ordre des Ardents - 7ème Caveau: Les Violents|Confrérie des Indépendants - 3ème Maison: Les Barbares|
+|L'Ordre de Lumière - 2ème Ciel: Les Illuminati|L'Ordre des Envieux - 2ème Caveau: Les Luxurieux|Confrérie des Nationalistes - 1ere Maison: Les Intégristes|
+|L'Ordre de Lumière - 5ème Ciel: Les Guerriers éclairés|L'Ordre des Envieux - 3ème Caveau: Les Gourmands|Confrérie des Nationalistes - 2ème Maison: Les Loyalistes|
+|L'Ordre de Lumière - 8ème Ciel: Les Hérauts de Célestia|L'Ordre des Envieux - 4ème Caveau: Les Avares|Confrérie des Nationalistes - 3ème Maison: Les Alliés|
+|L'Ordre des Ombres - 4ème Ciel: Les Avisés|L'Ordre des Indus - 1er Caveau: Le Limbe|Confrérie des Unionistes - 1ere Maison: Les Fédéralistes|
+|L'Ordre des Ombres - 6ème Ciel: Les Manipulateurs|L'Ordre des Indus - 8ème Caveau: Les Fraudeurs|Confrérie des Unionistes - 2ème Maison: Les Absolutistes|
+|L'Ordre des Ombres - 9ème Ciel: Les Cruels|L'Ordre des Indus - 9ème Caveau: Les Traîtres|Confrérie des Unionistes - 3ème Maison: Les Militaristes|
+
+La liste des correspondance classe <-> arbres n'est pas terminée, mais elle sera logique par rapport à la description des classes
+
 
 ## Talents
 Il existe 9 arbres de talents (identiques pour les 3 races, le Paria n'a accès qu'a un arbre spécifique). Chaque arbre contient des talents passifs et des talents actifs.
@@ -44,7 +61,7 @@ Tout les 5 niveaux, un personnage va gagner un point de talent, qu'il pourra dé
 
 De ce fait, un personnage n'investissant pas d'xp pour acheter des talents supplémentaires pourra atteindre le talent le plus élevé de l'arbre.
 
-### Talents des archétypes
+### Talents des archétypes (non définitive)
 __Offensif corps-à-corps__
 * Charge (actif) : Se déplace vers la cible et consomme les mouvements restant. Si l'attaque passe, inflige un bonus de dégats en fonction des mouvements au moment de la charge
 
@@ -77,6 +94,7 @@ __Spécialiste en soutiens__
   * Sceau : Place une marque, dont les stats sont un % de celle du lanceur. Un seul sceau peut être actif à la fois
   * Portail : le lanceur ouvre un portail à portée cac. Tout les personnages qui passent à travers sont téléportés vers le Sceau. Dès que le lanceur se déplace ou passe dans le portail, celui-ci disparait
 * Saut temporel : le lanceur reviens X heures en arrière : sa position et ses statistiques sont modifiés en conséquences.
+
 __Spécialiste en débuff__
 * Frayeur (actif) : Tout les persos font un test de resistance, ceux qui échouent vont fuir la zone (sans perte de mouvements)
 
