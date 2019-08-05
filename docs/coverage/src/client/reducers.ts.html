@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">77.78% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>7/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/1</span>
+        <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">77.78% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>7/9</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,7 +94,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -105,27 +105,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module Client.Redux
  * Application Redux items
@@ -134,7 +134,7 @@
 &nbsp;
 import { CharacterFrontend, ViewFrontend } from '@models';
 import { AnyAction } from 'redux';
-<span class="cstat-no" title="statement not covered" >import { Actions } from './actions';</span>
+import { Actions } from './actions';
 &nbsp;
 export interface IStateFrontend {
   selectedCharacter?: number;
@@ -145,34 +145,34 @@ export interface IStateFrontend {
   error?: string;
 }
 &nbsp;
-const initialState: IStateFrontend = <span class="cstat-no" title="statement not covered" >{</span>
+const initialState: IStateFrontend = {
   loading: false,
   loaded: false,
   characters: {},
   views: {},
 };
 &nbsp;
-const reducer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>tate: IStateFrontend = <span class="branch-0 cbranch-no" title="branch not covered" >initialState,</span> action: AnyAction): IStateFrontend =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  switch (action.type) {</span>
-    case Actions.REFRESH_CHARACTERS:
+const reducer = (state: IStateFrontend = <span class="branch-0 cbranch-no" title="branch not covered" >initialState,</span> action: AnyAction): IStateFrontend =&gt; {
+  switch (action.type) {
+<span class="branch-0 cbranch-no" title="branch not covered" >    case Actions.REFRESH_CHARACTERS:</span>
 <span class="cstat-no" title="statement not covered" >      return { ...state, loading: false, loaded: true, characters: action.characters };</span>
-    case Actions.REFRESH_MAPS:
+<span class="branch-1 cbranch-no" title="branch not covered" >    case Actions.REFRESH_MAPS:</span>
 <span class="cstat-no" title="statement not covered" >      return { ...state, loading: false, loaded: true, views: { ...state.views, [action.mat]: action.views } };</span>
     case Actions.SET_SELECTED_CHARACTER:
-<span class="cstat-no" title="statement not covered" >      return { ...state, selectedCharacter: action.mat };</span>
+      return { ...state, selectedCharacter: action.mat };
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return state;</span>
+  return state;
 };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default reducer;</span>
+export default reducer;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 30 2019 16:32:24 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Aug 05 2019 15:29:18 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

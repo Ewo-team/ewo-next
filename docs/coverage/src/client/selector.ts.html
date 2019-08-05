@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">63.16% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/19</span>
+        <span class='fraction'>12/19</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">37.5% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>3/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>3/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">62.5% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/16</span>
+        <span class='fraction'>10/16</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,33 +94,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -136,20 +136,20 @@
  */
 &nbsp;
 import { CharacterFrontend, ViewFrontend } from '@models';
-<span class="cstat-no" title="statement not covered" >import { createSelector } from 'reselect';</span>
+import { createSelector } from 'reselect';
 import { IStateFrontend } from './reducers';
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >getMat = <span class="fstat-no" title="function not covered" >(s</span>tate: IStateFrontend) =&gt; <span class="cstat-no" title="statement not covered" >state.selectedCharacter;</span></span>
-export const <span class="cstat-no" title="statement not covered" >getCharacters = <span class="fstat-no" title="function not covered" >(s</span>tate: IStateFrontend) =&gt; <span class="cstat-no" title="statement not covered" >state.characters;</span></span>
-export const <span class="cstat-no" title="statement not covered" >getView = <span class="fstat-no" title="function not covered" >(s</span>tate: IStateFrontend) =&gt; <span class="cstat-no" title="statement not covered" >state.views;</span></span>
+export const getMat = (state: IStateFrontend) =&gt; state.selectedCharacter;
+export const getCharacters = (state: IStateFrontend) =&gt; state.characters;
+export const getView = <span class="fstat-no" title="function not covered" >(s</span>tate: IStateFrontend) =&gt; <span class="cstat-no" title="statement not covered" >state.views;</span>
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >getSelectedCharacter = createSelector(</span>
+export const getSelectedCharacter = createSelector(
   [getCharacters, getMat],
-<span class="fstat-no" title="function not covered" >  (c</span>haracters: Record&lt;string, CharacterFrontend&gt;, mat): CharacterFrontend =&gt; {
+  (characters: Record&lt;string, CharacterFrontend&gt;, mat): CharacterFrontend =&gt; {
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (mat !== undefined) {</span>
-<span class="cstat-no" title="statement not covered" >      if (characters[mat] !== undefined) {</span>
-<span class="cstat-no" title="statement not covered" >        return characters[mat];</span>
+    if (mat !== undefined) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (characters[mat] !== undefined) {
+        return characters[mat];
       }
 &nbsp;
       const firstMat = <span class="cstat-no" title="statement not covered" >Object.keys(characters);</span>
@@ -158,11 +158,11 @@ export const <span class="cstat-no" title="statement not covered" >getSelectedCh
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return;</span>
+    return;
   },
 );
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >getSelectedView = createSelector(</span>
+export const getSelectedView = createSelector(
   [getView, getMat],
 <span class="fstat-no" title="function not covered" >  (v</span>iews: { [key: string]: ViewFrontend }, mat): ViewFrontend =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (views[mat] !== undefined) {</span>
@@ -178,7 +178,7 @@ export const <span class="cstat-no" title="statement not covered" >getSelectedVi
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 30 2019 16:32:24 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Aug 05 2019 15:29:18 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

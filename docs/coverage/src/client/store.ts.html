@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">47.62% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/21</span>
+        <span class='fraction'>10/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>2/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">47.62% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/21</span>
+        <span class='fraction'>10/21</span>
       </div>
     </div>
     <p class="quiet">
@@ -94,42 +94,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
@@ -137,22 +137,22 @@
  * Redux Store
  */
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import { applyMiddleware, compose, createStore as reduxCreateStore, Store } from 'redux';</span>
-<span class="cstat-no" title="statement not covered" >import { createLogger } from 'redux-logger';</span>
-<span class="cstat-no" title="statement not covered" >import reduxThunk from 'redux-thunk';</span>
-<span class="cstat-no" title="statement not covered" >import rootReducer, { IStateFrontend } from './reducers';</span>
+import { applyMiddleware, compose, createStore as reduxCreateStore, Store } from 'redux';
+import { createLogger } from 'redux-logger';
+import reduxThunk from 'redux-thunk';
+import rootReducer, { IStateFrontend } from './reducers';
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >createStore = <span class="fstat-no" title="function not covered" >(s</span>ocketSendMiddleware?, initialState?): Store&lt;IStateFrontend&gt; =&gt; {</span>
+export const createStore = (socketSendMiddleware?, initialState?): Store&lt;IStateFrontend&gt; =&gt; {
 &nbsp;
-  const middlewares = <span class="cstat-no" title="statement not covered" >[reduxThunk];</span>
+  const middlewares = [reduxThunk];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (socketSendMiddleware) {</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (socketSendMiddleware) {
 <span class="cstat-no" title="statement not covered" >    middlewares.push(socketSendMiddleware);</span>
   }
 &nbsp;
-  const hasLog = <span class="cstat-no" title="statement not covered" >['1', 'true', 'action'].includes(process.env.CLIENT_LOG);</span>
+  const hasLog = ['1', 'true', 'action'].includes(process.env.CLIENT_LOG);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (hasLog) {</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (hasLog) {
 &nbsp;
     const onlyAction = <span class="cstat-no" title="statement not covered" >process.env.CLIENT_LOG === 'action';</span>
 &nbsp;
@@ -172,7 +172,7 @@ export const <span class="cstat-no" title="statement not covered" >createStore =
 <span class="cstat-no" title="statement not covered" >    middlewares.push(logger);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return reduxCreateStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));</span>
+  return reduxCreateStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));
 &nbsp;
 };
 &nbsp;</pre></td></tr>
@@ -181,7 +181,7 @@ export const <span class="cstat-no" title="statement not covered" >createStore =
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 30 2019 16:32:24 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Aug 05 2019 15:29:18 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>
