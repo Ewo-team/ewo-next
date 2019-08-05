@@ -1,3 +1,7 @@
 # Game design
 
-[Présentation de l'interface](interface)
+[Niveau et xp](gamedesign/niveau)
+
+[Classes et talents](gamedesign/classes)
+
+[Présentation de l'interface](gamedesign/interface)

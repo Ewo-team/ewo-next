@@ -29,8 +29,25 @@ Ces caractéristiques sont fixes. elles peuvent cependant varier suivant les bon
 * __Expérience__ : L'expérience corresponds à la puissance du personnage, et à son niveau. Il est utilisé pour les calculs de gain d'expérience. Un personnage qui meurt pourra perdre de l'expérience.
   * __Amélioration__ : A chaque point d'expérience aquis, le personnage reçoit également un point d'amélioration, qu'il peut dépenser de plusieurs manières. Si le nombre de point d'amélioration passe en négatif (après une mort), un malus permanent pourra être appliqué, en fonction de la somme négative
 * __Force__ : La force du personnage, c'est à dire la quantité de dommage qu'il fera (sauf avec l'utilisation d'armes spécifiques). Une force élevé va également infliger d'avantages de malus à une cible qui se défends.
-* __Magie__ : Le niveau de magie du personnage. Indique les sorts de sa classe qu'il peut lancer, et la puissance de ceux-ci. Avoir un niveau 0 de magie n'empêche pas de lancer des techniques de classes non-magiques, ou faiblement magiques.
+* __Magie__ : Le niveau de magie du personnage. Indique les talents qu'il peut lancer, et la puissance de ceux-ci. Avoir un niveau 0 de magie n'empêche pas de lancer des talents non-magiques, ou faiblement magiques.
 * __Vision__ : La capacité du vue du personnage. Le premier effet de cette caractéristiques est la taille du damier. Cette taille est cependant plafonnées. Une bonne vision augmente également la distance du brouillard de guerre, et participe à des _jets de vision_ qui pourront être fait via certains objets
+
+### Autres charactéristiques
+Ces autres charactéristiques ne peuvent pas être augmenté directement par le joueur, mais peuvent être alteré via des buffs, des objets ou des talents passifs
+* __Regain de Points de vie__
+* __Regain de Points de vitesse__
+* __Regain de Points d'action__
+* __Résistance physique__
+* __Résistance magique__
+* __Allonge__
+* __Perception__
+* __Bonus d'agilité max__
+* __Bonus de vitesse max__
+* __Bonus de points de vie max__
+* __Bonus de défense__
+* __Bonus d'attaque__
+* __Bonus de force__
+* __Bonus de vision__
 
 ### Tours de jeu
 Les tours de jeu servent à calculer la régénération des statistiques. Un tour de jeu corresponds à 1h. Les statistiques de bases sont calculés de manière à régénérer la totalité des points d'action et des mouvements sur une période de 48h.
@@ -43,6 +60,9 @@ Quand un personnage à toutes ses caractéristiques à fonds et aucun bonus / ma
 Un buff (bonus / malus) est une alteration de caractéristique. Un buff peut être associé à n'importe quelle caractéristique, ou à la formule de régénération d'une caractéristique.
 
 Un buff peut être consommable (sa puissance est diminué par une regen), temporaire (va durer X tours), ou permanent (va durer jusqu'a dissipation). Un buff pourra également évoluer (Au moment ou un buff se termine, un nouveau buff est généré).
+
+## Actions
+Les actions en jeu sont regroupé en trois catégories : les actions universelles (tout le monde peut les utiliser), les actions contextuelles (on ne peut les utiliser que si on rempli les conditions) et les talents (il faut débloquer le talent pour l'utiliser, il peut y avoir des pré-requis)
 
 ## Cartes
 

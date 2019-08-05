@@ -2,7 +2,7 @@
 ## Interface générale
 L'interface de jeu se présente ainsi :
 
-![présentation interface](./images/ui-view.svg)
+![présentation interface](../images/ui-view.png)
 
 ### Bar de perso
 La boite contenant les informations sur le perso vont indiquer :
@@ -29,7 +29,7 @@ Le radar est affiché dans le coins en haut à droite. Il va le contenu de la vu
 ## Damier
 Le damier représente la grille de jeu.
 
-![présentation damier](./images/ui-perception.svg)
+![présentation damier](../images/ui-perception.png)
 
 Les cases en noir correspondent à des cases infranchissables. Leur représentation réelle doit encore être définie
 
@@ -43,12 +43,12 @@ En dessous du perso, il y a une représentation d'un déplacement multiple avec 
 
 Le jeu n'empêche pas de se déplacer dans une zone inconnue : Si un obstacle ou un joueur est présent en position 4, le personnage avancera simplement jusqu'en position 3. De la même manière, si un personnage invisible est en position 2, le personnage avancera en 1 et sont action sera ensuite interrompue
 
-__Une démonstration du pathfinding + raycasting est disponible avec le lien suivant : [Pathfinder](./demo/pathfinder.html)__
+__Une démonstration du pathfinding + raycasting est disponible avec le lien suivant : [Pathfinder](../demo/pathfinder.html)__
 
 ## Radar
 Le radar (ou GPS) va afficher ce qui se trouve autour du personnage. Il y a deux modes d'affichage : réduit (en haut de la page de jeu) ou étendu :
 
-![présentation damier](./images/ui-gps.svg)
+![présentation damier](../images/ui-gps.png)
 
 Dans cette vue, la page de jeu reste visible par transparence.
 
