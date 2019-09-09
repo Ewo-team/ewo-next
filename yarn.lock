@@ -1917,10 +1917,10 @@
     "@types/express" "*"
     "@types/node" "*"
 
-"@types/express-socket.io-session@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@types/express-socket.io-session/-/express-socket.io-session-1.3.1.tgz#6a82e161d7fd7d73f42ae7b0565a173f0b41ef93"
-  integrity sha512-QgL8bssVAQhvn6CKUz7AX17inBNDSTsZtS8/rPnu5C5A7CVt9UTIEkRcqO4T1W9bM+jWuskCkLiIykO6onhFRg==
+"@types/express-socket.io-session@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@types/express-socket.io-session/-/express-socket.io-session-1.3.2.tgz#25edd860fff4141af0bab05647a9c1537a46eab0"
+  integrity sha512-zUdB2M6zrmjkekZplB+52EM5vw62lGLQPRfSGxMwnw7viG6pffJdLgICjlqaggleOLjg8/onmqaD60eRTI5j0Q==
   dependencies:
     "@types/express" "*"
     "@types/socket.io" "*"
