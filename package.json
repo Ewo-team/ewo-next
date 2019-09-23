@@ -71,7 +71,7 @@
     "pathfinding": "^0.4.18",
     "react-docgen-typescript-loader": "^3.1.0",
     "react-router": "^5.0.1",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^3.1.2",
     "react-storybook-addon-props-combinations": "^1.1.0",
     "react-test-renderer": "^16.9.0",
     "redux-logger": "^3.0.6",
